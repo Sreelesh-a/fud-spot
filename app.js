@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import logoHeaderImg from "./img/fud-spot-log.png";
+import restData from "./restuarant";
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className="header ">
       <div className="logoHeader">
         <img src={logoHeaderImg} className="logoHeaderImg"></img>
         <span className="LocationHeader">Kochi, Kerala, India</span>
@@ -30,7 +31,15 @@ const RestaurantCard = (res) => {
         <img src={res.img} class="masked-image" />
       </div>
       <div className="resto-details">
-        <h3>{res.name}</h3>
+        <span className="resto-name">{res.name}</span>
+        <br />
+        <span className="resto-name">
+          {res.rating}
+          <span class="center-dot">•</span>
+          {res.time}
+        </span>
+        <br />
+        <span class="resto-location">{res.location}</span>
       </div>
     </div>
   );
@@ -86,21 +95,36 @@ const Body = () => {
       <div className="restaurantMain">
         <div className="sectionTitle">Top restaurant chains in Kochi</div>
         <div className="rest-container">
-          <RestaurantCard
-            rating="4.2 "
-            name="Pizza Hut"
-            img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/2b4f62d606d1b2bfba9ba9e5386fabb7"
-          />
-
-          <RestaurantCard
-            name="Chinese WOrk"
-            img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597"
-          />
-
-          <RestaurantCard
-            name="McDonald's"
-            img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/1/a87f58ea-72b1-4f3d-9ffe-ae74effb1073_57240.jpg"
-          />
+          {/* <div className="flex-item">
+            <RestaurantCard
+              location="MG Road"
+              rating="4.2"
+              time="25-30 mins"
+              name="Pizza Hut"
+              img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/2b4f62d606d1b2bfba9ba9e5386fabb7"
+            />
+          </div>
+          <div className="flex-item">
+            <RestaurantCard
+              location="Kacherippadi"
+              rating="4.3"
+              time="15-30 mins"
+              name="Chinese WOrk"
+              img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597"
+            />
+          </div>
+          <div className="flex-item">
+            <RestaurantCard
+              location="Elamkulam"
+              rating="4.0"
+              time="05-30 mins"
+              name="McDonald's"
+              img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/1/a87f58ea-72b1-4f3d-9ffe-ae74effb1073_57240.jpg"
+            />
+          </div> */}
+          <div className="flex-item">
+            <RestaurantCard restDatas={restData} />
+          </div>
         </div>
       </div>
     </div>
