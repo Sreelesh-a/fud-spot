@@ -1,30 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import logoHeaderImg from "./img/fud-spot-log.png";
-// import restData from "./restuarant";
-const restDatas = require("./restuarant");
-
-const Header = () => {
-  return (
-    <div className="header ">
-      <div className="logoHeader">
-        <img src={logoHeaderImg} className="logoHeaderImg"></img>
-        <span className="LocationHeader">Kochi, Kerala, India</span>
-      </div>
-      <div className="navItems">
-        <ul>
-          <li>FudSpot Corporate</li>
-          <li>Search</li>
-          <li>Offers</li>
-          <li>Help</li>
-          <li>Sign in</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
+const restDatas = require("/restuarant.js");
 const RestaurantCard = (res) => {
   const { restData } = res;
   const { name, cloudinaryImageId, avgRating, sla, areaName } = restData?.info;
@@ -54,7 +28,6 @@ const RestaurantCard = (res) => {
     </div>
   );
 };
-
 const Body = () => {
   return (
     <div className="body">
@@ -114,14 +87,5 @@ const Body = () => {
     </div>
   );
 };
-const AppLayout = () => {
-  return (
-    <div className="AppLayout">
-      <Header />
-      <Body />
-    </div>
-  );
-};
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default Body;
