@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import logoHeaderImg from "./img/fud-spot-log.png";
-import restData from "./restuarant";
+// import restData from "./restuarant";
+const restDatas = require("./restuarant");
 
 const Header = () => {
   return (
@@ -25,21 +26,31 @@ const Header = () => {
 };
 
 const RestaurantCard = (res) => {
+  const { restData } = res;
+  const { name, cloudinaryImageId, avgRating, sla, areaName } = restData?.info;
+  console.log(restData);
+  console.log(name);
   return (
-    <div className="res-card">
+    <div className="res-card ">
       <div class="res-card-img">
-        <img src={res.img} class="masked-image" />
+        <img
+          src={
+            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+            cloudinaryImageId
+          }
+          class="masked-image"
+        />
       </div>
       <div className="resto-details">
-        <span className="resto-name">{res.name}</span>
+        <span className="resto-name">{name}</span>
         <br />
         <span className="resto-name">
-          {res.rating}
+          {avgRating}
           <span class="center-dot">•</span>
-          {res.time}
+          {sla.slaString}
         </span>
         <br />
-        <span class="resto-location">{res.location}</span>
+        <span class="resto-location">{areaName}</span>
       </div>
     </div>
   );
@@ -95,36 +106,10 @@ const Body = () => {
       <div className="restaurantMain">
         <div className="sectionTitle">Top restaurant chains in Kochi</div>
         <div className="rest-container">
-          {/* <div className="flex-item">
-            <RestaurantCard
-              location="MG Road"
-              rating="4.2"
-              time="25-30 mins"
-              name="Pizza Hut"
-              img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/2b4f62d606d1b2bfba9ba9e5386fabb7"
-            />
-          </div>
-          <div className="flex-item">
-            <RestaurantCard
-              location="Kacherippadi"
-              rating="4.3"
-              time="15-30 mins"
-              name="Chinese WOrk"
-              img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597"
-            />
-          </div>
-          <div className="flex-item">
-            <RestaurantCard
-              location="Elamkulam"
-              rating="4.0"
-              time="05-30 mins"
-              name="McDonald's"
-              img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/1/a87f58ea-72b1-4f3d-9ffe-ae74effb1073_57240.jpg"
-            />
-          </div> */}
-          <div className="flex-item">
-            <RestaurantCard restDatas={restData} />
-          </div>
+          {/* <RestaurantCard restData={restDatas[0]} /> */}
+          {restDatas.map((rest) => (
+            <RestaurantCard key={rest.info.id} restData={rest} />
+          ))}
         </div>
       </div>
     </div>
