@@ -23,6 +23,89 @@ const Header = () => {
   );
 };
 
+const RestaurantCard = (res) => {
+  return (
+    <div className="res-card">
+      <div class="res-card-img">
+        <img src={res.img} class="masked-image" />
+      </div>
+      <div className="resto-details">
+        <h3>{res.name}</h3>
+      </div>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="carouselHome">
+        <div className="sectionTitle">What's on your mind?</div>
+        <div className="carouselItems">
+          <ul>
+            <li>
+              <img
+                className="carouselImg"
+                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/rng/md/carousel/production/e20c602ba8ed5d8ec2204e7a7b19d9f6"
+              ></img>
+            </li>
+            <li>
+              <img
+                className="carouselImg"
+                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1675667625/PC_Creative%20refresh/Biryani_2.png"
+              ></img>
+            </li>
+            <li>
+              <img
+                className="carouselImg"
+                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png"
+              ></img>
+            </li>
+            <li>
+              <img
+                className="carouselImg"
+                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Shakes.png"
+              ></img>
+            </li>
+            <li>
+              <img
+                className="carouselImg"
+                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Shawarma.png"
+              ></img>
+            </li>
+            <li>
+              <img
+                className="carouselImg"
+                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png"
+              ></img>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr className="line-divider" />
+      <div className="restaurantMain">
+        <div className="sectionTitle">Top restaurant chains in Kochi</div>
+        <div className="rest-container">
+          <RestaurantCard
+            rating="4.2 "
+            name="Pizza Hut"
+            img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/2b4f62d606d1b2bfba9ba9e5386fabb7"
+          />
+
+          <RestaurantCard
+            name="Chinese WOrk"
+            img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597"
+          />
+
+          <RestaurantCard
+            name="McDonald's"
+            img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/1/a87f58ea-72b1-4f3d-9ffe-ae74effb1073_57240.jpg"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 const AppLayout = () => {
   return (
     <div className="AppLayout">

@@ -31,5 +31,54 @@
 .body {
   max-width: 60rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 2rem 1.5rem;
+}
+.carouselItems > ul {
+  list-style: none;
+  display: flex;
+}
+.carouselItems > ul > li {
+  display: flex;
+}
+.carouselImg {
+  width: 9rem;
+}
+.sectionTitle {
+  margin-top: 2rem;
+  font-weight: bolder;
+  font-size: larger;
+  margin-bottom: 1rem;
+}
+.line-divider {
+  border-top: 1px solid #e8e8e8;
+}
+
+.res-card-img {
+  width: 18rem; /* Set the width of the box (300px / 16px = 18.75rem) */
+  height: 10rem; /* Set the height of the box */
+  border-radius: 1.25rem; /* Set the radius for rounded corners (20px / 16px = 1.25rem) */
+  overflow: hidden; /* Hide the overflow to mask the image */
+  display: flex; /* Optionally, use flex to center the image */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center;
+}
+.masked-image {
+  width: 100%; /* Ensure the image takes up the full width of the container */
+  height: 100%; /* Ensure the image takes up the full height of the container */
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+.resto-details > ul {
+  margin-top: 0.6rem;
+  list-style: none;
+}
+.rest-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resto-name {
+  font-size: larger;
+  font-weight: bold;
+  text-align: left;
+  color: rgb(53, 53, 53);
 }

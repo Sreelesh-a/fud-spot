@@ -1,4 +1,4 @@
-restaurants: [
+resto: [
   {
     info: {
       id: "704921",
