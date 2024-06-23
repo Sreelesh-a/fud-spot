@@ -1,0 +1,41 @@
+.AppLayout {
+  font-family: Helvetica;
+}
+
+.header {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.logoHeaderImg {
+  width: 2.8rem;
+  padding: 1rem;
+}
+
+.navItems > ul {
+  list-style: none;
+  display: flex;
+}
+
+.navItems > ul > li {
+  margin: 1rem;
+}
+
+.logoHeader {
+  align-items: center;
+  display: flex;
+}
+
+.LocationHeader {
+  color: #757575;
+  font-size: small;
+}
+
+.body {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+/*# sourceMappingURL=index.3a01df49.css.map */

@@ -1,0 +1,35 @@
+.AppLayout {
+  font-family: Helvetica;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.logoHeaderImg {
+  width: 2.8rem;
+  padding: 1rem;
+}
+.navItems > ul {
+  display: flex;
+  list-style: none;
+}
+
+.navItems > ul > li {
+  margin: 1rem;
+}
+
+.logoHeader {
+  align-items: center;
+  display: flex;
+}
+.LocationHeader {
+  font-size: small;
+  color: rgb(117, 117, 117);
+}
+.body {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
