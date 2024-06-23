@@ -27,6 +27,7 @@ const AppLayout = () => {
   return (
     <div className="AppLayout">
       <Header />
+      <Body />
     </div>
   );
 };
