@@ -176,6 +176,17 @@
     text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the text */
   }
 }
+.hamburger {
+  display: none;
+  font-size: 2.5rem;
+  color: rgb(112, 112, 112);
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
 .order-now-mb {
   display: none;
   background-color: chocolate;
@@ -209,3 +220,39 @@
   cursor: pointer;
   transform: scale(0.95);
 }
+
+/* menu */
+
+.menu-bar {
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+  }
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .nav-label {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #333;
+  }
+}
+.nav-logo {
+  width: 1.2rem;
+  color: black;
+}
+/* menu end */

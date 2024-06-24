@@ -6,6 +6,9 @@ const Header = () => {
         <img src={logoHeaderImg} className="logoHeaderImg"></img>
         <span className="LocationHeader">Kochi, Kerala, India</span>
       </div>
+      <div className="hamburger">
+        <i class="fa-solid fa-circle-user "></i>
+      </div>
       <div className="navItems hide-on-mob">
         <ul>
           <li>FudSpot Corporate</li>
