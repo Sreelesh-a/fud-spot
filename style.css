@@ -3,6 +3,7 @@
 }
 .header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -13,7 +14,17 @@
 }
 .navItems > ul {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
+  justify-content: center;
+}
+.hide-on-mob {
+  display: block;
+}
+@media (max-width: 768px) {
+  .hide-on-mob {
+    display: none;
+  }
 }
 
 .navItems > ul > li {
@@ -33,21 +44,49 @@
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
+.carouselItems {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
 .carouselItems > ul {
   list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
   display: flex;
+  flex-wrap: wrap;
 }
-.carouselItems > ul > li {
-  display: flex;
-}
+/* .carouselItems > ul > li {
+
+} */
 .carouselImg {
   width: 9rem;
+}
+@media (max-width: 768px) {
+  .carouselImg {
+    width: 5rem;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 .sectionTitle {
   margin-top: 2rem;
   font-weight: bolder;
   font-size: larger;
-  margin-bottom: 1rem;
+  margin-bottom: 2.4rem;
+}
+.sectionTitle-carousel {
+  margin-top: 1rem;
+  font-weight: bolder;
+  font-size: larger;
+}
+@media (max-width: 768px) {
+  .sectionTitle-carousel {
+    margin-bottom: 1.3rem;
+  }
 }
 .line-divider {
   border-top: 1px solid #e8e8e8;
@@ -61,6 +100,25 @@
   display: flex; /* Optionally, use flex to center the image */
   justify-content: center; /* Center the image horizontally */
   align-items: center;
+}
+@media (max-width: 768px) {
+  .res-card-img {
+    width: 8rem;
+    height: 7.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .res-card {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 768px) {
+  .resto-details {
+    margin: 2rem;
+  }
 }
 .masked-image {
   width: 100%; /* Ensure the image takes up the full width of the container */
@@ -76,10 +134,11 @@
 }
 .rest-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
-  gap: 1rem; /* Adds space between items */
+  gap: 2rem; /* Adds space between items */
 }
+
 .flex-item {
   flex: 1 1 calc(25% - 1rem);
   box-sizing: border-box;
@@ -90,6 +149,45 @@
   font-weight: bold;
 
   color: rgb(38, 38, 38);
+}
+@media (max-width: 768px) {
+  .resto-name {
+    font-size: smaller;
+    display: inline-block;
+    max-width: 7rem; /* Set the desired width */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden; /* Hides the overflow text */
+    text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the text */
+  }
+  .resto-rating {
+    font-size: smaller;
+    display: inline-block;
+    max-width: 8rem; /* Set the desired width */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden; /* Hides the overflow text */
+    text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the text */
+  }
+  .resto-location {
+    font-size: smaller;
+    display: inline-block;
+    max-width: 8rem; /* Set the desired width */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden; /* Hides the overflow text */
+    text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the text */
+  }
+}
+.order-now-mb {
+  display: none;
+  background-color: chocolate;
+  color: azure;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+@media (max-width: 768px) {
+  .order-now-mb {
+    display: block;
+  }
 }
 .center-dot {
   font-size: 1.2em;

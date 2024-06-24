@@ -17,13 +17,15 @@ const RestaurantCard = (res) => {
       <div className="resto-details">
         <span className="resto-name">{name}</span>
         <br />
-        <span className="resto-name">
+        <span className="resto-rating">
           {avgRating}
           <span className="center-dot">•</span>
           {sla.slaString}
         </span>
         <br />
         <span className="resto-location">{areaName}</span>
+        <br />
+        <button className="order-now-mb">Order Now</button>
       </div>
     </div>
   );
@@ -32,7 +34,7 @@ const Body = () => {
   return (
     <div className="body">
       <div className="carouselHome">
-        <div className="sectionTitle">What's on your mind?</div>
+        <div className="sectionTitle-carousel">What's on your mind?</div>
         <div className="carouselItems">
           <ul>
             <li>
