@@ -4,7 +4,9 @@ const Header = () => {
     <div className="header ">
       <div className="logoHeader">
         <img src={logoHeaderImg} className="logoHeaderImg"></img>
-        <span className="LocationHeader">Kochi, Kerala, India</span>
+        <span className="LocationHeader">
+          <span className="main-location">Kochi</span>, Kerala, India
+        </span>
       </div>
       <div className="hamburger">
         <i class="fa-solid fa-circle-user "></i>
