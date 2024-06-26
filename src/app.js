@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 // import restData from "./restuarant";
-const restDatas = require("../restuarant");
+
 import Header from "./components/Header";
 import Body from "./components/Body";
 import MobMenu from "./components/MobMenu";

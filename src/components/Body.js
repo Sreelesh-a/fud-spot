@@ -1,51 +1,6 @@
-const restDatas = require("/restuarant.js");
-const RestaurantCard = (res) => {
-  const { restData } = res;
-  const { name, cloudinaryImageId, avgRating, sla, areaName } = restData?.info;
-
-  return (
-    <div className="res-card ">
-      <div className="res-card-img">
-        <img
-          src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-            cloudinaryImageId
-          }
-          className="masked-image"
-        />
-      </div>
-      <div className="resto-details">
-        <span className="resto-name">{name}</span>
-        <br />
-        <span className="resto-rating">
-          {avgRating}
-          <span className="center-dot">•</span>
-          {sla.slaString}
-        </span>
-        <br />
-        <span className="resto-location">{areaName}</span>
-        <br />
-        <button className="order-now-mb">Order Now</button>
-      </div>
-    </div>
-  );
-};
-const MobCarousel = () => {
-  return (
-    <div className="mob-carousel">
-      <div className="fav-rest-caro">
-        <img
-          className="img-fav-caro"
-          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/ak4f9kufbxgb8fprancy"
-        />
-        <img
-          className="img-fav-caro"
-          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/9887a65f6a7e11c18965c02bbf255e79"
-        />
-      </div>
-    </div>
-  );
-};
+const restDatas = require("../utils/mockData");
+import RestaurantCard from "./RestaurantCard";
+import MobCarousel from "./MobCarousel";
 
 const Body = () => {
   return (

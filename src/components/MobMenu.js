@@ -4,7 +4,7 @@ const MobMenu = () => {
     <div className="menu-bar">
       <div className="menu-item">
         <img alt="logo" className="nav-logo" src={logoHeaderImg}></img>
-        <span className="nav-label">Food</span>
+        <span className="nav-label">FudSpot</span>
       </div>
       <div className="menu-item">
         <ion-icon name="fast-food-outline"></ion-icon>
