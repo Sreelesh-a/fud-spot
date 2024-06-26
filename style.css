@@ -81,6 +81,7 @@
 }
 .sectionTitle {
   margin-top: 2rem;
+
   font-weight: bolder;
   font-size: larger;
   margin-bottom: 2.4rem;
@@ -203,7 +204,7 @@
 
 .order-now-mb {
   display: none;
-  background-color: chocolate;
+  background-color: #d2691e;
   color: azure;
   width: 6rem;
   height: 2rem;
@@ -286,4 +287,20 @@
 .fav-rest-caro {
   display: flex;
   justify-content: space-between;
+}
+.top-rated-resto-btn {
+  background-color: #d2691e;
+  color: azure;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: none;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+.top-rated-resto-btn:hover {
+  transform: scale(0.95);
+}
+.top-rest-title {
+  margin-right: 0.5rem;
 }

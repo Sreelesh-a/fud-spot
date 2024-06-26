@@ -1,8 +1,17 @@
 const restDatas = require("../utils/mockData");
+// import { restDatas } from "../utils/mockData";
 import RestaurantCard from "./RestaurantCard";
+import { useState } from "react";
+
 import MobCarousel from "./MobCarousel";
 
 const Body = () => {
+  const [ListOfRest, setListOfRest] = useState(restDatas);
+  const topRatedResto = () => {
+    let filterList = ListOfRest.filter((res) => res.info.avgRating >= 4.5);
+    setListOfRest(filterList);
+  };
+
   return (
     <div className="body">
       <MobCarousel />
@@ -52,10 +61,16 @@ const Body = () => {
       <hr className="line-divider" />
 
       <div className="restaurantMain">
-        <div className="sectionTitle">Top restaurant chains in Kochi</div>
+        <div className="sectionTitle top-rated-resto">
+          <span className="top-rest-title">Top restaurant chains in Kochi</span>
+          <button className="top-rated-resto-btn" onClick={topRatedResto}>
+            Top Rated
+          </button>
+        </div>
+
         <div className="rest-container">
           {/* <RestaurantCard restData={restDatas[0]} /> */}
-          {restDatas.map((rest) => (
+          {ListOfRest.map((rest) => (
             <RestaurantCard key={rest.info.id} restData={rest} />
           ))}
         </div>
