@@ -1,15 +1,30 @@
 const restDatas = require("../utils/mockData");
 // import { restDatas } from "../utils/mockData";
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { SWIGGY_API_LINK } from "../utils/constants";
 
 import MobCarousel from "./MobCarousel";
 
 const Body = () => {
-  const [ListOfRest, setListOfRest] = useState(restDatas);
+  const [ListOfRest, setListOfRest] = useState([]);
   const topRatedResto = () => {
     let filterList = ListOfRest.filter((res) => res.info.avgRating >= 4.5);
     setListOfRest(filterList);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    const data = await fetch(SWIGGY_API_LINK);
+    const swiggyJson = await data.json();
+    console.log(
+      swiggyJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    );
+    setListOfRest(
+      swiggyJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    );
   };
 
   return (
