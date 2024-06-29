@@ -17,15 +17,23 @@ const Body = () => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    const data = await fetch(SWIGGY_API_LINK);
-    const swiggyJson = await data.json();
-    console.log(
-      swiggyJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    );
-    setListOfRest(
-      swiggyJson.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    );
+    try {
+      const response = await fetch(SWIGGY_API_LINK);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const swiggyJson = await response.json();
+      console.log(swiggyJson?.data?.cards[2]);
+      setListOfRest(
+        swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants || []
+      );
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
+  // let restoTitle = swiggyJson?.data?.cards[2]?.card?.card?.title;
+  // console.log(restoTitle);
 
   return (
     <div className="body">
@@ -77,7 +85,7 @@ const Body = () => {
 
       <div className="restaurantMain">
         <div className="sectionTitle top-rated-resto">
-          <span className="top-rest-title">Top restaurant chains in Kochi</span>
+          <span className="top-rest-title">Top Restaurant Chains in Kochi</span>
           <button className="top-rated-resto-btn" onClick={topRatedResto}>
             Top Rated
           </button>

@@ -178,7 +178,7 @@
   .resto-location {
     font-size: smaller;
     display: inline-block;
-    max-width: 8rem; /* Set the desired width */
+    max-width: 7rem; /* Set the desired width */
     white-space: nowrap; /* Prevents text from wrapping to the next line */
     overflow: hidden; /* Hides the overflow text */
     text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the text */
@@ -209,6 +209,7 @@
   width: 6rem;
   height: 2rem;
   border-radius: 1rem;
+  border: none;
 }
 @media (max-width: 768px) {
   .order-now-mb {
@@ -289,8 +290,8 @@
   justify-content: space-between;
 }
 .top-rated-resto-btn {
-  background-color: #d2691e;
-  color: azure;
+  background-color: #fff1e8;
+  color: #935528;
   width: 6rem;
   height: 2rem;
   border-radius: 1rem;
