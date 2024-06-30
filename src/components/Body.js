@@ -3,7 +3,8 @@ const restDatas = require("../utils/mockData");
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { SWIGGY_API_LINK } from "../utils/constants";
-
+import React from "react";
+import ShimmerCard from "./ShimmerCard";
 import MobCarousel from "./MobCarousel";
 
 const Body = () => {
@@ -32,8 +33,12 @@ const Body = () => {
       console.error("Error fetching data:", error);
     }
   };
-  // let restoTitle = swiggyJson?.data?.cards[2]?.card?.card?.title;
-  // console.log(restoTitle);
+
+  const ShimmerUi = () => {
+    if (ListOfRest.length === 0) {
+      return <ShimmerCard />;
+    }
+  };
 
   return (
     <div className="body">
@@ -89,6 +94,10 @@ const Body = () => {
           <button className="top-rated-resto-btn" onClick={topRatedResto}>
             Top Rated
           </button>
+        </div>
+
+        <div className="rest-container">
+          <ShimmerUi />
         </div>
 
         <div className="rest-container">

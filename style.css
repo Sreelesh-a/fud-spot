@@ -106,9 +106,27 @@
   border-radius: 1.25rem; /* Set the radius for rounded corners (20px / 16px = 1.25rem) */
   overflow: hidden; /* Hide the overflow to mask the image */
   display: flex; /* Optionally, use flex to center the image */
-  justify-content: center; /* Center the image horizontally */
-  align-items: center;
+  justify-content: space-between; /* Center the image horizontally */
+  /* align-items: center; */
 }
+
+.shimmer-card {
+  width: 18rem; /* Set the width of the box (300px / 16px = 18.75rem) */
+  height: 10rem; /* Set the height of the box */
+  border-radius: 1.25rem; /* Set the radius for rounded corners (20px / 16px = 1.25rem) */
+  overflow: hidden; /* Hide the overflow to mask the image */
+  display: flex; /* Optionally, use flex to center the image */
+  justify-content: space-between;
+  background-color: #eeeeee;
+  flex-wrap: wrap;
+}
+.shimmer-component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
 @media (max-width: 768px) {
   .res-card-img {
     width: 8rem;

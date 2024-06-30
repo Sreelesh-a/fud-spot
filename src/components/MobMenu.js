@@ -1,4 +1,5 @@
 import logoHeaderImg from "/img/fud-spot-log-b.png";
+import React from "react";
 const MobMenu = () => {
   return (
     <div className="menu-bar">

@@ -1,4 +1,5 @@
 import logoHeaderImg from "/img/fud-spot-log.png";
+import React from "react";
 const Header = () => {
   return (
     <div className="header ">
