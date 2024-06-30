@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Offers from "./components/Offers";
+import Error from "./components/Error";
 
 // const express = require("express");
 // const cors = require("cors");
@@ -13,7 +16,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import MobMenu from "./components/MobMenu";
 
-const AppLayout = () => {
+export const AppLayout = () => {
   return (
     <div className="AppLayout">
       <Header />
@@ -23,5 +26,17 @@ const AppLayout = () => {
   );
 };
 
+export const AppRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/offers",
+    element: <Offers />,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={AppRouter} />);

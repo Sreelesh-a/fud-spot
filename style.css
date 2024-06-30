@@ -229,7 +229,7 @@
 
 .order-now-mb {
   display: none;
-  background-color: #d2691e;
+  background-color: #fc8019;
   color: azure;
   width: 6rem;
   height: 2rem;
@@ -377,7 +377,7 @@
 
 .search-btn {
   border: none;
-  background-color: #d2691e;
+  background-color: #fc8019;
   color: #ffffff;
   border-radius: 0.4rem;
   padding: 0.2rem 1rem;
@@ -387,4 +387,41 @@
   gap: 1rem;
   display: flex;
   flex-wrap: wrap;
+}
+.error-main {
+  justify-content: center;
+  align-items: center;
+  margin-top: 7rem;
+}
+.error-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem;
+  font-size: large;
+  text-align: center;
+}
+.error-item > a {
+  text-decoration: none;
+}
+.err-title {
+  font-size: 2rem;
+  font-weight: bolder;
+  width: 100%;
+}
+.err-desc {
+  width: 100%;
+  color: #8d8d8d;
+}
+.err-btn {
+  background-color: #fc8019;
+  padding: 1rem 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
 }
