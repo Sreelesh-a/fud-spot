@@ -9,8 +9,15 @@ import MobCarousel from "./MobCarousel";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
+  const [FilteredListOfRest, setFilteredListOfRest] = useState([]);
   const topRatedResto = () => {
-    let filterList = ListOfRest.filter((res) => res.info.avgRating >= 4.5);
+    let filterList = ListOfRest.filter((res) => res?.info?.avgRating >= 4.5);
+    setListOfRest(filterList);
+  };
+  const mgRoadFilter = () => {
+    let filterList = ListOfRest.filter(
+      (res) => res?.info?.areaName >= "M G Road"
+    );
     setListOfRest(filterList);
   };
 
@@ -29,6 +36,10 @@ const Body = () => {
         swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || []
       );
+      setFilteredListOfRest(
+        swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants || []
+      );
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -39,6 +50,7 @@ const Body = () => {
       return <ShimmerCard />;
     }
   };
+  const [searchText, setSearchText] = useState("");
 
   return (
     <div className="body">
@@ -91,9 +103,46 @@ const Body = () => {
       <div className="restaurantMain">
         <div className="sectionTitle top-rated-resto">
           <span className="top-rest-title">Top Restaurant Chains in Kochi</span>
-          <button className="top-rated-resto-btn" onClick={topRatedResto}>
-            Top Rated
-          </button>
+          <div className="filter-resto">
+            <div className="search-filter">
+              <input
+                type="text"
+                className="search-input"
+                value={searchText}
+                onChange={(e) => {
+                  setSearchText(e.target.value);
+                }}
+              ></input>
+              <button
+                className="search-btn"
+                onClick={() => {
+                  //filter
+                  // const filterRest = ListOfRest.filter((res) =>
+                  //   res?.info?.name
+                  //     .toLowerCase()
+                  //     .includes(searchText.toLowerCase())
+                  // );
+                  const filterRest = ListOfRest.filter((res) =>
+                    res?.info?.name
+                      .toLowerCase()
+                      .includes(searchText.toLowerCase())
+                  );
+                  setFilteredListOfRest(filterRest);
+                  console.log(ListOfRest);
+                }}
+              >
+                Search
+              </button>
+            </div>
+            <div className="button-filter">
+              <button className="top-rated-resto-btn" onClick={topRatedResto}>
+                Top Rated
+              </button>
+              <button className="mgroad-resto-btn" onClick={mgRoadFilter}>
+                Near M G Road
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="rest-container">
@@ -102,7 +151,7 @@ const Body = () => {
 
         <div className="rest-container">
           {/* <RestaurantCard restData={restDatas[0]} /> */}
-          {ListOfRest.map((rest) => (
+          {FilteredListOfRest.map((rest) => (
             <RestaurantCard key={rest.info.id} restData={rest} />
           ))}
         </div>

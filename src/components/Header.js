@@ -1,6 +1,9 @@
 import logoHeaderImg from "/img/fud-spot-log.png";
 import React from "react";
+import { useState } from "react";
+
 const Header = () => {
+  const [loginAuth, setLoginAuth] = useState("Sign in");
   return (
     <div className="header ">
       <div className="logoHeader">
@@ -18,7 +21,16 @@ const Header = () => {
           <li>Search</li>
           <li>Offers</li>
           <li>Help</li>
-          <li>Sign in</li>
+          <li
+            className="login-auth"
+            onClick={() => {
+              loginAuth === "Sign in"
+                ? setLoginAuth("Sign out")
+                : setLoginAuth("Sign in");
+            }}
+          >
+            {loginAuth}
+          </li>
           <li>Cart</li>
         </ul>
       </div>

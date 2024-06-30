@@ -99,7 +99,11 @@
 .line-divider {
   border-top: 1px solid #e8e8e8;
 }
-
+.res-card-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
 .res-card-img {
   width: 18rem; /* Set the width of the box (300px / 16px = 18.75rem) */
   height: 10rem; /* Set the height of the box */
@@ -123,8 +127,11 @@
 .shimmer-component {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
+}
+.login-auth {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -307,10 +314,31 @@
   display: flex;
   justify-content: space-between;
 }
+.top-rated-resto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
 .top-rated-resto-btn {
-  background-color: #fff1e8;
-  color: #935528;
+  background-color: #eeeeee;
+  color: #3a3939;
+  border-width: 0.5rem;
+
   width: 6rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: none;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+.mgroad-resto-btn {
+  background-color: #eeeeee;
+  color: #3a3939;
+  border-width: 0.5rem;
+
+  width: 8rem;
   height: 2rem;
   border-radius: 1rem;
   border: none;
@@ -322,4 +350,41 @@
 }
 .top-rest-title {
   margin-right: 0.5rem;
+}
+.filter-resto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+.search-filter > input {
+  border-color: #ababab;
+  border-radius: 0.4rem;
+  opacity: 35%;
+  border-width: 0.1rem;
+  height: 1.5rem;
+  font-size: 16px;
+
+  margin-right: 0.4rem;
+}
+.search-filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-btn {
+  border: none;
+  background-color: #d2691e;
+  color: #ffffff;
+  border-radius: 0.4rem;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+}
+.button-filter {
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
