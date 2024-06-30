@@ -2,9 +2,8 @@ import Header from "./Header";
 const Offers = () => {
   return (
     <div>
-      <Header />
-      <div>
-        <div>Sign in</div>
+      <div className="offer-page">
+        <div>Offers Not Found! 😀</div>
       </div>
     </div>
   );

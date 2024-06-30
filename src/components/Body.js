@@ -6,6 +6,7 @@ import { SWIGGY_API_LINK } from "../utils/constants";
 import React from "react";
 import ShimmerCard from "./ShimmerCard";
 import MobCarousel from "./MobCarousel";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -51,6 +52,7 @@ const Body = () => {
     }
   };
   const [searchText, setSearchText] = useState("");
+  console.log(FilteredListOfRest[0]?.info?.id);
 
   return (
     <div className="body">
@@ -152,7 +154,11 @@ const Body = () => {
         <div className="rest-container">
           {/* <RestaurantCard restData={restDatas[0]} /> */}
           {FilteredListOfRest.map((rest) => (
-            <RestaurantCard key={rest.info.id} restData={rest} />
+            // <link key={rest.info.id} to={"/resto-menu/" + rest.info.id}>
+            <Link to={"/resto-menu/" + rest?.info?.id}>
+              <RestaurantCard restData={rest} />
+            </Link>
+            // </link>
           ))}
         </div>
       </div>

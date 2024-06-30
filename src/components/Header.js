@@ -1,6 +1,7 @@
 import logoHeaderImg from "/img/fud-spot-log.png";
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [loginAuth, setLoginAuth] = useState("Sign in");
@@ -17,9 +18,13 @@ const Header = () => {
       </div>
       <div className="navItems hide-on-mob">
         <ul>
-          <li>FudSpot Corporate</li>
+          <li>
+            <Link to="/"> FudSpot Corporate</Link>
+          </li>
           <li>Search</li>
-          <li>Offers</li>
+          <li>
+            <Link to="/offers">Offers</Link>
+          </li>
           <li>Help</li>
           <li
             className="login-auth"

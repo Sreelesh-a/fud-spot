@@ -25,6 +25,9 @@
   list-style: none;
   justify-content: center;
 }
+.navItem {
+  text-decoration: none;
+}
 .hide-on-mob {
   display: block;
 }
@@ -424,4 +427,12 @@
 
   align-items: center;
   justify-content: center;
+}
+.offer-page {
+  font-size: larger;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 7rem;
 }

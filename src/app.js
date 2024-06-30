@@ -3,14 +3,9 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Offers from "./components/Offers";
 import Error from "./components/Error";
-
-// const express = require("express");
-// const cors = require("cors");
-// const app = express();
-
-// app.use(cors());
-
-// import restData from "./restuarant";
+import { Outlet } from "react-router-dom";
+import RestMenu from "./components/RestMenu";
+import { useParams } from "react-router-dom";
 
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -21,7 +16,7 @@ export const AppLayout = () => {
     <div className="AppLayout">
       <Header />
       <MobMenu />
-      <Body />
+      <Outlet />
     </div>
   );
 };
@@ -31,10 +26,20 @@ export const AppRouter = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     errorElement: <Error />,
-  },
-  {
-    path: "/offers",
-    element: <Offers />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/offers",
+        element: <Offers />,
+      },
+      {
+        path: "/resto-menu/:resid",
+        element: <RestMenu />,
+      },
+    ],
   },
 ]);
 
