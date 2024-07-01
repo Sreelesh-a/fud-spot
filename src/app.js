@@ -6,6 +6,8 @@ import Error from "./components/Error";
 import { Outlet } from "react-router-dom";
 import RestMenu from "./components/RestMenu";
 import { useParams } from "react-router-dom";
+import Search from "./components/Search";
+import SearchClassComp from "./components/SearchClassComp";
 
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -38,6 +40,10 @@ export const AppRouter = createBrowserRouter([
       {
         path: "/resto-menu/:resid",
         element: <RestMenu />,
+      },
+      {
+        path: "/search",
+        element: <SearchClassComp />,
       },
     ],
   },

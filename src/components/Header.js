@@ -19,11 +19,27 @@ const Header = () => {
       <div className="navItems hide-on-mob">
         <ul>
           <li>
-            <Link to="/"> FudSpot Corporate</Link>
+            <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
+              {" "}
+              FudSpot Corporate
+            </Link>
           </li>
-          <li>Search</li>
           <li>
-            <Link to="/offers">Offers</Link>
+            {" "}
+            <Link
+              style={{ textDecoration: "none", color: "inherit" }}
+              to="/search"
+            >
+              Search
+            </Link>
+          </li>
+          <li>
+            <Link
+              style={{ textDecoration: "none", color: "inherit" }}
+              to="/offers"
+            >
+              Offers
+            </Link>
           </li>
           <li>Help</li>
           <li

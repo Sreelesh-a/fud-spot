@@ -490,3 +490,62 @@
   justify-content: center;
   display: flex;
 }
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 0.2rem;
+}
+.user-img {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 1rem;
+}
+.user-details > span {
+  width: 100%;
+}
+.user-card-items {
+  width: 10rem;
+  border: 10px black;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.user-follow-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+.user-followers {
+  font-weight: bold;
+  color: #3a79cb;
+  width: 100%;
+}
+.user-cards {
+  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+}
+.follow-btn {
+  background-color: #3a79cb;
+
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.2rem;
+  height: 2rem;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+  align-items: center;
+  justify-content: center;
+}
+.profile-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
