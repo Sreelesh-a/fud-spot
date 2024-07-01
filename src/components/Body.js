@@ -155,7 +155,10 @@ const Body = () => {
           {/* <RestaurantCard restData={restDatas[0]} /> */}
           {FilteredListOfRest.map((rest) => (
             // <link key={rest.info.id} to={"/resto-menu/" + rest.info.id}>
-            <Link to={"/resto-menu/" + rest?.info?.id}>
+            <Link
+              style={{ textDecoration: "none", color: "inherit" }}
+              to={"/resto-menu/" + rest?.info?.id}
+            >
               <RestaurantCard restData={rest} />
             </Link>
             // </link>

@@ -1,5 +1,5 @@
 .AppLayout {
-  font-family: Helvetica;
+  font-family: Roboto;
 }
 .header {
   display: flex;
@@ -103,18 +103,30 @@
   border-top: 1px solid #e8e8e8;
 }
 .res-card-main {
+  justify-content: space-between;
+  width: 12rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  padding: 0 0.5rem;
+}
+.res-card {
+  width: 100%;
 }
 .res-card-img {
-  width: 18rem; /* Set the width of the box (300px / 16px = 18.75rem) */
-  height: 10rem; /* Set the height of the box */
+  width: 13.5rem; /* Set the width of the box (300px / 16px = 18.75rem) */
+  height: 9rem; /* Set the height of the box */
   border-radius: 1.25rem; /* Set the radius for rounded corners (20px / 16px = 1.25rem) */
   overflow: hidden; /* Hide the overflow to mask the image */
   display: flex; /* Optionally, use flex to center the image */
   justify-content: space-between; /* Center the image horizontally */
   /* align-items: center; */
+}
+.resto-name {
+  display: inline-block;
+  max-width: 7rem; /* Set the desired width */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Hides the overflow text */
+  text-overflow: ellipsis;
 }
 
 .shimmer-card {
@@ -186,6 +198,13 @@
 
   color: rgb(38, 38, 38);
 }
+.resto-rating {
+  font-weight: bold;
+  color: #494949;
+  align-items: center;
+  display: flex;
+}
+
 @media (max-width: 768px) {
   .resto-name {
     font-size: smaller;
@@ -247,8 +266,9 @@
 .center-dot {
   font-size: 1.2em;
   line-height: 1;
-  vertical-align: middle;
-  padding: 0.3rem;
+  vertical-align: text-top;
+  /* align-items: center; */
+  padding: 0 0.3rem;
   color: rgb(38, 38, 38);
 }
 /* .fixed-top {
@@ -435,4 +455,38 @@
   display: flex;
   justify-content: center;
   margin-top: 7rem;
+}
+.resto-menu-box {
+  background-color: #ffffff;
+  border-width: 1rem;
+  border-radius: 1rem;
+  width: 100%;
+  height: 12rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  border-color: #000000;
+  margin: 1.5rem 0;
+}
+.body-menu {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+.resto-menu-details {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.resto-menu-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.resto-menu-header {
+  margin: 1rem 0;
+}
+.rating-svg {
+  margin-right: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }

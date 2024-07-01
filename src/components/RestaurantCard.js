@@ -1,5 +1,6 @@
 import { RESTO_IMG_LINK } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { Ratingicon } from "./RestMenu";
 const RestaurantCard = (res) => {
   const { restData } = res;
   const { name, cloudinaryImageId, avgRating, sla, areaName } = restData?.info;
@@ -16,7 +17,9 @@ const RestaurantCard = (res) => {
         <div className="resto-details">
           <span className="resto-name">{name}</span>
           <br />
+
           <span className="resto-rating">
+            <Ratingicon />
             {avgRating}
             <span className="center-dot">•</span>
             {sla.slaString}
