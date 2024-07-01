@@ -130,7 +130,6 @@ const Body = () => {
                       .includes(searchText.toLowerCase())
                   );
                   setFilteredListOfRest(filterRest);
-                  console.log(ListOfRest);
                 }}
               >
                 Search
