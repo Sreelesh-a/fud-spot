@@ -7,6 +7,7 @@ import React from "react";
 import ShimmerCard from "./ShimmerCard";
 import MobCarousel from "./MobCarousel";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -53,6 +54,14 @@ const Body = () => {
   };
   const [searchText, setSearchText] = useState("");
   console.log(FilteredListOfRest[0]?.info?.id);
+
+  const onlineStatus = useOnlineStatus();
+  console.log(onlineStatus);
+
+  if (onlineStatus === false)
+    return alert(
+      "You are currently offline. Please check your internet connection."
+    );
 
   return (
     <div className="body">
