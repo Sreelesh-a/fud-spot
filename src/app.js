@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Offers from "./components/Offers";
@@ -8,10 +8,15 @@ import RestMenu from "./components/RestMenu";
 import { useParams } from "react-router-dom";
 import Search from "./components/Search";
 import SearchClassComp from "./components/SearchClassComp";
-
 import Header from "./components/Header";
 import Body from "./components/Body";
 import MobMenu from "./components/MobMenu";
+import AboutUs from "./components/AboutUs";
+import ShimmerCard from "./components/ShimmerCard";
+
+const AboutUs = lazy(() => {
+  import("./components/AboutUs");
+});
 
 export const AppLayout = () => {
   return (
@@ -44,6 +49,14 @@ export const AppRouter = createBrowserRouter([
       {
         path: "/search",
         element: <SearchClassComp />,
+      },
+      {
+        path: "/about-us",
+        element: (
+          <Suspense fallback={<ShimmerCard />}>
+            <AboutUs />
+          </Suspense>
+        ),
       },
     ],
   },

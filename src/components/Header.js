@@ -8,7 +8,10 @@ const Header = () => {
   return (
     <div className="header ">
       <div className="logoHeader">
-        <img src={logoHeaderImg} className="logoHeaderImg"></img>
+        <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
+          <img src={logoHeaderImg} className="logoHeaderImg"></img>
+        </Link>
+
         <span className="LocationHeader">
           <span className="main-location">Kochi</span>, Kerala, India
         </span>
@@ -19,8 +22,10 @@ const Header = () => {
       <div className="navItems hide-on-mob">
         <ul>
           <li>
-            <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
-              {" "}
+            <Link
+              style={{ textDecoration: "none", color: "inherit" }}
+              to="/about-us"
+            >
               FudSpot Corporate
             </Link>
           </li>

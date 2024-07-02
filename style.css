@@ -453,8 +453,14 @@
   font-weight: bold;
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 7rem;
+}
+.wip {
+  width: 100%;
+  justify-content: center;
+  display: flex;
 }
 .resto-menu-box {
   background-color: #ffffff;
