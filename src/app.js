@@ -10,10 +10,11 @@ import SearchClassComp from "./components/SearchClassComp";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import MobMenu from "./components/MobMenu";
-import AboutUs from "./components/AboutUs";
+// import AboutUs from "./components/AboutUs";
+const AboutUs = require("./components/AboutUs");
 import ShimmerCard from "./components/ShimmerCard";
 
-const AboutUs = lazy(() => {
+AboutUs = lazy(() => {
   import("./components/AboutUs");
 });
 
