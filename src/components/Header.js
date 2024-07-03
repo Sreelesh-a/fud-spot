@@ -6,21 +6,21 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [loginAuth, setLoginAuth] = useState("Sign in");
   return (
-    <div className="header ">
-      <div className="logoHeader">
+    <div className="flex  justify-between p-4 m-5 items-center shadow-sm ">
+      <div className="flex items-center gap-4">
         <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
-          <img src={logoHeaderImg} className="logoHeaderImg"></img>
+          <img src={logoHeaderImg} className="w-10 "></img>
         </Link>
 
         <span className="LocationHeader">
-          <span className="main-location">Kochi</span>, Kerala, India
+          <span className="main-location ">Kochi</span>, Kerala, India
         </span>
       </div>
-      <div className="hamburger">
+      {/* <div className=" ">
         <i class="fa-solid fa-circle-user "></i>
-      </div>
-      <div className="navItems hide-on-mob">
-        <ul>
+      </div> */}
+      <div className="navItems hide-on-mob hidden sm:block">
+        <ul className="flex gap-6">
           <li>
             <Link
               style={{ textDecoration: "none", color: "inherit" }}

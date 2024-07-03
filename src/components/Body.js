@@ -64,12 +64,14 @@ const Body = () => {
     );
 
   return (
-    <div className="body">
-      <MobCarousel />
-      <div className="carouselHome">
-        <div className="sectionTitle-carousel">What's on your mind?</div>
+    <div className="px-10 lg:px-52   mt-9">
+      {/* <MobCarousel /> */}
+      <div className="my-9">
+        <div className="font-bold lg:text-2xl sm:text-sm">
+          What's on your mind?
+        </div>
         <div className="carouselItems">
-          <ul>
+          <ul className="lg:w-full sm:w-10  flex justify-between items-center ">
             <li>
               <img
                 className="carouselImg"
@@ -109,12 +111,14 @@ const Body = () => {
           </ul>
         </div>
       </div>
-      <hr className="line-divider" />
+      <hr className="" />
 
-      <div className="restaurantMain">
-        <div className="sectionTitle top-rated-resto">
-          <span className="top-rest-title">Top Restaurant Chains in Kochi</span>
-          <div className="filter-resto">
+      <div className="my-9">
+        <div className="flex items-center flex-wrap justify-between">
+          <div className="font-bold lg:text-2xl sm:text-lg">
+            Top Restaurant Chains in Kochi
+          </div>
+          <div className="flex gap-6">
             <div className="search-filter">
               <input
                 type="text"
@@ -127,12 +131,6 @@ const Body = () => {
               <button
                 className="search-btn"
                 onClick={() => {
-                  //filter
-                  // const filterRest = ListOfRest.filter((res) =>
-                  //   res?.info?.name
-                  //     .toLowerCase()
-                  //     .includes(searchText.toLowerCase())
-                  // );
                   const filterRest = ListOfRest.filter((res) =>
                     res?.info?.name
                       .toLowerCase()
@@ -159,7 +157,7 @@ const Body = () => {
           <ShimmerUi />
         </div>
 
-        <div className="rest-container">
+        <div className="grid grid-cols-1 sm:grid-cols-4 sm:gap-x-24 gap-x-5">
           {/* <RestaurantCard restData={restDatas[0]} /> */}
           {FilteredListOfRest.map((rest) => (
             // <link key={rest.info.id} to={"/resto-menu/" + rest.info.id}>

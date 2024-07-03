@@ -5,8 +5,7 @@ import Offers from "./components/Offers";
 import Error from "./components/Error";
 import { Outlet } from "react-router-dom";
 import RestMenu from "./components/RestMenu";
-import { useParams } from "react-router-dom";
-import Search from "./components/Search";
+
 import SearchClassComp from "./components/SearchClassComp";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -22,7 +21,7 @@ export const AppLayout = () => {
   return (
     <div className="AppLayout">
       <Header />
-      <MobMenu />
+      {/* <MobMenu /> */}
       <Outlet />
     </div>
   );

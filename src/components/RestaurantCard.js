@@ -7,29 +7,31 @@ const RestaurantCard = (res) => {
   const { name, cloudinaryImageId, avgRating, sla, areaName } = restData?.info;
 
   return (
-    <div className="res-card-main">
-      <div className="res-card ">
-        <div className="res-card-img">
-          <img
-            src={RESTO_IMG_LINK + cloudinaryImageId}
-            className="masked-image"
-          />
-        </div>
-        <div className="resto-details">
-          <span className="resto-name">{name}</span>
-
-          <div className="resto-rating">
-            <div className="avg-rating">
-              <Ratingicon />
-              {avgRating}
-              <span className="center-dot">•</span>
-              {sla.slaString}
-            </div>
+    <div className="">
+      <div className="justify-between mt-9 ">
+        <div className="space-y-2 grid grid-cols-2 items-center sm:grid-cols-1">
+          <div className="rounded-xl overflow-hidden w-28 h-28 sm:w-64 sm:h-36 ">
+            <img
+              src={RESTO_IMG_LINK + cloudinaryImageId}
+              className="object-cover w-full h-full"
+            />
           </div>
-          <br />
-          <span className="resto-location">{areaName}</span>
-          <br />
-          <button className="order-now-mb">Order Now</button>
+          <div className="resto-details   ">
+            <div className="font-bold truncate ...">{name}</div>
+
+            <div className="resto-rating ">
+              <div className="flex grid-cols-1  text-sm items-center gap-1 font-bold">
+                <Ratingicon />
+                {avgRating}
+                <div className="center-dot">•</div>
+                {sla.slaString}
+              </div>
+            </div>
+
+            <div className="overflow-hidden w-32 text-ellipsis">{areaName}</div>
+
+            {/* <button className="order-now-mb">Order Now</button> */}
+          </div>
         </div>
       </div>
     </div>
