@@ -1,3 +1,4 @@
 [build]
   command = "parcel build index.html"
   publish = "/dist"
+   url = "https://github.com/Sreelesh-a/fud-spot.  refs/heads/main"
