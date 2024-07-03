@@ -2,7 +2,8 @@
   "name": "food-order",
   "version": "1.0.0",
   "scripts": {
-    "start": "parcel watch index.html --dist-dir dist",
+    "starts": "parcel watch index.html --dist-dir dist",
+    "start": "parcel build index.html",
     "serve": "node server.js"
   },
   "author": "",
@@ -18,10 +19,12 @@
     "os-browserify": "^0.3.0",
     "parcel": "^2.12.0",
     "path-browserify": "^1.0.1",
+    "postcss": "^8.4.39",
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
+    "tailwindcss": "^3.4.4",
     "timers-browserify": "^2.0.12",
     "url": "^0.11.3",
     "util": "^0.12.5",

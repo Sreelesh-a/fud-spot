@@ -17,14 +17,15 @@ const RestaurantCard = (res) => {
         </div>
         <div className="resto-details">
           <span className="resto-name">{name}</span>
-          <br />
 
-          <span className="resto-rating">
-            <Ratingicon />
-            {avgRating}
-            <span className="center-dot">•</span>
-            {sla.slaString}
-          </span>
+          <div className="resto-rating">
+            <div className="avg-rating">
+              <Ratingicon />
+              {avgRating}
+              <span className="center-dot">•</span>
+              {sla.slaString}
+            </div>
+          </div>
           <br />
           <span className="resto-location">{areaName}</span>
           <br />

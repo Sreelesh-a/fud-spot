@@ -98,19 +98,43 @@
   .sectionTitle-carousel {
     margin-bottom: 1.3rem;
   }
+  .res-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    justify-content: space-between;
+  }
 }
 .line-divider {
   border-top: 1px solid #e8e8e8;
 }
 .res-card-main {
   justify-content: space-between;
-  width: 12rem;
+
   display: flex;
   flex-wrap: wrap;
-  padding: 0 0.5rem;
+  padding: 0 0;
+}
+@media (min-width: 1024px) {
+  .res-card-main {
+    justify-content: space-between;
+    width: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0.5rem;
+  }
+  .res-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 .res-card {
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
 }
 .res-card-img {
   width: 13.5rem; /* Set the width of the box (300px / 16px = 18.75rem) */
@@ -118,7 +142,7 @@
   border-radius: 1.25rem; /* Set the radius for rounded corners (20px / 16px = 1.25rem) */
   overflow: hidden; /* Hide the overflow to mask the image */
   display: flex; /* Optionally, use flex to center the image */
-  justify-content: space-between; /* Center the image horizontally */
+  justify-content: start; /* Center the image horizontally */
   /* align-items: center; */
 }
 .resto-name {
@@ -148,7 +172,11 @@
 .login-auth {
   cursor: pointer;
 }
-
+.avg-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 @media (max-width: 768px) {
   .res-card-img {
     width: 8rem;
@@ -165,7 +193,21 @@
 }
 @media (max-width: 768px) {
   .resto-details {
-    margin: 2rem;
+    justify-content: start;
+  }
+  .resto-rating {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .avg-rating {
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .rating-svg {
+    width: 0.9rem;
   }
 }
 .masked-image {
@@ -554,4 +596,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
+}
+.wip-icon {
+  width: 15rem;
 }

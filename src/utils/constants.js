@@ -5,10 +5,15 @@ module.exports = {
     "./api?lat=9.9312328&lng=76.26730409999999&is-seo-homepage-enabled=true&page_type=DESKT",
   SWIGGY_API_LINK2:
     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.9312328&lng=76.26730409999999&is-seo-homepage-enabled=true&page_type=DESKT",
-  SWIGGY_API_LINK:
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.9312328&lng=76.26730409999999&is-seo-homepage-enabled=true&page_type=DESKT",
+  SWIGGY_API_LINK3:
+    "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.9312328&lng=76.26730409999999&is-seo-homepage-enabled=true&page_type=DESKT",
+  SWIGGY_MENU_API2:
+    "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.9312328&lng=76.26730409999999&restaurantId=",
   SWIGGY_MENU_API:
-    "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.9312328&lng=76.26730409999999&restaurantId=",
+    "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D9.9312328%26lng%3D76.26730409999999%26restaurantId%3D",
+  SWIGGY_API_LINK:
+    "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D9.9312328%26lng%3D76.26730409999999%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKT",
   AVATAR_IMG:
     "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=338&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user",
+  WIP_ICON: "https://cdn-icons-png.flaticon.com/512/5038/5038308.png",
 };
