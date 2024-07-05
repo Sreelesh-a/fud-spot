@@ -11,7 +11,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import MobMenu from "./components/MobMenu";
 // import AboutUs from "./components/AboutUs";
-const AboutUs = require("./components/AboutUs");
+let AboutUs = require("./components/AboutUs");
 import ShimmerCard from "./components/ShimmerCard";
 
 AboutUs = lazy(() => {

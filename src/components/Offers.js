@@ -1,11 +1,14 @@
 import Header from "./Header";
+import WhatsOnYourMind from "./WhatsOnYourMind";
 const Offers = () => {
   return (
-    <div>
-      <div className="offer-page">
-        <div>Offers Not Found! 😀</div>
-      </div>
-    </div>
+    // <div>
+    //   <div className="offer-page">
+    //     <div>Offers Not Found! 😀</div>
+    //   </div>
+    // </div>
+
+    <WhatsOnYourMind />
   );
 };
 

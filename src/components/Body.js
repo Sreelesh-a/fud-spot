@@ -8,6 +8,7 @@ import ShimmerCard from "./ShimmerCard";
 import MobCarousel from "./MobCarousel";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import WhatsOnYourMind from "./WhatsOnYourMind";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -33,7 +34,7 @@ const Body = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const swiggyJson = await response.json();
-      console.log(swiggyJson?.data?.cards[2]);
+
       setListOfRest(
         swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || []
@@ -53,10 +54,9 @@ const Body = () => {
     }
   };
   const [searchText, setSearchText] = useState("");
-  console.log(FilteredListOfRest[0]?.info?.id);
+  // console.log(FilteredListOfRest[0]?.info?.id);
 
   const onlineStatus = useOnlineStatus();
-  console.log(onlineStatus);
 
   if (onlineStatus === false)
     return alert(
@@ -67,49 +67,11 @@ const Body = () => {
     <div className="px-10 lg:px-52   mt-9">
       {/* <MobCarousel /> */}
       <div className="my-9">
-        <div className="font-bold lg:text-2xl sm:text-sm">
+        {/* <div className="font-bold lg:text-2xl sm:text-sm">
           What's on your mind?
-        </div>
-        <div className="carouselItems">
-          <ul className="lg:w-full sm:w-10  flex justify-between items-center ">
-            <li>
-              <img
-                className="carouselImg"
-                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/rng/md/carousel/production/e20c602ba8ed5d8ec2204e7a7b19d9f6"
-              ></img>
-            </li>
-            <li>
-              <img
-                className="carouselImg"
-                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1675667625/PC_Creative%20refresh/Biryani_2.png"
-              ></img>
-            </li>
-            <li>
-              <img
-                className="carouselImg"
-                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png"
-              ></img>
-            </li>
-            <li>
-              <img
-                className="carouselImg"
-                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Shakes.png"
-              ></img>
-            </li>
-            <li>
-              <img
-                className="carouselImg"
-                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Shawarma.png"
-              ></img>
-            </li>
-            <li>
-              <img
-                className="carouselImg"
-                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png"
-              ></img>
-            </li>
-          </ul>
-        </div>
+        </div> */}
+
+        <WhatsOnYourMind />
       </div>
       <hr className="" />
 
