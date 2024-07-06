@@ -10,7 +10,7 @@ const RestaurantCard = (res) => {
     <div className="">
       <div className="justify-between mt-9 ">
         <div className="space-y-2 grid grid-cols-2 items-center sm:grid-cols-1">
-          <div className="rounded-xl overflow-hidden w-28 h-28 sm:w-64 sm:h-36 ">
+          <div className="rounded-xl overflow-hidden w-10 h-28 sm:w-64 sm:h-36 ">
             <img
               src={RESTO_IMG_LINK + cloudinaryImageId}
               className="object-cover w-full h-full"
@@ -28,7 +28,7 @@ const RestaurantCard = (res) => {
               </div>
             </div>
 
-            <div className="overflow-hidden w-32 text-ellipsis">{areaName}</div>
+            <div className=" truncate ...">{areaName}</div>
 
             {/* <button className="order-now-mb">Order Now</button> */}
           </div>

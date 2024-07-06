@@ -1,4 +1,5 @@
 import Header from "./Header";
+import RestaurantCard from "./RestaurantCard";
 import WhatsOnYourMind from "./WhatsOnYourMind";
 const Offers = () => {
   return (
@@ -8,7 +9,8 @@ const Offers = () => {
     //   </div>
     // </div>
 
-    <WhatsOnYourMind />
+    // <WhatsOnYourMind />
+    <RestaurantCard />
   );
 };
 

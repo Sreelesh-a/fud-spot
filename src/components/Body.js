@@ -119,7 +119,7 @@ const Body = () => {
           <ShimmerUi />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-4 sm:gap-x-24 gap-x-5">
+        <div className=" justify-center grid grid-cols-1 sm:grid-cols-4 sm:gap-x-24 gap-x-5">
           {/* <RestaurantCard restData={restDatas[0]} /> */}
           {FilteredListOfRest.map((rest) => (
             // <link key={rest.info.id} to={"/resto-menu/" + rest.info.id}>
