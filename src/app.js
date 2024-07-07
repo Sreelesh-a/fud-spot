@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Offers from "./components/Offers";
 import Error from "./components/Error";
-import { Outlet } from "react-router-dom";
+
 import RestMenu from "./components/RestMenu";
 
 import SearchClassComp from "./components/SearchClassComp";

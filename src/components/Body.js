@@ -1,14 +1,16 @@
 const restDatas = require("../utils/mockData");
 // import { restDatas } from "../utils/mockData";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { WithItemLable } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { SWIGGY_API_LINK } from "../utils/constants";
 import React from "react";
 import ShimmerCard from "./ShimmerCard";
 import MobCarousel from "./MobCarousel";
 import { Link } from "react-router-dom";
+
 import useOnlineStatus from "../utils/useOnlineStatus";
 import WhatsOnYourMind from "./WhatsOnYourMind";
+import useSwiggiApi from "../utils/useSwiggiApi";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -26,7 +28,38 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
+    // fetchSwigy();
   }, []);
+
+  // const fetchSwigy = async () => {
+  //   const swiggyApi = (await useSwiggiApi()) || [];
+
+  // };
+
+  // const swiggyApi = useSwiggiApi() || [];
+  // console.log(swiggyApi);
+
+  // const swiggyApi = useSwiggiApi();
+  // const swiggyDatas =
+  //   swiggyApi?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+  // console.log("SwiggyDatas:", swiggyDatas);
+
+  // setFilteredListOfRest(swiggyDatas);
+  // setListOfRest(swiggyDatas);
+
+  // setFilteredListOfRest(SwiggyDatas ? SwiggyDatas : []);
+  // setListOfRest(SwiggyDatas ? SwiggyDatas : []);
+
+  // setListOfRest(
+  //   swiggyApi?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  // ) || [];
+  // setFilteredListOfRest(
+  //   swiggyApi?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  // ) || [];
+
+  // setListOfRest(swiggyInfo);
+  // setFilteredListOfRest(swiggyInfo);
+
   const fetchData = async () => {
     try {
       const response = await fetch(SWIGGY_API_LINK);
@@ -57,11 +90,16 @@ const Body = () => {
   // console.log(FilteredListOfRest[0]?.info?.id);
 
   const onlineStatus = useOnlineStatus();
+  const RestoCardItemOffer = WithItemLable(RestaurantCard);
 
   if (onlineStatus === false)
-    return alert(
-      "You are currently offline. Please check your internet connection."
+    return (
+      <div>
+        You are currently offline. Please check your internet connection
+      </div>
     );
+  const discountInfo = FilteredListOfRest[1]?.info?.aggregatedDiscountInfoV3;
+  console.log(discountInfo);
 
   return (
     <div className="px-10 lg:px-52   mt-9">
@@ -121,13 +159,21 @@ const Body = () => {
 
         <div className=" justify-center grid grid-cols-1 sm:grid-cols-4 sm:gap-x-24 gap-x-5">
           {/* <RestaurantCard restData={restDatas[0]} /> */}
-          {FilteredListOfRest.map((rest) => (
+          {FilteredListOfRest?.map((rest) => (
             // <link key={rest.info.id} to={"/resto-menu/" + rest.info.id}>
             <Link
+              key={rest.info.id}
               style={{ textDecoration: "none", color: "inherit" }}
               to={"/resto-menu/" + rest?.info?.id}
             >
-              <RestaurantCard restData={rest} />
+              {rest?.info?.aggregatedDiscountInfoV3 ? (
+                <RestoCardItemOffer
+                  restData={rest}
+                  discountInfo={rest?.info?.aggregatedDiscountInfoV3}
+                />
+              ) : (
+                <RestaurantCard restData={rest} discountInfo={null} />
+              )}
             </Link>
             // </link>
           ))}

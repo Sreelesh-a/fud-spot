@@ -38,4 +38,18 @@ const RestaurantCard = (res) => {
   );
 };
 
+export const WithItemLable = (RestaurantCard) => {
+  return (props) => {
+    const { restData, discountInfo } = props;
+    console.log(discountInfo);
+    return (
+      <div>
+        <label className="absolutes bg-black text-white">
+          {discountInfo?.header + " " + discountInfo?.subHeader}
+        </label>
+        <RestaurantCard restData={restData} />
+      </div>
+    );
+  };
+};
 export default RestaurantCard;
