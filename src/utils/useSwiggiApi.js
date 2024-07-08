@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { SWIGGY_API_LINK } from "./constants";
+import { SWIGGY_API_LINK3 } from "./constants";
 
 const useSwiggyApi = () => {
   const [swiggyApi, setSwiggyApi] = useState(null);
@@ -7,7 +7,7 @@ const useSwiggyApi = () => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    const data = await fetch(SWIGGY_API_LINK);
+    const data = await fetch(SWIGGY_API_LINK3);
     const json = await data.json();
     setSwiggyApi(json?.data);
   };

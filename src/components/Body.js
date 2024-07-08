@@ -1,8 +1,8 @@
 const restDatas = require("../utils/mockData");
 // import { restDatas } from "../utils/mockData";
-import RestaurantCard, { WithItemLable } from "./RestaurantCard";
+import RestaurantCard, { WithItemLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
-import { SWIGGY_API_LINK } from "../utils/constants";
+import { SWIGGY_API_LINK3 } from "../utils/constants";
 import React from "react";
 import ShimmerCard from "./ShimmerCard";
 import MobCarousel from "./MobCarousel";
@@ -62,7 +62,7 @@ const Body = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(SWIGGY_API_LINK);
+      const response = await fetch(SWIGGY_API_LINK3);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -90,7 +90,7 @@ const Body = () => {
   // console.log(FilteredListOfRest[0]?.info?.id);
 
   const onlineStatus = useOnlineStatus();
-  const RestoCardItemOffer = WithItemLable(RestaurantCard);
+  const RestoCardItemOffer = WithItemLabel(RestaurantCard);
 
   if (onlineStatus === false)
     return (
@@ -98,8 +98,8 @@ const Body = () => {
         You are currently offline. Please check your internet connection
       </div>
     );
-  const discountInfo = FilteredListOfRest[1]?.info?.aggregatedDiscountInfoV3;
-  console.log(discountInfo);
+  // const discountInfo = FilteredListOfRest[1]?.info?.aggregatedDiscountInfoV3;
+  // console.log(discountInfo);
 
   return (
     <div className="px-10 lg:px-52   mt-9">
@@ -169,7 +169,7 @@ const Body = () => {
               {rest?.info?.aggregatedDiscountInfoV3 ? (
                 <RestoCardItemOffer
                   restData={rest}
-                  discountInfo={rest?.info?.aggregatedDiscountInfoV3}
+                  discountInfo={rest?.info?.aggregatedDiscountInfoV3 || null}
                 />
               ) : (
                 <RestaurantCard restData={rest} discountInfo={null} />

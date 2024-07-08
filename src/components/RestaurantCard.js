@@ -38,16 +38,17 @@ const RestaurantCard = (res) => {
   );
 };
 
-export const WithItemLable = (RestaurantCard) => {
+export const WithItemLabel = (RestaurantCard) => {
   return (props) => {
     const { restData, discountInfo } = props;
-    console.log(discountInfo);
     return (
-      <div>
-        <label className="absolutes bg-black text-white">
-          {discountInfo?.header + " " + discountInfo?.subHeader}
-        </label>
+      <div className="relative">
         <RestaurantCard restData={restData} />
+        {discountInfo && (
+          <div className="absolute bottom-20 left-2 bg-black bg-opacity-70 text-white px-2  py-1 rounded-md text-sm font-semibold">
+            {discountInfo.header} {discountInfo.subHeader}
+          </div>
+        )}
       </div>
     );
   };
