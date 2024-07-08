@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SWIGGY_CAROUSEL_API } from "../utils/constants";
 import React, { useRef } from "react";
 import Slider from "react-slick";
-import { ArrowBack, ArrowFront } from "../utils/icons/arrow";
+import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 
 const WhatsOnYourMind = () => {
   const swiggyApi = useSwiggyApi();
