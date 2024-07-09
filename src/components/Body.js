@@ -7,7 +7,7 @@ import React from "react";
 import ShimmerCard from "./ShimmerCard";
 import MobCarousel from "./MobCarousel";
 import { Link } from "react-router-dom";
-
+import TopRestoChains from "./TopRestoChains";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import WhatsOnYourMind from "./WhatsOnYourMind";
 import useSwiggiApi from "../utils/useSwiggiApi";
@@ -30,35 +30,6 @@ const Body = () => {
     fetchData();
     // fetchSwigy();
   }, []);
-
-  // const fetchSwigy = async () => {
-  //   const swiggyApi = (await useSwiggiApi()) || [];
-
-  // };
-
-  // const swiggyApi = useSwiggiApi() || [];
-  // console.log(swiggyApi);
-
-  // const swiggyApi = useSwiggiApi();
-  // const swiggyDatas =
-  //   swiggyApi?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-  // console.log("SwiggyDatas:", swiggyDatas);
-
-  // setFilteredListOfRest(swiggyDatas);
-  // setListOfRest(swiggyDatas);
-
-  // setFilteredListOfRest(SwiggyDatas ? SwiggyDatas : []);
-  // setListOfRest(SwiggyDatas ? SwiggyDatas : []);
-
-  // setListOfRest(
-  //   swiggyApi?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  // ) || [];
-  // setFilteredListOfRest(
-  //   swiggyApi?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  // ) || [];
-
-  // setListOfRest(swiggyInfo);
-  // setFilteredListOfRest(swiggyInfo);
 
   const fetchData = async () => {
     try {
@@ -102,7 +73,7 @@ const Body = () => {
   // console.log(discountInfo);
 
   return (
-    <div className="px-10 lg:px-52   mt-9">
+    <div className="px-10 lg:px-52  mt-9">
       {/* <MobCarousel /> */}
       <div className="my-9">
         {/* <div className="font-bold lg:text-2xl sm:text-sm">
@@ -110,6 +81,10 @@ const Body = () => {
         </div> */}
 
         <WhatsOnYourMind />
+      </div>
+      <hr className="" />
+      <div className="my-9">
+        <TopRestoChains />
       </div>
       <hr className="" />
 
@@ -157,10 +132,8 @@ const Body = () => {
           <ShimmerUi />
         </div>
 
-        <div className=" justify-center grid grid-cols-1 sm:grid-cols-4 sm:gap-x-24 gap-x-5">
-          {/* <RestaurantCard restData={restDatas[0]} /> */}
+        <div className="  justify-between  grid grid-cols-1 sm:grid-cols-4 sm:gap-x-24 gap-x-5 ">
           {FilteredListOfRest?.map((rest) => (
-            // <link key={rest.info.id} to={"/resto-menu/" + rest.info.id}>
             <Link
               key={rest.info.id}
               style={{ textDecoration: "none", color: "inherit" }}

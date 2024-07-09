@@ -32,7 +32,9 @@ const NestedCategories = ({ data }) => {
         className=" justify-between flex flex-wrap w-full cursor-pointer   items-center "
         onClick={clickHandle}
       >
-        <div className="font-semibold text-gray-700 ">{data.title}</div>
+        <div className="font-semibold text-gray-700 ">
+          {data.title} ({data.itemCards.length})
+        </div>
         <i
           class={
             showSubCategoryList
