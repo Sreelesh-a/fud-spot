@@ -4,13 +4,19 @@ import { useState } from "react";
 import ItemsUnderNestedCategories from "./ItemsUnderNestedCategories";
 
 const ListOfRestMenuCategory = ({ categories }) => {
+  const [showIndex, SetShowIndex] = useState(0);
   //   console.log(categories);
   return (
     <div className="">
       <div className=" ">
         {categories &&
-          categories.map((res) => (
-            <NestedCategories key={res?.card?.info?.id} data={res} />
+          categories.map((res, index) => (
+            <NestedCategories
+              key={res?.card?.info?.id}
+              data={res}
+              SetShowIndex={() => SetShowIndex(index)}
+              showSubCategoryList={showIndex == index && true}
+            />
           ))}
       </div>
       <div className=""></div>
@@ -18,12 +24,13 @@ const ListOfRestMenuCategory = ({ categories }) => {
   );
 };
 
-const NestedCategories = ({ data }) => {
+const NestedCategories = ({ data, showSubCategoryList, SetShowIndex }) => {
   const [caretIcon, setCaretIcon] = useState("fa-solid fa-chevron-down");
-  const [showSubCategoryList, setShowSubCategoryList] = useState(false);
+  // const [showSubCategoryList, setShowSubCategoryList] = useState(false);
 
   const clickHandle = () => {
-    setShowSubCategoryList(!showSubCategoryList);
+    // setShowSubCategoryList(!showSubCategoryList);
+    SetShowIndex();
   };
 
   return (
@@ -32,7 +39,7 @@ const NestedCategories = ({ data }) => {
         className=" justify-between flex flex-wrap w-full cursor-pointer   items-center "
         onClick={clickHandle}
       >
-        <div className="font-semibold text-sm ">{data.title}</div>
+        <div className="font-semibold text-gray-700 ">{data.title}</div>
         <i
           class={
             showSubCategoryList
@@ -41,7 +48,7 @@ const NestedCategories = ({ data }) => {
           }
         ></i>
       </div>
-      {showSubCategoryList ? <hr className="my-3 " /> : <hr className="my-3" />}
+      {!showSubCategoryList && <hr className="my-3" />}
       <div>
         {data?.itemCards &&
           data?.itemCards.map(
@@ -49,6 +56,7 @@ const NestedCategories = ({ data }) => {
               showSubCategoryList && (
                 <ItemsUnderNestedCategories
                   data={res}
+                  f
                   key={res?.card?.info?.id}
                 />
               )
