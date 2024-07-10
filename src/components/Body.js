@@ -83,7 +83,7 @@ const Body = () => {
         <WhatsOnYourMind />
       </div>
       <hr className="" />
-      <div className="my-9">
+      <div className="my-9 ">
         <TopRestoChains />
       </div>
       <hr className="" />
@@ -131,25 +131,26 @@ const Body = () => {
         <div className="rest-container">
           <ShimmerUi />
         </div>
-
-        <div className="  justify-between  grid grid-cols-1 sm:grid-cols-4 sm:gap-x-24 gap-x-5 ">
-          {FilteredListOfRest?.map((rest) => (
-            <Link
-              key={rest.info.id}
-              style={{ textDecoration: "none", color: "inherit" }}
-              to={"/resto-menu/" + rest?.info?.id}
-            >
-              {rest?.info?.aggregatedDiscountInfoV3 ? (
-                <RestoCardItemOffer
-                  restData={rest}
-                  discountInfo={rest?.info?.aggregatedDiscountInfoV3 || null}
-                />
-              ) : (
-                <RestaurantCard restData={rest} discountInfo={null} />
-              )}
-            </Link>
-            // </link>
-          ))}
+        <div className="h-full overflow-auto">
+          <div className="  justify-between  grid grid-cols-1 sm:grid-cols-4  ">
+            {FilteredListOfRest?.map((rest) => (
+              <Link
+                key={rest.info.id}
+                style={{ textDecoration: "none", color: "inherit" }}
+                to={"/resto-menu/" + rest?.info?.id}
+              >
+                {rest?.info?.aggregatedDiscountInfoV3 ? (
+                  <RestoCardItemOffer
+                    restData={rest}
+                    discountInfo={rest?.info?.aggregatedDiscountInfoV3 || null}
+                  />
+                ) : (
+                  <RestaurantCard restData={rest} discountInfo={null} />
+                )}
+              </Link>
+              // </link>
+            ))}
+          </div>
         </div>
       </div>
     </div>

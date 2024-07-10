@@ -9,14 +9,13 @@ const RestaurantCard = (res) => {
   return (
     <div className="justify-center mt-9 ">
       <div className="space-y-2 grid grid-cols-2 items-center sm:grid-cols-1  ">
-        <div className="">
-          <div className="rounded-xl overflow-hidden w-10 h-28 sm:w-64 sm:h-36 ">
-            <img
-              src={RESTO_IMG_LINK + cloudinaryImageId}
-              className="object-cover w-full h-full"
-            />
-          </div>
+        <div className="rounded-xl overflow-hidden w-10 h-28 sm:w-64 sm:h-36  ">
+          <img
+            src={RESTO_IMG_LINK + cloudinaryImageId}
+            className="object-cover w-full h-full "
+          />
         </div>
+
         <div className="resto-details   ">
           <div className="font-bold truncate ...">{name}</div>
 

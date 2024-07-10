@@ -82,7 +82,7 @@ const TopRestoChains = () => {
                 to={"/resto-menu/" + rest?.info?.id}
               >
                 {rest?.info?.aggregatedDiscountInfoV3 ? (
-                  <div className="space-x-5">
+                  <div className="gap-x-9">
                     <RestoCardItemOffer
                       restData={rest}
                       discountInfo={
@@ -91,7 +91,7 @@ const TopRestoChains = () => {
                     />
                   </div>
                 ) : (
-                  <div className="space-x-5">
+                  <div className="gap-x-1">
                     <RestaurantCard restData={rest} discountInfo={null} />
                   </div>
                 )}
