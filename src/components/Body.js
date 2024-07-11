@@ -11,6 +11,7 @@ import TopRestoChains from "./TopRestoChains";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import WhatsOnYourMind from "./WhatsOnYourMind";
 import useSwiggiApi from "../utils/useSwiggiApi";
+import RestoWithOnlineFoodDelivery from "./RestoWithOnlineFoodDelivery";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -88,6 +89,8 @@ const Body = () => {
       </div>
       <hr className="" />
 
+      <div className="my-9">{/* <RestoWithOnlineFoodDelivery /> */}</div>
+
       <div className="my-9">
         <div className="flex items-center flex-wrap justify-between">
           <div className="font-bold lg:text-2xl sm:text-lg">
@@ -133,23 +136,26 @@ const Body = () => {
         </div>
         <div className="h-full overflow-auto">
           <div className="  justify-between  grid grid-cols-1 sm:grid-cols-4  ">
-            {FilteredListOfRest?.map((rest) => (
-              <Link
-                key={rest.info.id}
-                style={{ textDecoration: "none", color: "inherit" }}
-                to={"/resto-menu/" + rest?.info?.id}
-              >
-                {rest?.info?.aggregatedDiscountInfoV3 ? (
-                  <RestoCardItemOffer
-                    restData={rest}
-                    discountInfo={rest?.info?.aggregatedDiscountInfoV3 || null}
-                  />
-                ) : (
-                  <RestaurantCard restData={rest} discountInfo={null} />
-                )}
-              </Link>
-              // </link>
-            ))}
+            {FilteredListOfRest &&
+              FilteredListOfRest?.map((rest) => (
+                <Link
+                  key={rest.info.id}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                  to={"/resto-menu/" + rest?.info?.id}
+                >
+                  {rest?.info?.aggregatedDiscountInfoV3 ? (
+                    <RestoCardItemOffer
+                      restData={rest}
+                      discountInfo={
+                        rest?.info?.aggregatedDiscountInfoV3 || null
+                      }
+                    />
+                  ) : (
+                    <RestaurantCard restData={rest} discountInfo={null} />
+                  )}
+                </Link>
+                // </link>
+              ))}
           </div>
         </div>
       </div>
