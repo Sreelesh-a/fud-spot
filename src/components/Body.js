@@ -26,7 +26,7 @@ const Body = () => {
   useEffect(() => {
     if (restaurantData && restaurantData) {
       setListOfRest(restDatas || []);
-      setFilteredListOfResto(ListOfRest);
+      setFilteredListOfResto(ListOfRest || []);
     }
   }, [restaurantData]);
   // console.log(FilteredListOfResto);
