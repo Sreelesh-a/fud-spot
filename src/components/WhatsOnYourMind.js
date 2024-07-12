@@ -5,10 +5,22 @@ import { SWIGGY_CAROUSEL_API } from "../utils/constants";
 import React, { useRef } from "react";
 import Slider from "react-slick";
 import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
+import { ShimmerWhatsOnYourMind } from "./ShimmerCard";
 
 const WhatsOnYourMind = () => {
   const swiggyApi = useSwiggyApi();
-  let swiggyInfo = swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info;
+  swiggyInfo = swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info || [];
+  // console.log(swiggyInfo.length);
+
+  // const [swiggyInfo, setSwiggyInfo] = useState([]);
+
+  // setSwiggyInfo(swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info || []);
+
+  const ShimmerUi = () => {
+    if (swiggyInfo.length == 0) {
+      return <ShimmerWhatsOnYourMind />;
+    }
+  };
 
   let sliderRef = useRef(null);
   const next = () => {
@@ -41,6 +53,7 @@ const WhatsOnYourMind = () => {
             </div>
           </div>
         </div>
+        <ShimmerUi />
         <Slider
           ref={(slider) => {
             sliderRef = slider;

@@ -8,6 +8,7 @@ import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import RestaurantCard, { WithItemLabel } from "./RestaurantCard";
 import { SWIGGY_API_LINK3 } from "../utils/constants";
 import { Link } from "react-router-dom";
+import ShimmerCard from "./ShimmerCard";
 
 const TopRestoChains = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -33,6 +34,12 @@ const TopRestoChains = () => {
       );
     } catch (error) {
       console.error("Error fetching data:", error);
+    }
+  };
+
+  const ShimmerUi = () => {
+    if (ListOfRest.length == 0) {
+      return <ShimmerCard />;
     }
   };
 
@@ -68,6 +75,7 @@ const TopRestoChains = () => {
       </div>
 
       <div className="">
+        <ShimmerUi />
         <Slider
           ref={(slider) => {
             sliderRef = slider;

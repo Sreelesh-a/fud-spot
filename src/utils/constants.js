@@ -19,4 +19,6 @@ module.exports = {
   WIP_ICON: "https://cdn-icons-png.flaticon.com/512/5038/5038308.png",
   SWIGGY_CAROUSEL_API:
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/",
+  SWIGGY_NEW_OFFSET:
+    "https://www.swiggy.com/api/seo/getListing?lat=10.054039908667727&lng=76.34344674532176",
 };

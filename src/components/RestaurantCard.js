@@ -4,20 +4,20 @@ import { Ratingicon } from "./RestMenu";
 import { Ratingicon } from "./Ratingicon";
 const RestaurantCard = (res) => {
   const { discountCheck } = res;
-  // console.log(discountCheck);
+
   const { restData } = res;
   const { name, cloudinaryImageId, avgRating, sla, areaName } = restData?.info;
 
   return (
     <div className="justify-between mt-9 ">
       <div className="space-y-2 grid grid-cols-2 items-center sm:grid-cols-1  ">
-        <div className="relative rounded-xl overflow-hidden w-10 h-28 sm:w-60 sm:h-36  ">
+        <div className="relative rounded-xl overflow-hidden w-10 h-28 sm:w-56 sm:h-40  ">
           <img
             src={RESTO_IMG_LINK + cloudinaryImageId}
             className="object-cover w-full h-full "
           />
           {discountCheck && (
-            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent from-10%"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent from-10%"></div>
           )}
         </div>
 
@@ -59,9 +59,3 @@ export const WithItemLabel = (RestaurantCard) => {
   };
 };
 export default RestaurantCard;
-
-{
-  /* <div className="absolute bottom-20 left-2 bg-black bg-opacity-70 text-white px-2  py-1 rounded-md text-sm font-semibold">
-  {discountInfo.header} {discountInfo.subHeader}
-</div>; */
-}

@@ -12,65 +12,40 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import WhatsOnYourMind from "./WhatsOnYourMind";
 import useSwiggiApi from "../utils/useSwiggiApi";
 import RestoWithOnlineFoodDelivery from "./RestoWithOnlineFoodDelivery";
+import { list } from "postcss";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
-  const [FilteredListOfRest, setFilteredListOfRest] = useState([]);
+  const [FilteredListOfResto, setFilteredListOfResto] = useState([]);
 
-  const fetchSwiggyApi = async () => {
-    const swiggyApidata = await useSwiggiApi();
-    setFilteredListOfRest(
-      swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants || []
-    );
-    setListOfRest(
-      swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants || []
-    );
-  };
+  const swiggyApidata = useSwiggiApi();
+  const restaurantData =
+    swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      ?.restaurants;
 
   useEffect(() => {
-    fetchData();
-    // fetchSwiggyApi();
-  }, []);
-
-  // console.log(restInformations);
-  // console.log(FilteredListOfRest);
+    if (restaurantData && restaurantData) {
+      setListOfRest(restDatas || []);
+      setFilteredListOfResto(ListOfRest);
+    }
+  }, [restaurantData]);
+  // console.log(FilteredListOfResto);
+  // console.log(ListOfRest);
+  // console.log(swiggyApidata);
 
   const topRatedResto = () => {
-    let filterList = ListOfRest.filter((res) => res?.info?.avgRating >= 4.5);
-    setListOfRest(filterList);
+    let filterList = ListOfRest.filter((res) => res?.info?.avgRating >= 4.2);
+    setFilteredListOfResto(filterList);
   };
   const mgRoadFilter = () => {
     let filterList = ListOfRest.filter(
       (res) => res?.info?.areaName >= "M G Road"
     );
-    setListOfRest(filterList);
-  };
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(SWIGGY_API_LINK3);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const swiggyJson = await response.json();
-
-      setListOfRest(
-        swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || []
-      );
-      setFilteredListOfRest(
-        swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || []
-      );
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    setFilteredListOfResto(filterList);
   };
 
   const ShimmerUi = () => {
-    if (ListOfRest.length === 0) {
+    if (FilteredListOfResto.length === 0) {
       return <ShimmerCard />;
     }
   };
@@ -86,8 +61,6 @@ const Body = () => {
         You are currently offline. Please check your internet connection
       </div>
     );
-  // const discountInfo = FilteredListOfRest[1]?.info?.aggregatedDiscountInfoV3;
-  // console.log(discountInfo);
 
   return (
     <div className="px-10 lg:px-52  mt-9">
@@ -108,22 +81,22 @@ const Body = () => {
       <div className="my-9">{/* <RestoWithOnlineFoodDelivery /> */}</div>
 
       <div className="my-9">
-        <div className="flex items-center flex-wrap justify-between">
+        <div className="flex items-center flex-wrap justify-between gap-y-4">
           <div className="font-bold lg:text-2xl sm:text-lg">
             Top Restaurant Chains in Kochi
           </div>
-          <div className="flex gap-6">
-            <div className="search-filter">
+          <div className="flex gap-x-6">
+            {/* <div className="flex gap-x-2">
               <input
                 type="text"
-                className="search-input"
+                className="border border-gray-300 "
                 value={searchText}
                 onChange={(e) => {
                   setSearchText(e.target.value);
                 }}
               ></input>
               <button
-                className="search-btn"
+                className="bg-orange-600 px-3 text-white rounded-md"
                 onClick={() => {
                   const filterRest = ListOfRest.filter((res) =>
                     res?.info?.name
@@ -135,13 +108,49 @@ const Body = () => {
               >
                 Search
               </button>
-            </div>
-            <div className="button-filter">
-              <button className="top-rated-resto-btn" onClick={topRatedResto}>
-                Top Rated
+            </div> */}
+            <div className="button-filter flex gap-x-3  text-gray-500">
+              <button
+                className=" border border-gray-400 px-4 rounded-xl"
+                onClick={topRatedResto}
+              >
+                Rating 4.2+
               </button>
-              <button className="mgroad-resto-btn" onClick={mgRoadFilter}>
+              <button
+                className="border border-gray-400 px-4 rounded-xl"
+                onClick={mgRoadFilter}
+              >
                 Near M G Road
+              </button>
+              <button
+                className="border border-gray-400 px-4 rounded-xl"
+                onClick={""}
+              >
+                Pure Veg
+              </button>
+              <button
+                className="border border-gray-400 px-4 rounded-xl"
+                onClick={""}
+              >
+                Fast Delivery
+              </button>
+              <button
+                className="border border-gray-400 px-4 rounded-xl"
+                onClick={""}
+              >
+                Offers
+              </button>
+              <button
+                className="border border-gray-400 px-4 rounded-xl"
+                onClick={""}
+              >
+                ₹300-600
+              </button>
+              <button
+                className="border border-gray-400 px-4 rounded-xl"
+                onClick={""}
+              >
+                Less than ₹300
               </button>
             </div>
           </div>
@@ -150,10 +159,10 @@ const Body = () => {
         <div className="rest-container">
           <ShimmerUi />
         </div>
-        <div className="h-full overflow-auto">
-          <div className="  justify-between  grid grid-cols-1 sm:grid-cols-4  ">
-            {FilteredListOfRest &&
-              FilteredListOfRest?.map((rest) => (
+        <div className="">
+          <div className="  justify-between  grid grid-cols-1 sm:grid-cols-4  gap-x-4 cursor-pointer ">
+            {FilteredListOfResto &&
+              FilteredListOfResto?.map((rest) => (
                 <Link
                   key={rest.info.id}
                   style={{ textDecoration: "none", color: "inherit" }}
