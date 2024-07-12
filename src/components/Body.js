@@ -16,6 +16,27 @@ import RestoWithOnlineFoodDelivery from "./RestoWithOnlineFoodDelivery";
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
   const [FilteredListOfRest, setFilteredListOfRest] = useState([]);
+
+  const fetchSwiggyApi = async () => {
+    const swiggyApidata = await useSwiggiApi();
+    setFilteredListOfRest(
+      swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || []
+    );
+    setListOfRest(
+      swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || []
+    );
+  };
+
+  useEffect(() => {
+    fetchData();
+    // fetchSwiggyApi();
+  }, []);
+
+  // console.log(restInformations);
+  // console.log(FilteredListOfRest);
+
   const topRatedResto = () => {
     let filterList = ListOfRest.filter((res) => res?.info?.avgRating >= 4.5);
     setListOfRest(filterList);
@@ -26,11 +47,6 @@ const Body = () => {
     );
     setListOfRest(filterList);
   };
-
-  useEffect(() => {
-    fetchData();
-    // fetchSwigy();
-  }, []);
 
   const fetchData = async () => {
     try {
@@ -151,7 +167,11 @@ const Body = () => {
                       }
                     />
                   ) : (
-                    <RestaurantCard restData={rest} discountInfo={null} />
+                    <RestaurantCard
+                      restData={rest}
+                      discountInfo={null}
+                      discountCheck={false}
+                    />
                   )}
                 </Link>
                 // </link>

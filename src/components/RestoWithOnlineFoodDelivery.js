@@ -1,52 +1,57 @@
-const lat = 9.9312328;
-const lng = 76.26730409999999;
-let nextOffset = "CJhlELQ4KIDg8qu6oay4fjCnEzgE"; // This value might need to be updated dynamically
+import { title } from "process";
+import useSwiggyApi from "../utils/useSwiggiApi";
+import React, { useState, useEffect } from "react";
+import { RESTO_IMG_LINK } from "../utils/constants";
+import { Link } from "react-router-dom";
 
-async function fetchMoreRestaurants() {
-  const payload = {
-    lat: lat,
-    lng: lng,
-    nextOffset: nextOffset,
-    widgetOffset: {
-      NewListingView_category_bar_chicletranking_TwoRows: "",
-      NewListingView_category_bar_chicletranking_TwoRows_Rendition: "",
-      Restaurant_Group_WebView_SEO_PB_Theme: "",
-      collectionV5RestaurantListWidget_SimRestoRelevance_food_seo: "9",
-      inlineFacetFilter: "",
-      restaurantCountWidget: "",
-    },
-    filters: {},
-    seoParams: {
-      seoUrl: "https://www.swiggy.com/",
-      pageType: "FOOD_HOMEPAGE",
-      apiName: "FoodHomePage",
-    },
-    page_type: "DESKTOP_WEB_LISTING",
-    _csrf: "mtIetXQm4Tei-jEbnbVKvZ0Du8h7o6Pjz10jwdYA", // Ensure this is correct and up-to-date
-  };
+const RestoWithOnlineFoodDelivery = () => {
+  const [ListOfRest, setListOfRest] = useState([]);
+  const [title, setTitle] = useState("Loading");
+  const swiggyApi = useSwiggyApi();
 
-  const response = await fetch(
-    "https://www.swiggy.com/dapi/restaurants/list/update",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // Include any other necessary headers, such as session cookies
-      },
-      body: JSON.stringify(payload),
-    }
+  useEffect(() => {
+    setListOfRest(
+      swiggyApi?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || []
+    );
+    setTitle(swiggyApi?.cards[2]?.card?.card?.title);
+  }, []);
+
+  //   console.log(ListOfRest[0].info);
+
+  return (
+    <div className="">
+      <div className="">
+        <div className="font-bold lg:text-2xl sm:text-lg">{title} </div>
+        <div className=""></div>
+      </div>
+      <div className="grid grid-cols-4 ">
+        {ListOfRest &&
+          ListOfRest.map((res) => (
+            <Link key="res?.info?.id">
+              <RestoCards info={res?.info} />
+            </Link>
+          ))}
+      </div>
+    </div>
   );
+};
 
-  if (response.ok) {
-    const data = await response.json();
-    console.log("Data:", data);
-    nextOffset = data.data.nextOffset; // Update nextOffset for subsequent requests
-    // Process the data as needed
-  } else {
-    const errorData = await response.json();
-    console.error("Error fetching more restaurants:", errorData);
-  }
-}
+const RestoCards = (props) => {
+  const { info } = props;
+  const { name, cloudinaryImageId, avgRating, sla, areaName } = info;
+  return (
+    <div className="">
+      <div className="">
+        <div className="w-64 h-48">
+          <img
+            src={RESTO_IMG_LINK + cloudinaryImageId}
+            className="object-cover w-full h-full"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-// Initial fetch
-fetchMoreRestaurants();
+export default RestoWithOnlineFoodDelivery;
