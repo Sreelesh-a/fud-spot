@@ -13,6 +13,8 @@ import WhatsOnYourMind from "./WhatsOnYourMind";
 import useSwiggiApi from "../utils/useSwiggiApi";
 import RestoWithOnlineFoodDelivery from "./RestoWithOnlineFoodDelivery";
 import { list } from "postcss";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -24,14 +26,19 @@ const Body = () => {
       ?.restaurants;
 
   useEffect(() => {
-    if (restaurantData && restaurantData) {
-      setListOfRest(restDatas || []);
-      setFilteredListOfResto(ListOfRest || []);
+    if (restaurantData) {
+      setListOfRest(restaurantData || []);
+      setFilteredListOfResto(restaurantData || []);
     }
   }, [restaurantData]);
-  // console.log(FilteredListOfResto);
-  // console.log(ListOfRest);
-  // console.log(swiggyApidata);
+
+  const ShimmerUi = () => {
+    if (FilteredListOfResto.length === 0) {
+      return <ShimmerCard />;
+    }
+  };
+  const [searchText, setSearchText] = useState("");
+  // console.log(FilteredListOfRest[0]?.info?.id);
 
   const topRatedResto = () => {
     let filterList = ListOfRest.filter((res) => res?.info?.avgRating >= 4.2);
@@ -44,23 +51,22 @@ const Body = () => {
     setFilteredListOfResto(filterList);
   };
 
-  const ShimmerUi = () => {
-    if (FilteredListOfResto.length === 0) {
-      return <ShimmerCard />;
-    }
-  };
-  const [searchText, setSearchText] = useState("");
-  // console.log(FilteredListOfRest[0]?.info?.id);
-
   const onlineStatus = useOnlineStatus();
   const RestoCardItemOffer = WithItemLabel(RestaurantCard);
 
-  if (onlineStatus === false)
-    return (
-      <div>
-        You are currently offline. Please check your internet connection
-      </div>
-    );
+  if (onlineStatus === false) {
+    toast("Lost connection. Retry.", {
+      position: "top-left",
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+  }
 
   return (
     <div className="px-10 lg:px-52  mt-9">
@@ -188,6 +194,7 @@ const Body = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
