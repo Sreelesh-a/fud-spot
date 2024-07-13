@@ -1,5 +1,5 @@
 import useSwiggyApi from "../utils/useSwiggiApi";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { SWIGGY_CAROUSEL_API } from "../utils/constants";
 import React, { useRef } from "react";
@@ -8,13 +8,17 @@ import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import { ShimmerWhatsOnYourMind } from "./ShimmerCard";
 
 const WhatsOnYourMind = () => {
-  const swiggyApi = useSwiggyApi();
-  swiggyInfo = swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info || [];
-  // console.log(swiggyInfo.length);
+  const [swiggyInfo, setSwiggyInfo] = useState([]);
+  let swiggyApi = useSwiggyApi();
 
-  // const [swiggyInfo, setSwiggyInfo] = useState([]);
-
-  // setSwiggyInfo(swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info || []);
+  useEffect(() => {
+    if (swiggyApi) {
+      setSwiggyInfo(
+        (swiggyApi && swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info) ||
+          []
+      );
+    }
+  }, [swiggyApi]);
 
   const ShimmerUi = () => {
     if (swiggyInfo.length == 0) {
