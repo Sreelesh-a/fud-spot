@@ -69,9 +69,9 @@ const Body = () => {
   }
 
   return (
-    <div className="px-10 lg:px-52  mt-9">
+    <div className="px-10 sm:px-52 py-4 ml-6">
       {/* <MobCarousel /> */}
-      <div className="my-9">
+      <div className="">
         {/* <div className="font-bold lg:text-2xl sm:text-sm">
           What's on your mind?
         </div> */}
@@ -84,7 +84,7 @@ const Body = () => {
       </div>
       <hr className="" />
 
-      <div className="my-9">{/* <RestoWithOnlineFoodDelivery /> */}</div>
+      {/* <div className="my-9"><RestoWithOnlineFoodDelivery /> </div> */}
 
       <div className="my-9">
         <div className="flex items-center flex-wrap justify-between gap-y-4">

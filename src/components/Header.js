@@ -6,15 +6,20 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [loginAuth, setLoginAuth] = useState("Sign in");
   return (
-    <div className="flex  justify-between p-4 m-5 items-center shadow-sm ">
+    <div className="flex  justify-between py-4  px-28 m-5 items-center shadow-sm  ">
       <div className="flex items-center gap-4">
         <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
           <img src={logoHeaderImg} className="w-10 "></img>
         </Link>
 
-        <span className="LocationHeader">
-          <span className="main-location ">Kochi</span>, Kerala, India
-        </span>
+        <div className="flex items-center gap-x-2 cursor-pointer">
+          <span className="font-semibold underline underline-offset-4">
+            Kochi
+          </span>
+          <span className="text-gray-400 text-sm">Kerala, India...</span>
+
+          <i class="fa-solid fa-chevron-down text-orange-500"></i>
+        </div>
       </div>
       {/* <div className=" ">
         <i class="fa-solid fa-circle-user "></i>

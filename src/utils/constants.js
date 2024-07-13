@@ -7,7 +7,7 @@ module.exports = {
   SWIGGY_API_LINK2:
     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.9312328&lng=76.26730409999999&is-seo-homepage-enabled=true&page_type=DESKT",
   SWIGGY_API_LINK3:
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.9312328&lng=76.26730409999999&is-seo-homepage-enabled=true&page_type=DESKT",
+    "https://www.swiggy.com/dapi/restaurants/list/v5?is-seo-homepage-enabled=true&page_type=DESKT&",
   SWIGGY_MENU_API2:
     "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.9312328&lng=76.26730409999999&restaurantId=",
   SWIGGY_MENU_API:
@@ -22,3 +22,6 @@ module.exports = {
   SWIGGY_NEW_OFFSET:
     "https://www.swiggy.com/api/seo/getListing?lat=10.054039908667727&lng=76.34344674532176",
 };
+
+// lat: 11.2587531;
+// lng: 75.78041;

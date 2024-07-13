@@ -1,4 +1,3 @@
-import useSwiggyApi from "../utils/useSwiggiApi";
 import React from "react";
 import { useState, useEffect } from "react";
 import { SWIGGY_CAROUSEL_API } from "../utils/constants";
@@ -9,33 +8,49 @@ import RestaurantCard, { WithItemLabel } from "./RestaurantCard";
 import { SWIGGY_API_LINK3 } from "../utils/constants";
 import { Link } from "react-router-dom";
 import ShimmerCard from "./ShimmerCard";
+import useSwiggiApi from "../utils/useSwiggiApi";
 
 const TopRestoChains = () => {
   const [ListOfRest, setListOfRest] = useState([]);
-  const swiggyApi = useSwiggyApi();
-  let swiggyInfo = swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info;
-  const RestoCardItemOffer = WithItemLabel(RestaurantCard);
+  // const swiggyApi = useSwiggyApi();
+  // let swiggyInfo = swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info;
+  // const RestoCardItemOffer = WithItemLabel(RestaurantCard);
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch(SWIGGY_API_LINK3);
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
+  //     const swiggyJson = await response.json();
+
+  //     setListOfRest(
+  //       swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+  //         ?.restaurants || []
+  //     );
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
+
+  const [FilteredListOfResto, setFilteredListOfResto] = useState([]);
+
+  const swiggyApidata = useSwiggiApi();
+  const restaurantData =
+    swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      ?.restaurants;
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(SWIGGY_API_LINK3);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const swiggyJson = await response.json();
-
-      setListOfRest(
-        swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || []
-      );
-    } catch (error) {
-      console.error("Error fetching data:", error);
+    if (restaurantData) {
+      setListOfRest(restaurantData || []);
+      setFilteredListOfResto(restaurantData || []);
     }
-  };
+  }, [restaurantData]);
+  const RestoCardItemOffer = WithItemLabel(RestaurantCard);
 
   const ShimmerUi = () => {
     if (ListOfRest.length == 0) {
