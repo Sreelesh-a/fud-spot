@@ -1,15 +1,11 @@
-import Header from "./Header";
-import RestaurantCard from "./RestaurantCard";
-import WhatsOnYourMind from "./WhatsOnYourMind";
-import RestoWithOnlineFoodDelivery from "./RestoWithOnlineFoodDelivery";
-import { ShimmerWhatsOnYourMind } from "./ShimmerCard";
+import UpdateRestaurantCard from "./updateRestaurantCard";
+import { useState, useEffect } from "react";
 
 const Offers = () => {
   return (
-    // <WhatsOnYourMind />
-    // <RestaurantCard />
-    // <RestoWithOnlineFoodDelivery />
-    <ShimmerWhatsOnYourMind />
+    <>
+      <UpdateRestaurantCard />
+    </>
   );
 };
 

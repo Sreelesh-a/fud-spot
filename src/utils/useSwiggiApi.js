@@ -1,36 +1,45 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { SWIGGY_API_LINK3 } from "./constants";
 import axios from "axios";
+import LocationContext from "./LocationContext";
+import { SelectLocation } from "./LocationContext";
+import { SelectLocationContext } from "./LocationContext";
 
 const useSwiggyApi = () => {
-  const [latANdLng, setLatAndLng] = useState(
-    "lat=9.9312328&lng=76.26730409999999"
-  );
+  const locationData = useContext(LocationContext);
+  const { location } = useContext(SelectLocationContext);
+  const [locationSelect, setLocationSelect] = useState("Kochi");
 
-  // calicut : "lat=11.2587531&lng=75.78041";
+  const payloads = useContext(LocationContext);
+  const Kochi = new URLSearchParams(payloads?.[location]).toString();
+  const Bangalore = new URLSearchParams(payloads?.Bangalore).toString();
+  const [getLocation, setGetLocation] = useState(Kochi);
 
-  // setLatAndLng("");
-  // lat: 11.2587531;
-  // lng: 75.78041;
+  // console.log(getLocation);
 
   const [swiggyApi, setSwiggyApi] = useState(null);
-  const [swiggyfect, setSwiggyFetch] = useState([]);
+  const url = `${SWIGGY_API_LINK3}${getLocation}`;
+
+  // useEffect(() => {
+  //   setLocationSelect(location);
+  // }, []);
+
   useEffect(() => {
-    // axios
-    //   .get(SWIGGY_API_LINK3)
-    //   .then((res) => {
-    //     setSwiggyApi(res?.data?.data);
-    //   })
-    //   .catch((Err) => console.log(Err));
     fetchData();
   }, []);
 
-  // console.log(swiggyApi);
-
   const fetchData = async () => {
-    const data = await fetch(SWIGGY_API_LINK3 + latANdLng);
-    const json = await data.json();
-    setSwiggyApi(json?.data);
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Network Respone is not ok");
+      }
+      const json = await response.json();
+
+      setSwiggyApi(json?.data);
+    } catch (err) {
+      console.error("error", err);
+    }
   };
 
   return swiggyApi;

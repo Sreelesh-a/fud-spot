@@ -11,7 +11,7 @@ const RestaurantCard = (res) => {
   return (
     <div className="justify-between mt-9 ">
       <div className="space-y-2 grid grid-cols-2 items-center sm:grid-cols-1  ">
-        <div className="relative rounded-xl overflow-hidden w-10 h-28 sm:w-56 sm:h-40  ">
+        <div className="relative rounded-xl overflow-hidden w-10 h-28 sm:w-60 sm:h-40  ">
           <img
             src={RESTO_IMG_LINK + cloudinaryImageId}
             className="object-cover w-full h-full "

@@ -1,0 +1,3 @@
+const useUpdatedApi = () => {
+  return upadatedApi;
+};

@@ -13,18 +13,40 @@ import MobMenu from "./components/MobMenu";
 // import AboutUs from "./components/AboutUs";
 let AboutUs = require("./components/AboutUs");
 import ShimmerCard from "./components/ShimmerCard";
+import { useState } from "react";
+import { SelectLocationContext } from "./utils/LocationContext";
+import SelectLocation from "./components/SelectLocation";
 
 AboutUs = lazy(() => {
   import("./components/AboutUs");
 });
 
 export const AppLayout = () => {
+  const [selectArea, setSelectArea] = useState("Kochi");
+  const [displaySelectLocation, setDisplaySelectLocation] = useState(true);
+
   return (
-    <div className="AppLayout">
-      <Header />
-      {/* <MobMenu /> */}
-      <Outlet />
-    </div>
+    <>
+      <SelectLocationContext.Provider
+        value={{ location: selectArea, setDisplaySelectLocation }}
+      >
+        <div className="AppLayout relative">
+          <div className="">
+            {displaySelectLocation == true && (
+              <SelectLocation
+                displaySelectLocation={displaySelectLocation}
+                setDisplaySelectLocation={setDisplaySelectLocation}
+                setSelectArea={setSelectArea}
+              />
+            )}
+          </div>
+
+          <Header />
+          {/* <MobMenu /> */}
+          <Outlet />
+        </div>
+      </SelectLocationContext.Provider>
+    </>
   );
 };
 

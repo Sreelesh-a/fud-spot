@@ -1,7 +1,6 @@
 module.exports = {
   RESTO_IMG_LINK: "https://media-assets.swiggy.com/swiggy/image/upload/",
-  RESTO_IMG_LINK2:
-    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/",
+
   SWIGGY_API_LINK1:
     "./api?lat=9.9312328&lng=76.26730409999999&is-seo-homepage-enabled=true&page_type=DESKT",
   SWIGGY_API_LINK2:
@@ -21,7 +20,5 @@ module.exports = {
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/",
   SWIGGY_NEW_OFFSET:
     "https://www.swiggy.com/api/seo/getListing?lat=10.054039908667727&lng=76.34344674532176",
+  PLACE_ID_API: "https://www.swiggy.com/dapi/misc/address-recommend?place_id=",
 };
-
-// lat: 11.2587531;
-// lng: 75.78041;
