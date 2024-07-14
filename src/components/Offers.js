@@ -1,8 +1,7 @@
-import UpdateRestaurantCard from "./updateRestaurantCard";
 import { useState, useEffect } from "react";
 
 const Offers = () => {
-  return <>{/* <UpdateRestaurantCard /> */}</>;
+  return <></>;
 };
 
 export default Offers;
