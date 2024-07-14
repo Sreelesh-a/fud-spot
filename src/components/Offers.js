@@ -2,11 +2,7 @@ import UpdateRestaurantCard from "./updateRestaurantCard";
 import { useState, useEffect } from "react";
 
 const Offers = () => {
-  return (
-    <>
-      <UpdateRestaurantCard />
-    </>
-  );
+  return <>{/* <UpdateRestaurantCard /> */}</>;
 };
 
 export default Offers;
