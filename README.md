@@ -9,11 +9,11 @@ FudSPot is a Swiggy UI clone built using React, Parcel, and JavaScript. This pro
 FudSPot is currently a work in progress. New features and improvements are being added regularly. Contributions and suggestions are welcome!
 
 ## Screenshots 1 
-![App Screenshot1](https://i.postimg.cc/Dz0Rkxkv/Screenshot-2024-07-15-at-6-49-05-PM.png)
+![App Screenshot1](https://i.ibb.co/KLMNf2Z/first.png)
 ## Screenshots 2
-![App Screenshot2](https://i.postimg.cc/63GSTTpF/Screenshot-2024-07-15-at-6-49-19-PM.png)
+![App Screenshot2](https://i.ibb.co/PN7tmhj/second.png)
 ## Screenshots 3
-![App Screenshot3](https://i.postimg.cc/8CY91LNh/Screenshot-2024-07-15-at-6-49-56-PM.png)
+![App Screenshot3](https://i.ibb.co/wYZpqjL/third.png)
 
 ## Run Locally
 
