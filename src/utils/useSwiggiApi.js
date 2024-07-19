@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { SWIGGY_API_LINK3 } from "./constants";
+import { SWIGGY_API_LINK } from "./constants";
 import axios from "axios";
 import LocationContext from "./LocationContext";
 import { SelectLocation } from "./LocationContext";
@@ -18,7 +18,7 @@ const useSwiggyApi = () => {
   // console.log(getLocation);
 
   const [swiggyApi, setSwiggyApi] = useState(null);
-  const url = `${SWIGGY_API_LINK3}${getLocation}`;
+  const url = `${SWIGGY_API_LINK}${getLocation}`;
 
   // useEffect(() => {
   //   setLocationSelect(location);

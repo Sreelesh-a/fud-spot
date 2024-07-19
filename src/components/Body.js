@@ -78,18 +78,18 @@ const Body = () => {
 
         <WhatsOnYourMind />
       </div>
-      <hr className="" />
+      <hr className="my-6" />
       <div className="my-9 ">
         <TopRestoChains />
       </div>
-      <hr className="" />
+      <hr className="my-6" />
 
       {/* <div className="my-9"><RestoWithOnlineFoodDelivery /> </div> */}
 
       <div className="my-9">
         <div className="flex items-center flex-wrap justify-between gap-y-4">
-          <div className="font-bold lg:text-2xl sm:text-lg">
-            Top Restaurant Chains in Kochi
+          <div className="font-bold lg:text-2xl sm:text-lg my-2">
+            Restaurants with online food delivery in Kochi
           </div>
           <div className="flex gap-x-6">
             {/* <div className="flex gap-x-2">
