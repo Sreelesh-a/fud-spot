@@ -23,7 +23,7 @@ AboutUs = lazy(() => {
 
 export const AppLayout = () => {
   const [selectArea, setSelectArea] = useState("Kochi");
-  const [displaySelectLocation, setDisplaySelectLocation] = useState(true);
+  const [displaySelectLocation, setDisplaySelectLocation] = useState(false);
 
   return (
     <>
