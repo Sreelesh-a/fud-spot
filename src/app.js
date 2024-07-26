@@ -7,6 +7,7 @@ import Error from "./components/Error";
 import RestMenu from "./components/RestMenu";
 
 import SearchClassComp from "./components/SearchClassComp";
+import Search from "./components/Search";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import MobMenu from "./components/MobMenu";
@@ -70,7 +71,7 @@ export const AppRouter = createBrowserRouter([
       },
       {
         path: "/search",
-        element: <SearchClassComp />,
+        element: <Search />,
       },
       {
         path: "/about-us",

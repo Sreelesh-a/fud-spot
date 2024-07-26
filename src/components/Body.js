@@ -46,7 +46,7 @@ const Body = () => {
   };
   const mgRoadFilter = () => {
     let filterList = ListOfRest.filter(
-      (res) => res?.info?.areaName >= "M G Road"
+      (res) => res?.info?.areaName == "M G Road"
     );
     setFilteredListOfResto(filterList);
   };
