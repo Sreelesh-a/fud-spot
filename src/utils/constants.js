@@ -21,4 +21,6 @@ module.exports = {
   SWIGGY_NEW_OFFSET:
     "https://www.swiggy.com/api/seo/getListing?lat=10.054039908667727&lng=76.34344674532176",
   PLACE_ID_API: "https://www.swiggy.com/dapi/misc/address-recommend?place_id=",
+  CYCLE_DELIVERY_ICON:
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_40,h_40/v1648635511/Delivery_fee_new_cjxumu",
 };

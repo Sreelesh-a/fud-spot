@@ -5,8 +5,8 @@ const ItemsUnderNestedCategories = ({ data }) => {
   return (
     <div>
       <div>
-        <div className="my-5" key="res?.card?.info?.id">
-          <div className=" flex justify-between items-center my-10">
+        <div className="">
+          <div className=" flex justify-between items-center my-5">
             <div className="w-8/12 space-y-2">
               <div></div>
               <div className=" flex font-semibold text-lg text-gray-600">
@@ -57,7 +57,7 @@ const ItemsUnderNestedCategories = ({ data }) => {
           </div>
         </div>
       </div>
-      <hr className="my-3" />
+      <hr className="my-8" />
     </div>
   );
 };

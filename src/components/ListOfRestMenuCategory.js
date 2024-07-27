@@ -4,7 +4,7 @@ import { useState } from "react";
 import ItemsUnderNestedCategories from "./ItemsUnderNestedCategories";
 
 const ListOfRestMenuCategory = ({ categories }) => {
-  //   console.log(categories);
+  // console.log(categories);
   return (
     <div className="">
       <div className=" ">
@@ -18,7 +18,7 @@ const ListOfRestMenuCategory = ({ categories }) => {
   );
 };
 
-const NestedCategories = ({ data }) => {
+export const NestedCategories = ({ data }) => {
   const [caretIcon, setCaretIcon] = useState("fa-solid fa-chevron-down");
   const [showSubCategoryList, setShowSubCategoryList] = useState(false);
 
