@@ -98,28 +98,24 @@ const TopRestoChains = () => {
           {...settings}
         >
           {ListOfRest?.map((rest) => (
-            <div className="">
-              <Link
-                key={rest.info.id}
-                style={{ textDecoration: "none", color: "inherit" }}
-                to={"/resto-menu/" + rest?.info?.id}
-              >
-                {rest?.info?.aggregatedDiscountInfoV3 ? (
-                  <div className="gap-x-9">
-                    <RestoCardItemOffer
-                      restData={rest}
-                      discountInfo={
-                        rest?.info?.aggregatedDiscountInfoV3 || null
-                      }
-                    />
-                  </div>
-                ) : (
-                  <div className="gap-x-1">
-                    <RestaurantCard restData={rest} discountInfo={null} />
-                  </div>
-                )}
-              </Link>
-            </div>
+            <Link
+              key={rest?.info?.id}
+              style={{ textDecoration: "none", color: "inherit" }}
+              to={"/resto-menu/" + rest?.info?.id}
+            >
+              {rest?.info?.aggregatedDiscountInfoV3 ? (
+                <div className="gap-x-9">
+                  <RestoCardItemOffer
+                    restData={rest}
+                    discountInfo={rest?.info?.aggregatedDiscountInfoV3 || null}
+                  />
+                </div>
+              ) : (
+                <div className="gap-x-1">
+                  <RestaurantCard restData={rest} discountInfo={null} />
+                </div>
+              )}
+            </Link>
           ))}
         </Slider>
       </div>
