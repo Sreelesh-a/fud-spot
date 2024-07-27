@@ -7,13 +7,16 @@ FudSPot is a Swiggy UI clone built using React, Parcel, and JavaScript. This pro
 🚧 Under Construction 🚧
 
 FudSPot is currently a work in progress. New features and improvements are being added regularly. Contributions and suggestions are welcome!
+Project Preview : https://fudspot.netlify.app
 
-## Screenshots 1 
-![App Screenshot1](https://i.ibb.co/KLMNf2Z/first.png)
-## Screenshots 2
-![App Screenshot2](https://i.ibb.co/PN7tmhj/second.png)
-## Screenshots 3
-![App Screenshot3](https://i.ibb.co/wYZpqjL/third.png)
+## Home Page 
+![App Screenshot1](https://i.ibb.co/51jpgzV/1stpic.png)
+## Restaurant Cards
+![App Screenshot2](https://i.ibb.co/YBV6PHp/2ndpic.png)
+## Search Page
+![App Screenshot3](https://i.ibb.co/5xrLSRd/3rd-pic.png)
+## Restaurant Menu Page
+![App Screenshot3](https://i.ibb.co/qMNpnwc/4th-pic.png)
 
 ## Run Locally
 
