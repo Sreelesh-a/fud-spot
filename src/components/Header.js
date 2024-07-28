@@ -26,8 +26,8 @@ const Header = () => {
   // };
 
   return (
-    <div className="flex  justify-between py-4  px-28 m-5 items-center shadow-sm  ">
-      <div className="flex items-center gap-4">
+    <div className="flex  justify-between py-4  px-28  items-center drop-shadow-[0_0rem_1rem_rgba(0,0,0,0.07)]  w-full fixed top-0 left-0 right-0 z-10 bg-white  ">
+      <div className="flex items-center gap-4 ">
         <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
           <img src={logoHeaderImg} className="w-10 "></img>
         </Link>

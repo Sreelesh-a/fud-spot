@@ -43,7 +43,7 @@ const WhatsOnYourMind = () => {
 
   return (
     <div className="">
-      <div className=" ">
+      <div className="">
         <div className=" flex justify-between">
           <div className="font-bold lg:text-2xl sm:text-sm">
             What's on your mind?
@@ -66,7 +66,7 @@ const WhatsOnYourMind = () => {
         >
           {swiggyInfo?.map((d) => (
             <div key={d?.id} className="">
-              <img className="" src={SWIGGY_CAROUSEL_API + d?.imageId} />
+              <img className="w-36" src={SWIGGY_CAROUSEL_API + d?.imageId} />
             </div>
           ))}
         </Slider>

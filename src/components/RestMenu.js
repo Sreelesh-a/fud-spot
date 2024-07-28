@@ -47,13 +47,13 @@ const RestMenu = () => {
     restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2];
   console.log(restInfo?.cards[2]?.card?.card?.info);
   return (
-    <div className="px-80">
+    <div className="px-80 mt-32">
       <div className="menu-main my-12">
         <div className="resto-menu-header">
           <div className="font-bold text-xl">{name}</div>
           <div className="flex items-center justify-center py-6">
             <div className=" relative border-black  bg-gradient-to-t from-gray-200 h-52 w-full   rounded-3xl ">
-              <div className="absolute border-gray-200 border-[.1rem]   bg-white w-[47rem] h-48    left-4 rounded-3xl ">
+              <div className="absolute border-gray-200 border-[.1rem]   bg-white w-[97%] h-[93%]    left-[1.5%] rounded-3xl ">
                 <div className="py-6 px-6 ">
                   <div className="resto-rating flex gap-2 font-bold items-center">
                     <Ratingicon />

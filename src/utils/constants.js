@@ -23,4 +23,10 @@ module.exports = {
   PLACE_ID_API: "https://www.swiggy.com/dapi/misc/address-recommend?place_id=",
   CYCLE_DELIVERY_ICON:
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_40,h_40/v1648635511/Delivery_fee_new_cjxumu",
+  PLAYSTORE_IMG:
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/play_store.png",
+  APPSTORE_IMG:
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/app_store.png",
+  LINKEDIN_IMG:
+    "https://freepnglogo.com/images/all_img/1715491395linkedin-logo-png.png",
 };

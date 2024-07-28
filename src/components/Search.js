@@ -28,7 +28,7 @@ const Search = () => {
   console.log(listofResto);
 
   return (
-    <div className="px-80 py-9 space-y-6">
+    <div className="px-80 py-9 space-y-6 mt-28">
       <div className=" w-full  h-12 border border-gray-400 rounded-sm flex items-center justify-between ">
         <input
           className="w-11/12 h-full text-gray-400 p-4"

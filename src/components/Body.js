@@ -69,7 +69,7 @@ const Body = () => {
   }
 
   return (
-    <div className="px-10 sm:px-40 py-4 ml-6">
+    <div className="px-10 sm:px-40 py-4 ml-6 mt-24 bg-[#FFFFFF]">
       {/* <MobCarousel /> */}
       <div className="">
         {/* <div className="font-bold lg:text-2xl sm:text-sm">

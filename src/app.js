@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Offers from "./components/Offers";
 import Error from "./components/Error";
+import AppDownloadBanner from "./components/AppDownloadBanner";
 
 import RestMenu from "./components/RestMenu";
 
@@ -17,6 +18,7 @@ import ShimmerCard from "./components/ShimmerCard";
 import { useState } from "react";
 import { SelectLocationContext } from "./utils/LocationContext";
 import SelectLocation from "./components/SelectLocation";
+import Footer from "./components/Footer";
 
 AboutUs = lazy(() => {
   import("./components/AboutUs");
@@ -59,7 +61,13 @@ export const AppRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: (
+          <>
+            <Body />
+            <AppDownloadBanner />
+            <Footer />
+          </>
+        ),
       },
       {
         path: "/offers",
