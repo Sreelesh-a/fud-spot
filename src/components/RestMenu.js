@@ -4,13 +4,14 @@ import { Ratingicon } from "./Ratingicon";
 import useRestoMenu from "../utils/useRestoMenu";
 import RestoMenuCategory from "./RestoMenuCategory";
 import { CYCLE_DELIVERY_ICON } from "../utils/constants";
+import MenuPageShimmerUI from "./MenuPageShimmerUI";
 
 const RestMenu = () => {
   const { resid } = useParams();
 
   const restInfo = useRestoMenu(resid);
 
-  if (restInfo === null) return <ShimmerCard />;
+  if (restInfo === null) return <MenuPageShimmerUI />;
 
   // const { itemCardss } =
   //   restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card

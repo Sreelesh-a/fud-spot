@@ -5,7 +5,7 @@ import { LINKEDIN_IMG } from "../utils/constants";
 
 const Footer = () => {
   const swiggyData = useSwiggyApi();
-  console.log(swiggyData);
+  // console.log(swiggyData);
 
   return (
     <div>

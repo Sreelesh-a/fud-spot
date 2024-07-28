@@ -19,6 +19,7 @@ import { useState } from "react";
 import { SelectLocationContext } from "./utils/LocationContext";
 import SelectLocation from "./components/SelectLocation";
 import Footer from "./components/Footer";
+import WhatsOUMCOllection from "./components/WhatsOUMCOllection";
 
 AboutUs = lazy(() => {
   import("./components/AboutUs");
@@ -88,6 +89,10 @@ export const AppRouter = createBrowserRouter([
             <AboutUs />
           </Suspense>
         ),
+      },
+      {
+        path: "/collections/:collectionId",
+        element: <WhatsOUMCOllection />,
       },
     ],
   },

@@ -6,9 +6,13 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import { ShimmerWhatsOnYourMind } from "./ShimmerCard";
+import { Link } from "react-router-dom";
+import WhatsOUMCOllection from "./WhatsOUMCOllection";
+import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
 
 const WhatsOnYourMind = () => {
   const [swiggyInfo, setSwiggyInfo] = useState([]);
+  const [collectionId, setCollectionId] = useState(null);
   let swiggyApi = useSwiggyApi();
 
   useEffect(() => {
@@ -19,6 +23,7 @@ const WhatsOnYourMind = () => {
       );
     }
   }, [swiggyApi]);
+  // console.log(swiggyInfo);
 
   const ShimmerUi = () => {
     if (swiggyInfo.length == 0) {
@@ -40,6 +45,7 @@ const WhatsOnYourMind = () => {
     slidesToShow: 6,
     slidesToScroll: 3,
   };
+  const regex = /collections\/(\d+)\?/i;
 
   return (
     <div className="">
@@ -66,7 +72,9 @@ const WhatsOnYourMind = () => {
         >
           {swiggyInfo?.map((d) => (
             <div key={d?.id} className="">
-              <img className="w-36" src={SWIGGY_CAROUSEL_API + d?.imageId} />
+              <Link to={"/collections/" + regex.exec(d?.action?.link)[1]}>
+                <img className="w-36" src={SWIGGY_CAROUSEL_API + d?.imageId} />
+              </Link>
             </div>
           ))}
         </Slider>

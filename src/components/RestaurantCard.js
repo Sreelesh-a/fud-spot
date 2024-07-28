@@ -2,8 +2,10 @@ import { RESTO_IMG_LINK } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { Ratingicon } from "./RestMenu";
 import { Ratingicon } from "./Ratingicon";
+
 const RestaurantCard = (res) => {
   const { discountCheck } = res;
+  console.log(res);
 
   const { restData } = res;
   const { name, cloudinaryImageId, avgRating, sla, areaName } = restData?.info;
@@ -50,7 +52,7 @@ export const WithItemLabel = (RestaurantCard) => {
       <div className="relative ">
         <RestaurantCard restData={restData} discountCheck={true} />
         {discountInfo && (
-          <div className="absolute bottom-20 left-2  text-white px-2  py-1 text-sm font-semibold">
+          <div className="absolute bottom-20 left-2  text-white px-2 font-[oswald] py-1 text-xl font-bold">
             {discountInfo.header} {discountInfo.subHeader}
           </div>
         )}

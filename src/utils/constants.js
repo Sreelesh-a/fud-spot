@@ -29,4 +29,8 @@ module.exports = {
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/app_store.png",
   LINKEDIN_IMG:
     "https://freepnglogo.com/images/all_img/1715491395linkedin-logo-png.png",
+  SWIGGY_WHATSONYOURMIND_API2:
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.9312328&lng=76.26730409999999&tags=layout_FestiveEvent4&sortBy=&filters=&type=rcv2&offset=0&page_type=null&collection=",
+  SWIGGY_WHATSONYOURMIND_API:
+    "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D9.9312328%26lng%3D76.26730409999999%26tags%3Dlayout_FestiveEvent4%26sortBy%3D%26filters%3D%26type%3Drcv2%26offset%3D0%26page_type%3Dnull%26collection%3D",
 };

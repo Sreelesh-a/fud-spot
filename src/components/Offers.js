@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
+import MenuPageShimmerUI from "./MenuPageShimmerUI";
+import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
 
 const Offers = () => {
-  return <></>;
+  const whatsOnUrMindData = useWhatsOnUrMindAPI();
+  return (
+    <>
+      <MenuPageShimmerUI />
+    </>
+  );
 };
 
 export default Offers;

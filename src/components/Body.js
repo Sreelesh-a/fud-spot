@@ -15,6 +15,7 @@ import RestoWithOnlineFoodDelivery from "./RestoWithOnlineFoodDelivery";
 import { list } from "postcss";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -24,6 +25,8 @@ const Body = () => {
   const restaurantData =
     swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
       ?.restaurants;
+
+  // console.log(swiggyApidata);
 
   useEffect(() => {
     if (restaurantData) {
@@ -67,6 +70,7 @@ const Body = () => {
       transition: Bounce,
     });
   }
+  // console.log(FilteredListOfResto);
 
   return (
     <div className="px-10 sm:px-40 py-4 ml-6 mt-24 bg-[#FFFFFF]">
