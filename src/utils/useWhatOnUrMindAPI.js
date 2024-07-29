@@ -3,9 +3,9 @@ import useSwiggyApi from "./useSwiggiApi";
 import { SWIGGY_WHATSONYOURMIND_API } from "./constants";
 
 const useWhatsOnUrMindAPI = (props) => {
-  // console.log(props);
   const [apiData, setApiData] = useState([]);
   // console.log(`${SWIGGY_WHATSONYOURMIND_API}${props}`);
+  console.log(apiData);
 
   useEffect(() => {
     fetchdata();

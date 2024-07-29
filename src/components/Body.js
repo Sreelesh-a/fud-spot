@@ -1,4 +1,4 @@
-const restDatas = require("../utils/mockData");
+// const restDatas = require("../utils/mockData");
 // import { restDatas } from "../utils/mockData";
 import RestaurantCard, { WithItemLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";

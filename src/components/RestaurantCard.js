@@ -2,17 +2,23 @@ import { RESTO_IMG_LINK } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { Ratingicon } from "./RestMenu";
 import { Ratingicon } from "./Ratingicon";
+import ShimmerCard from "./ShimmerCard";
 
 const RestaurantCard = (res) => {
   const { discountCheck } = res;
-  console.log(res);
 
   const { restData } = res;
   const { name, cloudinaryImageId, avgRating, sla, areaName } = restData?.info;
+  // const ShimmerUi = () => {
+  //   if (!res.length === 0) {
+  //     return <ShimmerCard />;
+  //   }
+  // };
 
   return (
     <div className="justify-between mt-9 ">
       <div className="space-y-2 grid grid-cols-2 items-center sm:grid-cols-1  ">
+        {/* <ShimmerUi /> */}
         <div className="relative rounded-xl overflow-hidden w-10 h-28 sm:w-60 sm:h-40  ">
           <img
             src={RESTO_IMG_LINK + cloudinaryImageId}

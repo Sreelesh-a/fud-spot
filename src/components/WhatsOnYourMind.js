@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import { ShimmerWhatsOnYourMind } from "./ShimmerCard";
 import { Link } from "react-router-dom";
-import WhatsOUMCOllection from "./WhatsOUMCOllection";
+import WhatsOUMCOllection from "./WhatsOUMCollection";
 import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
 
 const WhatsOnYourMind = () => {
@@ -72,7 +72,13 @@ const WhatsOnYourMind = () => {
         >
           {swiggyInfo?.map((d) => (
             <div key={d?.id} className="">
-              <Link to={"/collections/" + regex.exec(d?.action?.link)[1]}>
+              <Link
+                to={
+                  "/collections/" +
+                  regex.exec(d?.action?.link)[1] +
+                  d?.description
+                }
+              >
                 <img className="w-36" src={SWIGGY_CAROUSEL_API + d?.imageId} />
               </Link>
             </div>
