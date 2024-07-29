@@ -1,6 +1,6 @@
 const MenuPageShimmerUI = () => {
   return (
-    <div className="px-80 mt-32">
+    <div className="px-6 sm:px-80 mt-32">
       <div className="my-12">
         <div className="flex items-center justify-center py-6">
           <div className=" relative border-black  bg-gradient-to-t from-gray-200 h-52 w-full   rounded-3xl ">

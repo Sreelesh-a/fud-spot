@@ -10,32 +10,8 @@ import { Link } from "react-router-dom";
 import ShimmerCard from "./ShimmerCard";
 import useSwiggiApi from "../utils/useSwiggiApi";
 
-const TopRestoChains = () => {
+const TopRestoChainsMobile = () => {
   const [ListOfRest, setListOfRest] = useState([]);
-  // const swiggyApi = useSwiggyApi();
-  // let swiggyInfo = swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info;
-  // const RestoCardItemOffer = WithItemLabel(RestaurantCard);
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch(SWIGGY_API_LINK3);
-  //     if (!response.ok) {
-  //       throw new Error(`HTTP error! status: ${response.status}`);
-  //     }
-  //     const swiggyJson = await response.json();
-
-  //     setListOfRest(
-  //       swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-  //         ?.restaurants || []
-  //     );
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // };
 
   const [FilteredListOfResto, setFilteredListOfResto] = useState([]);
 
@@ -68,9 +44,9 @@ const TopRestoChains = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1000,
-    slidesToShow: 4,
-    slidesToScroll: 2,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
 
   return (
@@ -123,4 +99,4 @@ const TopRestoChains = () => {
   );
 };
 
-export default TopRestoChains;
+export default TopRestoChainsMobile;

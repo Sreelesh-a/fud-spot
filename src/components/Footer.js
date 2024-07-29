@@ -9,8 +9,8 @@ const Footer = () => {
 
   return (
     <div>
-      <div className="w-full h-auto bg-[#02060C] text-white">
-        <div className="px-48 py-9">
+      <div className="hidden lg:block  w-full h-auto bg-[#02060C] text-white">
+        <div className="px-4 sm:px-48 py-9">
           <div className="flex items-start justify-between">
             <div className="space-y-4">
               <div className=" flex items-center gap-x-5">
@@ -32,7 +32,7 @@ const Footer = () => {
                       <div className="text-md text-gray-200">
                         Let's connect!
                       </div>
-                      <div className="w-20">
+                      <div className="w-11 sm:w-20">
                         <img src={LINKEDIN_IMG} />
                       </div>
                     </div>
@@ -41,7 +41,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-40">
+            <div className="flex items-start gap-1 sm:gap-40">
               <div className="space-y-3">
                 <span className="font-bold">Company</span>
                 <ul className="text-gray-400 space-y-3">

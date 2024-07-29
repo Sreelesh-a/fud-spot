@@ -16,8 +16,10 @@ const SearchResult = (props) => {
           />
         </div>
         <div>
-          <div className="font-semibold">{name}</div>
-          <div className="text-gray-500">{areaName}</div>
+          <div className="font-semibold truncate... w-36 sm:w-full">{name}</div>
+          <div className="text-gray-500 truncate... w-20 sm:w-full">
+            {areaName}
+          </div>
         </div>
       </div>
     </div>

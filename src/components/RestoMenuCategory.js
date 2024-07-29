@@ -14,7 +14,7 @@ const RestoMenuCategory = ({ restData, recommend }) => {
   // console.log(restData);
   const { title } = restData?.card?.card;
   return (
-    <div className="py-2  px-5">
+    <div className="py-2 px-3 sm:px-5">
       <div className="flex justify-between  items-center ">
         <div className="font-bold py-4 text-lg">{title}</div>
         {recommend?.itemCards && (

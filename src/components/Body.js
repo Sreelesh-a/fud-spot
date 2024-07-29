@@ -16,6 +16,7 @@ import { list } from "postcss";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
+import TopRestoChainsMobile from "./TopRestoChainsMobile";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -73,7 +74,7 @@ const Body = () => {
   // console.log(FilteredListOfResto);
 
   return (
-    <div className="px-10 sm:px-40 py-4 ml-6 mt-24 bg-[#FFFFFF]">
+    <div className="px-4 sm:px-40 py-4 ml-2 sm:w-full  sm:ml-6 mt-24 bg-[#FFFFFF]">
       {/* <MobCarousel /> */}
       <div className="">
         {/* <div className="font-bold lg:text-2xl sm:text-sm">
@@ -83,8 +84,11 @@ const Body = () => {
         <WhatsOnYourMind />
       </div>
       <hr className="my-6" />
-      <div className="my-9 ">
+      <div className="my-9 hidden sm:block">
         <TopRestoChains />
+      </div>
+      <div className=" sm:hidden ">
+        <TopRestoChainsMobile />
       </div>
       <hr className="my-6" />
 
@@ -119,49 +123,51 @@ const Body = () => {
                 Search
               </button>
             </div> */}
-            <div className="button-filter flex gap-x-3  text-gray-500">
-              <button
-                className=" border border-gray-400 px-4 rounded-xl"
-                onClick={topRatedResto}
-              >
-                Rating 4.2+
-              </button>
-              <button
-                className="border border-gray-400 px-4 rounded-xl"
-                onClick={mgRoadFilter}
-              >
-                Near M G Road
-              </button>
-              <button
-                className="border border-gray-400 px-4 rounded-xl"
-                onClick={""}
-              >
-                Pure Veg
-              </button>
-              <button
-                className="border border-gray-400 px-4 rounded-xl"
-                onClick={""}
-              >
-                Fast Delivery
-              </button>
-              <button
-                className="border border-gray-400 px-4 rounded-xl"
-                onClick={""}
-              >
-                Offers
-              </button>
-              <button
-                className="border border-gray-400 px-4 rounded-xl"
-                onClick={""}
-              >
-                ₹300-600
-              </button>
-              <button
-                className="border border-gray-400 px-4 rounded-xl"
-                onClick={""}
-              >
-                Less than ₹300
-              </button>
+            <div className="relative w-[21rem] sm:w-full overflow-x-auto md:overflow-x-visible   text-gray-500">
+              <div className="flex space-x-4 pb-4 sm:flex-wrap sm:space-x-0 md:gap-3">
+                <button
+                  className=" flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  onClick={topRatedResto}
+                >
+                  Rating 4.2+
+                </button>
+                <button
+                  className="flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  onClick={mgRoadFilter}
+                >
+                  Near M G Road
+                </button>
+                <button
+                  className=" flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  onClick={""}
+                >
+                  Pure Veg
+                </button>
+                <button
+                  className=" flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  onClick={""}
+                >
+                  Fast Delivery
+                </button>
+                <button
+                  className=" flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  onClick={""}
+                >
+                  Offers
+                </button>
+                <button
+                  className="flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  onClick={""}
+                >
+                  ₹300-600
+                </button>
+                <button
+                  className="flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  onClick={""}
+                >
+                  Less than ₹300
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -169,7 +175,7 @@ const Body = () => {
         <div className="rest-container">
           <ShimmerUi />
         </div>
-        <div className="">
+        <div className="sm:mb-0 mb-20">
           <div className="  justify-between  grid grid-cols-1 sm:grid-cols-4  gap-x-4 cursor-pointer ">
             {FilteredListOfResto &&
               FilteredListOfResto?.map((rest) => (

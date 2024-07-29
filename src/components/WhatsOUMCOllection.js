@@ -42,12 +42,12 @@ const WhatsOUMCOllection = () => {
 
   return (
     <div>
-      <div className="my-32 px-44">
+      <div className="my-32 px-7 sm:px-44">
         <div>
           <div className="font-bold text-3xl font-[montserrat]">
             {collectionId.slice(5)}
           </div>
-          <span className="text-gray-500 font-[montserrat]">
+          <span className="text-gray-500 font-[montserrat] text-[.7rem] sm:text-md">
             Satisfy your cravings for South Indian food with these{" "}
             {collectionId.slice(5)}
           </span>

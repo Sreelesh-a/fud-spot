@@ -13,6 +13,7 @@ import {
   ProfileIcon,
   CartIcon,
 } from "../utils/icons/Arrow";
+import MobMenu from "./MobMenu";
 
 const Header = () => {
   const { setSelectArea, location } = useContext(SelectLocationContext);
@@ -26,81 +27,86 @@ const Header = () => {
   // };
 
   return (
-    <div className="flex  justify-between py-4  px-28  items-center drop-shadow-[0_0rem_1rem_rgba(0,0,0,0.07)]  w-full fixed top-0 left-0 right-0 z-10 bg-white  ">
-      <div className="flex items-center gap-4 ">
-        <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
-          <img src={logoHeaderImg} className="w-10 "></img>
-        </Link>
+    <div>
+      <div className="flex  justify-between py-4  px-10 sm:px-28  items-center drop-shadow-[0_0rem_1rem_rgba(0,0,0,0.07)]  w-full fixed top-0 left-0 right-0 z-10 bg-white  ">
+        <div className="flex items-center gap-4 ">
+          <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
+            <img src={logoHeaderImg} className="w-10 "></img>
+          </Link>
 
-        <div className="flex items-center gap-x-2 cursor-pointer">
-          <div
-            className="font-semibold underline underline-offset-4"
-            onClick={() => {
-              setDisplaySelectLocation(true);
-            }}
-          >
-            {location}
+          <div className="flex items-center gap-x-2 cursor-pointer">
+            <div
+              className="font-semibold underline underline-offset-4"
+              onClick={() => {
+                setDisplaySelectLocation(true);
+              }}
+            >
+              {location}
+            </div>
+            <span className="text-gray-400 text-sm">Kerala, India...</span>
+
+            <i class="fa-solid fa-chevron-down text-orange-500"></i>
           </div>
-          <span className="text-gray-400 text-sm">Kerala, India...</span>
-
-          <i class="fa-solid fa-chevron-down text-orange-500"></i>
         </div>
-      </div>
-      {/* <div className=" ">
+        {/* <div className=" ">
         <i class="fa-solid fa-circle-user "></i>
       </div> */}
-      <div className="navItems hide-on-mob hidden sm:block">
-        <ul className="flex gap-6 items-center">
-          <li>
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              to="/about-us"
+        <div className="navItems hide-on-mob hidden sm:block">
+          <ul className="flex gap-6 items-center">
+            <li>
+              <Link
+                style={{ textDecoration: "none", color: "inherit" }}
+                to="/about-us"
+                className="flex items-center gap-x-2"
+              >
+                <AboutUsIcon />
+                FudSpot Corporate
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                style={{ textDecoration: "none", color: "inherit" }}
+                to="/search"
+                className="flex items-center gap-x-2"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i> Search
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ textDecoration: "none", color: "inherit" }}
+                to="/offers"
+                className="flex items-center gap-x-2"
+              >
+                <Offer />
+                Offers
+              </Link>
+            </li>
+            <li className="flex items-center gap-x-2">
+              <HelpIcon />
+              Help
+            </li>
+            <li
               className="flex items-center gap-x-2"
+              onClick={() => {
+                loginAuth === "Sign in"
+                  ? setLoginAuth("Sign out")
+                  : setLoginAuth("Sign in");
+              }}
             >
-              <AboutUsIcon />
-              FudSpot Corporate
-            </Link>
-          </li>
-          <li>
-            {" "}
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              to="/search"
-              className="flex items-center gap-x-2"
-            >
-              <i class="fa-solid fa-magnifying-glass"></i> Search
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              to="/offers"
-              className="flex items-center gap-x-2"
-            >
-              <Offer />
-              Offers
-            </Link>
-          </li>
-          <li className="flex items-center gap-x-2">
-            <HelpIcon />
-            Help
-          </li>
-          <li
-            className="flex items-center gap-x-2"
-            onClick={() => {
-              loginAuth === "Sign in"
-                ? setLoginAuth("Sign out")
-                : setLoginAuth("Sign in");
-            }}
-          >
-            <ProfileIcon />
-            {loginAuth}
-          </li>
-          <li className="flex items-center gap-x-2">
-            <CartIcon />
-            Cart
-          </li>
-        </ul>
+              <ProfileIcon />
+              {loginAuth}
+            </li>
+            <li className="flex items-center gap-x-2">
+              <CartIcon />
+              Cart
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="sm:hidden">
+        <MobMenu />
       </div>
     </div>
   );

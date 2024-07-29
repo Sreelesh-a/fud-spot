@@ -48,15 +48,15 @@ const RestMenu = () => {
     restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2];
   console.log(restInfo?.cards[2]?.card?.card?.info);
   return (
-    <div className="px-80 mt-32">
+    <div className="px-4 sm:px-80 mt-28 sm:mt-32">
       <div className="menu-main my-12">
         <div className="resto-menu-header">
-          <div className="font-bold text-xl">{name}</div>
+          <div className="font-bold sm:ml-0 ml-4 text-xl">{name}</div>
           <div className="flex items-center justify-center py-6">
-            <div className=" relative border-black  bg-gradient-to-t from-gray-200 h-52 w-full   rounded-3xl ">
+            <div className=" relative border-black  bg-gradient-to-t from-gray-200 h-52 sm:h-52 w-full   rounded-3xl ">
               <div className="absolute border-gray-200 border-[.1rem]   bg-white w-[97%] h-[93%]    left-[1.5%] rounded-3xl ">
                 <div className="py-6 px-6 ">
-                  <div className="resto-rating flex gap-2 font-bold items-center">
+                  <div className="resto-rating flex text-sm sm:tex-xl sm:gap-2 font-bold items-center">
                     <Ratingicon />
                     {avgRating} ({totalRatingsString})
                     <span className="text-gray-400 px-1">•</span>
@@ -74,7 +74,7 @@ const RestMenu = () => {
                       <div className="font-semibold text-sm space-y-2">
                         <div className="flex gap-x-3">
                           Outlet{" "}
-                          <span className="text-gray-500 font-normal">
+                          <span className="text-gray-500 font-normal truncate w-52 sm:w-full">
                             {areaName}
                           </span>
                         </div>

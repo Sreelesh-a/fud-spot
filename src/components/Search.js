@@ -28,7 +28,7 @@ const Search = () => {
   console.log(listofResto);
 
   return (
-    <div className="px-80 py-9 space-y-6 mt-28">
+    <div className=" px-7 sm:px-80 sm:mb-0 mb-32 sm:py-9 space-y-6 mt-28">
       <div className=" w-full  h-12 border border-gray-400 rounded-sm flex items-center justify-between ">
         <input
           className="w-11/12 h-full text-gray-400 p-4"
@@ -47,7 +47,7 @@ const Search = () => {
         ></input>
         <i className="fa-solid fa-magnifying-glass text-gray-500 p-4"></i>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-4 sm:mb-0 mb-20">
         {searchingResult.length == 0 ? (
           <WhatsOnYourMind />
         ) : (

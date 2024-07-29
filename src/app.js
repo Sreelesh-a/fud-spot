@@ -46,6 +46,7 @@ export const AppLayout = () => {
           </div>
 
           <Header />
+
           {/* <MobMenu /> */}
           <Outlet />
         </div>

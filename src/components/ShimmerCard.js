@@ -48,13 +48,13 @@ const ShimmerCard = () => {
 export const ShimmerWhatsOnYourMind = () => {
   return (
     <div className="">
-      <div className="grid grid-cols-6 px-9 mt-8">
-        <div className="bg-gray-300 w-28 h-28 rounded-full"></div>
-        <div className="bg-gray-300 w-28 h-28 rounded-full"></div>
-        <div className="bg-gray-300 w-28 h-28 rounded-full"></div>
-        <div className="bg-gray-300  w-28 h-28 rounded-full"></div>
-        <div className="bg-gray-300 w-28 h-28 rounded-full"></div>
-        <div className="bg-gray-300 w-28 h-28 rounded-full"></div>
+      <div className="grid grid-cols-6 px-1 sm:px-9 mt-5 justify-between sm:mt-8">
+        <div className="bg-gray-300 size-11  sm:size-28 rounded-full"></div>
+        <div className="bg-gray-300 size-11 sm:size-28 rounded-full"></div>
+        <div className="bg-gray-300 size-11 sm:size-28 rounded-full"></div>
+        <div className="bg-gray-300 size-11 sm:size-28 rounded-full"></div>
+        <div className="bg-gray-300 size-11 sm:size-28 rounded-full"></div>
+        <div className="bg-gray-300 size-11 sm:size-28 rounded-full"></div>
       </div>
     </div>
   );
