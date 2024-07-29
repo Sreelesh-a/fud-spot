@@ -19,7 +19,7 @@ import { useState } from "react";
 import { SelectLocationContext } from "./utils/LocationContext";
 import SelectLocation from "./components/SelectLocation";
 import Footer from "./components/Footer";
-import WhatsOUMCollection from "./components/WhatsOUMCollection";
+import WhatsOUMCOllection from "./components/WhatsOUMCOllection.js";
 
 AboutUs = lazy(() => {
   import("./components/AboutUs");
@@ -92,7 +92,7 @@ export const AppRouter = createBrowserRouter([
       },
       {
         path: "/collections/:collectionId",
-        element: <WhatsOUMCollection />,
+        element: <WhatsOUMCOllection />,
       },
     ],
   },

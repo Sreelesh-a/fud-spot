@@ -6,7 +6,7 @@ import { WithItemLabel } from "./RestaurantCard";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerCard from "./ShimmerCard";
 
-const WhatsOUMCollection = () => {
+const WhatsOUMCOllection = () => {
   const { collectionId } = useParams();
   // console.log(collectionId.slice(5));
   const [itemCards, setItemCards] = useState([]);
@@ -86,4 +86,4 @@ const WhatsOUMCollection = () => {
   );
 };
 
-export default WhatsOUMCollection;
+export default WhatsOUMCOllection;
