@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import { ShimmerWhatsOnYourMind } from "./ShimmerCard";
 import { Link } from "react-router-dom";
-import WhatsOUMCOllection from "./WhatsOUMCollection";
+// import WhatsOUMCOllection from "./WhatsOUMCollection";
 import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
 
 const WhatsOnYourMind = () => {
