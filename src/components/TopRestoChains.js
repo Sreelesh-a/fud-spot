@@ -41,7 +41,7 @@ const TopRestoChains = () => {
 
   const swiggyApidata = useSwiggiApi();
   const restaurantData =
-    swiggyApidata?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+    swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
       ?.restaurants;
 
   useEffect(() => {
