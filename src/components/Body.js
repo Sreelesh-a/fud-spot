@@ -27,6 +27,7 @@ const Body = () => {
     swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
       ?.restaurants;
 
+  // console.log(FilteredListOfResto);
   // console.log(swiggyApidata);
 
   useEffect(() => {
@@ -81,9 +82,9 @@ const Body = () => {
           What's on your mind?
         </div> */}
 
- <WhatsOnYourMind />
+        <WhatsOnYourMind />
       </div>
-<hr className="my-6" />
+      <hr className="my-6" />
       <div className="my-9 hidden sm:block">
         <TopRestoChains />
       </div>

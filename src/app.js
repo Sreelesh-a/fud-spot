@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Offers from "./components/Offers";
 import Error from "./components/Error";
 import AppDownloadBanner from "./components/AppDownloadBanner";
-
+import { SwiggyProvider } from "./utils/swiggyContext.js";
 import RestMenu from "./components/RestMenu";
 
 import SearchClassComp from "./components/SearchClassComp";
@@ -34,22 +34,24 @@ export const AppLayout = () => {
       <SelectLocationContext.Provider
         value={{ location: selectArea, setDisplaySelectLocation }}
       >
-        <div className="AppLayout relative">
-          <div className="">
-            {displaySelectLocation == true && (
-              <SelectLocation
-                displaySelectLocation={displaySelectLocation}
-                setDisplaySelectLocation={setDisplaySelectLocation}
-                setSelectArea={setSelectArea}
-              />
-            )}
+        <SwiggyProvider>
+          <div className="AppLayout relative">
+            <div className="">
+              {displaySelectLocation == true && (
+                <SelectLocation
+                  displaySelectLocation={displaySelectLocation}
+                  setDisplaySelectLocation={setDisplaySelectLocation}
+                  setSelectArea={setSelectArea}
+                />
+              )}
+            </div>
+
+            <Header />
+
+            {/* <MobMenu /> */}
+            <Outlet />
           </div>
-
-          <Header />
-
-          {/* <MobMenu /> */}
-          <Outlet />
-        </div>
+        </SwiggyProvider>
       </SelectLocationContext.Provider>
     </>
   );
