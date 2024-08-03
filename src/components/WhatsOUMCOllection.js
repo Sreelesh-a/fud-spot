@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { WithItemLabel } from "./RestaurantCard";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerCard from "./ShimmerCard";
+import { title } from "process";
 
 const WhatsOUMCOllection = () => {
   const { collectionId } = useParams();
@@ -32,8 +33,17 @@ const WhatsOUMCOllection = () => {
   //   if (!apiData.length == 0) {
   //     return <ShimmerCard />;
   //   }
+  let collectionTitle = null;
+  let itemID = null;
+  const regex = /^(\d+)([a-zA-Z].+)?/;
+  const matchRegex = regex.exec(collectionId);
+  if (matchRegex) {
+    collectionTitle = matchRegex[2];
+    itemID = matchRegex[1];
+  }
+  console.log(matchRegex);
+  console.log(collectionId);
 
-  console.log(apiData);
   const ShimmerUi = () => {
     if (!filteredList) {
       return <ShimmerCard />;
@@ -45,11 +55,11 @@ const WhatsOUMCOllection = () => {
       <div className="my-32 px-7 sm:px-44">
         <div>
           <div className="font-bold text-3xl font-[montserrat]">
-            {collectionId.slice(5)}
+            {collectionTitle}
           </div>
           <span className="text-gray-500 font-[montserrat] text-[.7rem] sm:text-md">
             Satisfy your cravings for South Indian food with these{" "}
-            {collectionId.slice(5)}
+            {collectionTitle}
           </span>
         </div>
 
