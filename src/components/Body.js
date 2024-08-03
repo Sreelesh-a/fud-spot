@@ -18,7 +18,6 @@ import "react-toastify/dist/ReactToastify.css";
 import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
 import TopRestoChainsMobile from "./TopRestoChainsMobile";
 import WhatsOnYourMindMobile from "./whatsOnYourMindMobile";
-import WhatsOYMindMobile from "./WhatsOYMindMobile";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
