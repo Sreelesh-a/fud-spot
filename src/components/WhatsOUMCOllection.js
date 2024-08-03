@@ -41,8 +41,8 @@ const WhatsOUMCOllection = () => {
     collectionTitle = matchRegex[2];
     itemID = matchRegex[1];
   }
-  console.log(matchRegex);
-  console.log(collectionId);
+  // console.log(matchRegex);
+  // console.log(collectionId);
 
   const ShimmerUi = () => {
     if (!filteredList) {

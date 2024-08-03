@@ -17,6 +17,8 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
 import TopRestoChainsMobile from "./TopRestoChainsMobile";
+import WhatsOnYourMindMobile from "./whatsOnYourMindMobile";
+import WhatsOYMindMobile from "./WhatsOYMindMobile";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -77,12 +79,15 @@ const Body = () => {
   return (
     <div className="px-4 sm:px-40 py-4 ml-2 sm:w-full  sm:ml-6 mt-24 bg-[#FFFFFF]">
       {/* <MobCarousel /> */}
-      <div className="">
+      <div className="hidden sm:block">
         {/* <div className="font-bold lg:text-2xl sm:text-sm">
           What's on your mind?
         </div> */}
 
         <WhatsOnYourMind />
+      </div>
+      <div className="sm:hidden">
+        <WhatsOYMindMobile />
       </div>
       <hr className="my-6" />
       <div className="my-9 hidden sm:block">
@@ -101,29 +106,6 @@ const Body = () => {
             Restaurants with online food delivery in Kochi
           </div>
           <div className="flex gap-x-6">
-            {/* <div className="flex gap-x-2">
-              <input
-                type="text"
-                className="border border-gray-300 "
-                value={searchText}
-                onChange={(e) => {
-                  setSearchText(e.target.value);
-                }}
-              ></input>
-              <button
-                className="bg-orange-600 px-3 text-white rounded-md"
-                onClick={() => {
-                  const filterRest = ListOfRest.filter((res) =>
-                    res?.info?.name
-                      .toLowerCase()
-                      .includes(searchText.toLowerCase())
-                  );
-                  setFilteredListOfRest(filterRest);
-                }}
-              >
-                Search
-              </button>
-            </div> */}
             <div className="relative w-[21rem] sm:w-full overflow-x-auto md:overflow-x-visible   text-gray-500">
               <div className="flex space-x-4 pb-4 sm:flex-wrap sm:space-x-0 md:gap-3">
                 <button

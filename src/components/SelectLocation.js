@@ -5,12 +5,12 @@ const SelectLocation = (props) => {
     props;
   //   console.log(displaySelectLocation);
   return (
-    <div className="fixed flex items-center min-h-screen  z-50  w-6/12  h-auto  ml-80">
+    <div className="fixed flex items-center min-h-4 sm:min-h-screen  z-50 ml-6  sm:w-6/12  h-auto  sm:ml-80">
       {displaySelectLocation == true && (
         <>
-          <div className="bg-slate-100 w-full  rounded-3xl shadow-md  ">
+          <div className="bg-white w-full  rounded-3xl shadow-md  ">
             <div className="p-11">
-              <div className="font-bold text-xl py-3 flex justify-between">
+              <div className="font-bold text-lg gap-8 sm:gap-0 sm:text-xl py-3 flex justify-between">
                 <div>Choose Your Location</div>
                 <div>
                   <i

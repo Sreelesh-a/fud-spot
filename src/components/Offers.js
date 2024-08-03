@@ -2,12 +2,17 @@ import { useState, useEffect } from "react";
 import MenuPageShimmerUI from "./MenuPageShimmerUI";
 import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
 import ShimmerCard from "./ShimmerCard";
+import WhatsOnYourMindMobile from "./whatsOnYourMindMobile";
+import WhatsOYMindMobile from "./WhatsOYMindMobile";
 
 const Offers = () => {
   const whatsOnUrMindData = useWhatsOnUrMindAPI();
   return (
     <>
-      <ShimmerCard />
+      {/* <ShimmerCard /> */}
+      <div className="">
+        <WhatsOYMindMobile />
+      </div>
     </>
   );
 };

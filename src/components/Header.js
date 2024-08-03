@@ -52,7 +52,7 @@ const Header = () => {
         <i class="fa-solid fa-circle-user "></i>
       </div> */}
         <div className="navItems hide-on-mob hidden sm:block">
-          <ul className="flex gap-6 items-center">
+          <ul className="flex gap-10 items-center">
             <li>
               <Link
                 style={{ textDecoration: "none", color: "inherit" }}

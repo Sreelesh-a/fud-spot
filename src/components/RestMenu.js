@@ -56,22 +56,27 @@ const RestMenu = () => {
             <div className=" relative border-black  bg-gradient-to-t from-gray-200 h-52 sm:h-52 w-full   rounded-3xl ">
               <div className="absolute border-gray-200 border-[.1rem]   bg-white w-[97%] h-[93%]    left-[1.5%] rounded-3xl ">
                 <div className="py-6 px-6 ">
-                  <div className="resto-rating flex text-sm sm:tex-xl sm:gap-2 font-bold items-center">
-                    <Ratingicon />
-                    {avgRating} ({totalRatingsString})
-                    <span className="text-gray-400 px-1">•</span>
-                    {costForTwoMessage}
+                  <div>
+                    <div className="resto-rating flex text-sm sm:tex-xl gap-2 sm:gap-2 font-bold items-center">
+                      <Ratingicon />
+                      {avgRating} ({totalRatingsString})
+                      <span className="text-gray-400 px-0 sm:px-1 ">•</span>
+                      {costForTwoMessage}
+                    </div>
                   </div>
-                  <div className="py-3">
+
+                  <div className="py-3 ">
                     <div className="flex gap-4 ">
-                      <div className="relative w-1 h-11  bg-gray-100 mt-[.20rem]">
-                        <div className="absolute top-0 left-0 flex flex-col justify-between h-full">
-                          <div className="size-2 rounded-full bg-gray-300"></div>
-                          <div className="size-2 rounded-full bg-gray-300"></div>
+                      <div className="ml-1">
+                        <div className="relative w-1 h-11  bg-gray-100 mt-[.20rem]">
+                          <div className="absolute top-0 left-0 flex flex-col justify-between h-full">
+                            <div className="size-2 rounded-full bg-gray-300"></div>
+                            <div className="size-2 rounded-full bg-gray-300"></div>
+                          </div>
                         </div>
                       </div>
 
-                      <div className="font-semibold text-sm space-y-2">
+                      <div className="font-semibold text-sm space-y-2 ml-1">
                         <div className="flex gap-x-3">
                           Outlet{" "}
                           <span className="text-gray-500 font-normal truncate w-52 sm:w-full">

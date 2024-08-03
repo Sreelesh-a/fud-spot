@@ -670,6 +670,11 @@ video {
   margin-bottom: 2.25rem;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mb-20 {
   margin-bottom: 5rem;
 }
@@ -728,6 +733,34 @@ video {
 
 .mt-\[\.20rem\] {
   margin-top: .20rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.ml-12 {
+  margin-left: 3rem;
+}
+
+.ml-9 {
+  margin-left: 2.25rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
 }
 
 .flex {
@@ -830,8 +863,20 @@ video {
   height: 100%;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-44 {
+  height: 11rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-4 {
+  min-height: 1rem;
 }
 
 .w-1 {
@@ -918,8 +963,56 @@ video {
   width: 100%;
 }
 
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
+.w-80 {
+  width: 20rem;
+}
+
+.w-72 {
+  width: 18rem;
+}
+
+.w-\[\.2rem\] {
+  width: .2rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-\[3\] {
+  flex: 3;
+}
+
+.flex-\[33\%\] {
+  flex: 33%;
+}
+
+.flex-\[1\2c 1\2c 33\%\] {
+  flex: 1,1,33%;
+}
+
+.flex-\[2\2c 1\2c 33\%\] {
+  flex: 2,1,33%;
+}
+
+.flex-\[2\2c 2\2c 33\%\] {
+  flex: 2,2,33%;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.flex-shrink-\[6rem\] {
+  flex-shrink: 6rem;
 }
 
 .cursor-pointer {
@@ -942,6 +1035,14 @@ video {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -960,6 +1061,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -996,6 +1101,26 @@ video {
 
 .gap-9 {
   gap: 2.25rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.gap-11 {
+  gap: 2.75rem;
+}
+
+.gap-14 {
+  gap: 3.5rem;
 }
 
 .gap-x-1 {
@@ -1072,6 +1197,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.space-x-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-hidden {
@@ -1322,6 +1453,51 @@ video {
   padding-bottom: 2.25rem;
 }
 
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-\[0\.1rem\] {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+}
+
+.px-\[0\.2rem\] {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.px-\[0\.09rem\] {
+  padding-left: 0.09rem;
+  padding-right: 0.09rem;
+}
+
+.px-\[0\.06rem\] {
+  padding-left: 0.06rem;
+  padding-right: 0.06rem;
+}
+
+.px-\[0\.04rem\] {
+  padding-left: 0.04rem;
+  padding-right: 0.04rem;
+}
+
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1517,6 +1693,10 @@ video {
     margin-top: 2rem;
   }
 
+  .sm\:ml-80 {
+    margin-left: 20rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -1538,6 +1718,10 @@ video {
     height: 13rem;
   }
 
+  .sm\:min-h-screen {
+    min-height: 100vh;
+  }
+
   .sm\:w-20 {
     width: 5rem;
   }
@@ -1552,6 +1736,10 @@ video {
 
   .sm\:w-full {
     width: 100%;
+  }
+
+  .sm\:w-6\/12 {
+    width: 50%;
   }
 
   .sm\:grid-cols-1 {
@@ -1574,6 +1762,14 @@ video {
     gap: 10rem;
   }
 
+  .sm\:gap-0 {
+    gap: 0px;
+  }
+
+  .sm\:gap-1 {
+    gap: 0.25rem;
+  }
+
   .sm\:gap-x-9 {
     -moz-column-gap: 2.25rem;
          column-gap: 2.25rem;
@@ -1583,6 +1779,12 @@ video {
     --tw-space-x-reverse: 0;
     margin-right: calc(0px * var(--tw-space-x-reverse));
     margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .sm\:px-28 {
@@ -1623,6 +1825,16 @@ video {
   .sm\:py-9 {
     padding-top: 2.25rem;
     padding-bottom: 2.25rem;
+  }
+
+  .sm\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  .sm\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 
   .sm\:text-lg {
