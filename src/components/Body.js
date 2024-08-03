@@ -24,9 +24,10 @@ const Body = () => {
 
   const swiggyApidata = useSwiggiApi();
   const restaurantData =
-    swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+    swiggyApidata?.cards[3]?.card?.card?.gridElements?.infoWithStyle
       ?.restaurants;
 
+  console.log(FilteredListOfResto);
   // console.log(swiggyApidata);
 
   useEffect(() => {

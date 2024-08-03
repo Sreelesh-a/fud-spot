@@ -11,6 +11,8 @@ module.exports = {
     "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.9312328&lng=76.26730409999999&restaurantId=",
   SWIGGY_MENU_API:
     "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D9.9312328%26lng%3D76.26730409999999%26restaurantId%3D",
+  SWIGGY_CORS_API:
+    "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Fis-seo-homepage-enabled%3Dtrue%26page_type%3DDESKT%26lat%3D9.9312328%26lng%3D76.26730409999999",
   SWIGGY_API_LINK:
     "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D9.9312328%26lng%3D76.26730409999999%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKT",
   AVATAR_IMG:

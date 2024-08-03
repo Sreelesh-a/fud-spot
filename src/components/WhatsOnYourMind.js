@@ -14,6 +14,7 @@ const WhatsOnYourMind = () => {
   const [swiggyInfo, setSwiggyInfo] = useState([]);
   const [collectionId, setCollectionId] = useState(null);
   let swiggyApi = useSwiggyApi();
+  console.log(swiggyApi);
 
   useEffect(() => {
     if (swiggyApi) {
