@@ -11,7 +11,7 @@ const Offers = () => {
     <>
       {/* <ShimmerCard /> */}
       <div className="">
-        <WhatsOYMindMobile />
+        
       </div>
     </>
   );
