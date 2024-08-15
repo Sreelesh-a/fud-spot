@@ -26,9 +26,9 @@ const ItemsUnderNestedCategories = ({ data }) => {
       <div>
         <div className="">
           <div className=" flex justify-between items-center my-5">
-            <div className="w-8/12 space-y-2">
+            <div className="w-6/12 sm:w-8/12 space-y-2">
               <div></div>
-              <div className=" flex font-semibold text-lg text-gray-600">
+              <div className=" flex font-semibold text-lg text-gray-600 truncate">
                 {res?.card?.info?.name}
               </div>
               <div className=" flex font-medium ">
@@ -53,7 +53,7 @@ const ItemsUnderNestedCategories = ({ data }) => {
                 </div>
               )}
               <div>
-                <p className="text-gray-500 text-xs">
+                <p className="text-gray-500 text-xs truncate w-[80%]">
                   {res?.card?.info?.description}
                 </p>
               </div>
@@ -62,7 +62,7 @@ const ItemsUnderNestedCategories = ({ data }) => {
             <div className="relative ">
               {res?.card?.info?.imageId ? (
                 <img
-                  className="w-36 h-36 rounded-2xl"
+                  className=" w-36 h-36 rounded-2xl"
                   src={RESTO_IMG_LINK + res?.card?.info?.imageId}
                   alt=""
                 />
@@ -70,7 +70,7 @@ const ItemsUnderNestedCategories = ({ data }) => {
                 <div className="w-36 h-36 rounded-2xl bg-gray-100"></div>
               )}
               <div
-                className="absolute bg-white cursor-pointer hover:bg-gray-100  font-bold text-green-600 bottom-[-1rem] shadow-md mx-6 py-1  px-7 w-24 h-8 rounded-lg items-center "
+                className="absolute bg-white cursor-pointer hover:bg-gray-100  font-bold text-green-600 bottom-[-1rem] shadow-md mx-6 sm:mx-6  py-1 w-24 h-9 text-center sm:h-8 rounded-lg items-center "
                 onClick={() => {
                   handleAddItems(res?.card?.info);
                 }}
