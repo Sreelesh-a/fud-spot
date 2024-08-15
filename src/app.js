@@ -20,6 +20,10 @@ import { SelectLocationContext } from "./utils/LocationContext";
 import SelectLocation from "./components/SelectLocation";
 import Footer from "./components/Footer";
 import WhatsOUMCOllection from "./components/WhatsOUMCOllection.js";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
+import path from "path-browserify";
+import CartPage from "./components/CartPage.js";
 
 AboutUs = lazy(() => {
   import("./components/AboutUs");
@@ -31,28 +35,30 @@ export const AppLayout = () => {
 
   return (
     <>
-      <SelectLocationContext.Provider
-        value={{ location: selectArea, setDisplaySelectLocation }}
-      >
-        <SwiggyProvider>
-          <div className="AppLayout relative">
-            <div className="">
-              {displaySelectLocation == true && (
-                <SelectLocation
-                  displaySelectLocation={displaySelectLocation}
-                  setDisplaySelectLocation={setDisplaySelectLocation}
-                  setSelectArea={setSelectArea}
-                />
-              )}
+      <Provider store={appStore}>
+        <SelectLocationContext.Provider
+          value={{ location: selectArea, setDisplaySelectLocation }}
+        >
+          <SwiggyProvider>
+            <div className="AppLayout relative">
+              <div className="">
+                {displaySelectLocation == true && (
+                  <SelectLocation
+                    displaySelectLocation={displaySelectLocation}
+                    setDisplaySelectLocation={setDisplaySelectLocation}
+                    setSelectArea={setSelectArea}
+                  />
+                )}
+              </div>
+
+              <Header />
+
+              {/* <MobMenu /> */}
+              <Outlet />
             </div>
-
-            <Header />
-
-            {/* <MobMenu /> */}
-            <Outlet />
-          </div>
-        </SwiggyProvider>
-      </SelectLocationContext.Provider>
+          </SwiggyProvider>
+        </SelectLocationContext.Provider>
+      </Provider>
     </>
   );
 };
@@ -96,6 +102,10 @@ export const AppRouter = createBrowserRouter([
       {
         path: "/collections/:collectionId",
         element: <WhatsOUMCOllection />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
       },
     ],
   },

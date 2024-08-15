@@ -1,6 +1,25 @@
+import { useDispatch } from "react-redux";
 import { RESTO_IMG_LINK } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 const ItemsUnderNestedCategories = ({ data }) => {
+  const [cartId, setCartId] = useState([]);
   const res = data;
+  const dispatch = useDispatch();
+  const handleAddItems = (res) => {
+    dispatch(addItem(res));
+  };
+
+  const cartItems = useSelector((store) => store.cart.items);
+  // console.log(cartItems);
+
+  // const getCartIDs = () => {
+  //   if (cartItems) {
+  //     cartItems.map((res) => setCartId(res?.id));
+  //   }
+  // };
+  console.log(cartItems);
 
   return (
     <div>
@@ -50,7 +69,10 @@ const ItemsUnderNestedCategories = ({ data }) => {
               ) : (
                 <div className="w-36 h-36 rounded-2xl bg-gray-100"></div>
               )}
-              <div className="absolute bg-white cursor-pointer hover:bg-gray-100  font-bold text-green-600 bottom-[-1rem] shadow-md mx-6 py-1  px-7 w-24 h-8 rounded-lg items-center ">
+              <div
+                className="absolute bg-white cursor-pointer hover:bg-gray-100  font-bold text-green-600 bottom-[-1rem] shadow-md mx-6 py-1  px-7 w-24 h-8 rounded-lg items-center "
+                onClick={() => handleAddItems(res?.card?.info)}
+              >
                 ADD
               </div>
             </div>

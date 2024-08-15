@@ -17,7 +17,7 @@ const MobMenu = () => {
         </Link>
 
         <div className="">
-          <Link to={"/"}>
+          <Link to={"/cart"}>
             <span className="text-xl mx-auto ml-1 ">
               <ion-icon className="" name="fast-food-outline"></ion-icon>
             </span>

@@ -46,7 +46,7 @@ const RestMenu = () => {
     );
   const recommendMenu =
     restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2];
-  console.log(restInfo?.cards[2]?.card?.card?.info);
+  // console.log(restInfo?.cards[2]?.card?.card?.info);
   return (
     <div className="px-4 sm:px-80 mt-28 sm:mt-32">
       <div className="menu-main my-12">

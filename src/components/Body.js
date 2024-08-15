@@ -76,7 +76,7 @@ const Body = () => {
   // console.log(FilteredListOfResto);
 
   return (
-    <div className="px-4 sm:px-40 py-4 ml-2 sm:w-full  sm:ml-6 mt-24 bg-[#FFFFFF]">
+    <div className="px-4 sm:px-40 py-4 ml-2   sm:ml-6 mt-24 bg-[#FFFFFF]">
       {/* <MobCarousel /> */}
       <div className="hidden sm:block">
         {/* <div className="font-bold lg:text-2xl sm:text-sm">

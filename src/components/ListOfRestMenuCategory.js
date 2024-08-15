@@ -9,8 +9,8 @@ const ListOfRestMenuCategory = ({ categories }) => {
     <div className="">
       <div className=" ">
         {categories &&
-          categories.map((res) => (
-            <NestedCategories key={res?.card?.info?.id} data={res} />
+          categories.map((res, index) => (
+            <NestedCategories key={index} data={res} />
           ))}
       </div>
       <div className=""></div>

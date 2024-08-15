@@ -14,6 +14,7 @@ import {
   CartIcon,
 } from "../utils/icons/Arrow";
 import MobMenu from "./MobMenu";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const { setSelectArea, location } = useContext(SelectLocationContext);
@@ -25,6 +26,8 @@ const Header = () => {
   //     return <SelectLocation />;
   //   }
   // };
+  const cartItems = useSelector((store) => store.cart.items);
+  // console.log(cartItems);
 
   return (
     <div>
@@ -98,10 +101,12 @@ const Header = () => {
               <ProfileIcon />
               {loginAuth}
             </li>
-            <li className="flex items-center gap-x-2">
-              <CartIcon />
-              Cart
-            </li>
+            <Link to="/cart">
+              <li className="flex items-center gap-x-2">
+                <CartIcon />
+                Cart ({cartItems.length})
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
