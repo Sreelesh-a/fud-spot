@@ -103,8 +103,21 @@ const Header = () => {
             </li>
             <Link to="/cart">
               <li className="flex items-center gap-x-2">
-                <CartIcon />
-                Cart ({cartItems.length})
+                {cartItems.length != 0 ? (
+                  <div className="scale-150 items-center text-green-700 mb-1">
+                    <CartIcon />
+                  </div>
+                ) : (
+                  <div className="">
+                    <CartIcon />
+                  </div>
+                )}
+                Cart
+                {cartItems.length != 0 && (
+                  <div className="absolute ml-[.47rem]  text-xs font-bold mt-2 text-green-700 mb-[.23rem] ">
+                    {cartItems.length}
+                  </div>
+                )}
               </li>
             </Link>
           </ul>

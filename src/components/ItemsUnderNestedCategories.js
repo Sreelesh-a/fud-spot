@@ -71,7 +71,9 @@ const ItemsUnderNestedCategories = ({ data }) => {
               )}
               <div
                 className="absolute bg-white cursor-pointer hover:bg-gray-100  font-bold text-green-600 bottom-[-1rem] shadow-md mx-6 py-1  px-7 w-24 h-8 rounded-lg items-center "
-                onClick={() => handleAddItems(res?.card?.info)}
+                onClick={() => {
+                  handleAddItems(res?.card?.info);
+                }}
               >
                 ADD
               </div>

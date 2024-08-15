@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { RESTO_IMG_LINK } from "../utils/constants";
 import { useState } from "react";
 import { addItem, removeItem, clearCart } from "../utils/cartSlice";
+import { Link } from "react-router-dom";
+import cartIMG from "../../img/cartIMG.png";
 
 const CartPage = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -32,13 +34,16 @@ const CartPage = () => {
   };
   return (
     <div className="bg-[#E9ECEE] px-2 sm:px-40 py-2  sm:mb-0 mb-52 sm:py-6    ">
-      <div className="mt-24">
-        <div
-          className="border-red-500 border-[.1rem] mt-1  scale-90 z-50 absolute right-[42.3%]  bg-white hover:bg-red-500 hover:text-white  font-medium w-32 h-9 flex gap-x-2 p-2 cursor-pointer items-center justify-center rounded-xl text-red-600"
-          onClick={() => handleClearCart()}
-        >
-          <i class="fa-regular fa-trash-can"></i> Clear Cart
-        </div>
+      <div className="relative mt-24">
+        {cartItems.length != 0 && (
+          <div
+            className="border-red-500 border-[.1rem] mt-1  scale-90 z-100 absolute right-[10%] sm:right-[42.3%]  bg-white hover:bg-red-500 hover:text-white  font-medium w-32 h-9 flex gap-x-2 p-2 cursor-pointer items-center justify-center rounded-xl text-red-600"
+            onClick={() => handleClearCart()}
+          >
+            <i class="fa-regular fa-trash-can"></i> Clear Cart
+          </div>
+        )}
+
         <div className="p-4 sm:px-1  flex flex-wrap justify-between w-full">
           <div className="bg-white w-full sm:w-[60%] items-start py-6 h-auto grid grid-cols-1 justify-between px-6 sm:px-9">
             {cartItems && cartItems.length > 0 ? (
@@ -62,17 +67,17 @@ const CartPage = () => {
                         {res?.name}
                       </div>
                     </div>
-                    <div className="border-[.01rem] w-28 sm:w-[30%] sm:px-4">
-                      <div className=" items-center h-10 border-green-600 flex justify-between ">
+                    <div className="border-[.1rem] rounded-md px-3 border-green-600 sm:border-[.01rem] w-28 sm:w-[30%] sm:px-4">
+                      <div className=" items-center h-10 flex justify-between ">
                         <div
-                          className="cursor-pointer"
+                          className="cursor-pointer text-xl font-bold text-gray-400"
                           onClick={() => handleRemoveItem(res)}
                         >
                           -
                         </div>
                         <span>{res?.count}</span>
                         <div
-                          className="cursor-pointer"
+                          className="cursor-pointer text-xl font-bold text-green-600"
                           onClick={() => handleAddItem(res)}
                         >
                           +
@@ -88,16 +93,37 @@ const CartPage = () => {
                 );
               })
             ) : (
-              <div>No items in cart</div>
+              <div className="mx-auto my-auto sm:mt-2 sm:py-4  mt-10">
+                <div className="text-center text-lg font-semibold text-gray-600 ">
+                  Your cart is empty
+                </div>
+                <div className="mx-auto text-center text-xs ">
+                  You can go to home page to view more restaurants
+                </div>
+                <Link to="/">
+                  <div className="font-bold my-3 bg-[#FF5200] w-60 h-10 mx-auto flex justify-center items-center text-white ">
+                    See restaurants near you
+                  </div>
+                </Link>
+              </div>
             )}
           </div>
 
           <div className="bg-white w-full max-h-96  sm:w-[38%] py-6  grid grid-cols-1 justify-between px-9">
             <div>
-              <div className="bg-white  h-2 text-xl font-bold flex justify-between">
-                <span className="">To pay :</span>{" "}
-                <span className=" text-green-600">{totalAmount / 100} </span>
-              </div>
+              {cartItems.length !== 0 ? (
+                <div className="bg-white  h-2 text-xl font-bold flex justify-between mb-20">
+                  <span className="">To pay :</span>{" "}
+                  <span className=" text-green-600">{totalAmount / 100} </span>
+                </div>
+              ) : (
+                <div className="mx-auto my-auto">
+                  <img
+                    className="w-36 mx-auto my-auto opacity-80"
+                    src={cartIMG}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
