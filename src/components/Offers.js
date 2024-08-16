@@ -10,9 +10,7 @@ const Offers = () => {
   return (
     <>
       {/* <ShimmerCard /> */}
-      <div className="">
-        
-      </div>
+      <div className=""></div>
     </>
   );
 };
