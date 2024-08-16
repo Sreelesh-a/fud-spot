@@ -13,7 +13,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import MobMenu from "./components/MobMenu";
 // import AboutUs from "./components/AboutUs";
-let AboutUs = require("./components/AboutUs");
+// let AboutUs = require("./components/AboutUs");
 import ShimmerCard from "./components/ShimmerCard";
 import { useState } from "react";
 import { SelectLocationContext } from "./utils/LocationContext";
@@ -24,6 +24,7 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
 import path from "path-browserify";
 import CartPage from "./components/CartPage.js";
+import AboutUs from "./components/AboutUs";
 
 AboutUs = lazy(() => {
   import("./components/AboutUs");
@@ -91,14 +92,7 @@ export const AppRouter = createBrowserRouter([
         path: "/search",
         element: <Search />,
       },
-      {
-        path: "/about-us",
-        element: (
-          <Suspense fallback={<ShimmerCard />}>
-            <AboutUs />
-          </Suspense>
-        ),
-      },
+
       {
         path: "/collections/:collectionId",
         element: <WhatsOUMCOllection />,
@@ -108,6 +102,15 @@ export const AppRouter = createBrowserRouter([
         element: <CartPage />,
       },
     ],
+  },
+  {
+    path: "/about-us",
+    element: (
+      <Suspense fallback={<ShimmerCard />}>
+        <AboutUs />
+      </Suspense>
+    ),
+    errorElement: <Error />,
   },
 ]);
 

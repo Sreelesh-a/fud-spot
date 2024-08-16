@@ -35,4 +35,14 @@ module.exports = {
     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.9312328&lng=76.26730409999999&tags=layout_FestiveEvent4&sortBy=&filters=&type=rcv2&offset=0&page_type=null&collection=",
   SWIGGY_WHATSONYOURMIND_API:
     "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D9.9312328%26lng%3D76.26730409999999%26tags%3Dlayout_FestiveEvent4%26sortBy%3D%26filters%3D%26type%3Drcv2%26offset%3D0%26page_type%3Dnull%26collection%3D",
+  SWIGGY_DEVELERY_BOY_VECTOR:
+    "https://www.swiggy.com/about-us/wp-content/uploads/2024/04/DE-on-bike-2-2.png",
+  SWIGGY_GROCERY_VECTOR:
+    "https://www.swiggy.com/about-us/wp-content/uploads/2024/04/03-Instamart_3_front_view_2_skycolour.png",
+  SWIGGY_DELEVERY_VECTOR_STAND:
+    "https://www.swiggy.com/about-us/wp-content/uploads/2024/04/Group-1000006479.png",
+  SWIGGY_AERO_DELIVERY_VECTOR:
+    "https://www.swiggy.com/about-us/wp-content/uploads/2024/04/about-img1-new.png",
+  SWIGGY_APP_DOWNLOAD_FOOTER:
+    "https://www.swiggy.com/about-us/wp-content/uploads/2024/03/Section-Break.png",
 };

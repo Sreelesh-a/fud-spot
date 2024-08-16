@@ -67,7 +67,7 @@ const ItemsUnderNestedCategories = ({ data }) => {
                   alt=""
                 />
               ) : (
-                <div className="w-36 h-36 rounded-2xl bg-gray-100"></div>
+                <div className=" animate-pulse w-36 h-36 rounded-2xl bg-gray-200"></div>
               )}
               <div
                 className="absolute bg-white cursor-pointer hover:bg-gray-100  font-bold text-green-600 bottom-[-1rem] shadow-md mx-6 sm:mx-6  py-1 w-24 h-9 text-center sm:h-8 rounded-lg items-center "
