@@ -24,11 +24,11 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
 import path from "path-browserify";
 import CartPage from "./components/CartPage.js";
-import { AboutUs } from "./components/AboutUs";
+import AboutUs from "./components/AboutUs";
 
-AboutUs = lazy(() => {
-  import("./components/AboutUs");
-});
+// AboutUs = lazy(() => {
+//   import("./components/AboutUs");
+// });
 
 export const AppLayout = () => {
   const [selectArea, setSelectArea] = useState("Kochi");
@@ -106,9 +106,9 @@ export const AppRouter = createBrowserRouter([
   {
     path: "/about-us",
     element: (
-      <Suspense fallback={<ShimmerCard />}>
-        <AboutUs />
-      </Suspense>
+      // <Suspense fallback={<ShimmerCard />}>
+      <AboutUs />
+      // </Suspense>
     ),
     errorElement: <Error />,
   },
