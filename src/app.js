@@ -24,7 +24,7 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
 import path from "path-browserify";
 import CartPage from "./components/CartPage.js";
-import AboutUs from "./components/AboutUs";
+import { AboutUs } from "./components/AboutUs";
 
 AboutUs = lazy(() => {
   import("./components/AboutUs");
