@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { SWIGGY_CAROUSEL_API } from "../utils/constants";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Slider from "react-slick";
 import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import RestaurantCard, { WithItemLabel } from "./RestaurantCard";

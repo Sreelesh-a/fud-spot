@@ -1,6 +1,6 @@
 import { RESTO_IMG_LINK } from "../utils/constants";
 import { Link } from "react-router-dom";
-import { Ratingicon } from "./RestMenu";
+// import { Ratingicon } from "./RestMenu";
 import { Ratingicon } from "./Ratingicon";
 import ShimmerCard from "./ShimmerCard";
 

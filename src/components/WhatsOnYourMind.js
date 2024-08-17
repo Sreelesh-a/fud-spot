@@ -2,7 +2,7 @@ import useSwiggyApi from "../utils/useSwiggiApi";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { SWIGGY_CAROUSEL_API } from "../utils/constants";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Slider from "react-slick";
 import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import { ShimmerWhatsOnYourMind } from "./ShimmerCard";

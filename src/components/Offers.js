@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
-import MenuPageShimmerUI from "./MenuPageShimmerUI";
-import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
-import ShimmerCard from "./ShimmerCard";
-
-import WhatsOYMindMobile from "./WhatsOYMindMobile";
-
 const Offers = () => {
-  const whatsOnUrMindData = useWhatsOnUrMindAPI();
   return (
     <>
       {/* <ShimmerCard /> */}
-      <div className=""></div>
+      <div className="text-center mt-32">
+        <h1>Offer Closes Soon...</h1>
+        <div className="text-2xl font-bold">New Offers</div>
+        <div className="flex justify-center gap-6 p-6">
+          <div className="w-44 h-32 animate-pulse bg-gray-200 rounded-xl"></div>
+          <div className="w-44 h-32 animate-pulse bg-gray-200 rounded-xl"></div>
+          <div className="w-44 h-32 animate-pulse bg-gray-200 rounded-xl"></div>
+          <div className="w-44 h-32 animate-pulse bg-gray-200 rounded-xl"></div>
+        </div>
+      </div>
     </>
   );
 };
