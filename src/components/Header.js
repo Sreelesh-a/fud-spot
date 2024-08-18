@@ -1,4 +1,7 @@
-import logoHeaderImg from "/img/fud-spot-log.png";
+// import logoHeaderImg from "../../img/fud-spot-log.png";
+
+import { logoHeaderImg } from "../utils/imageConstants";
+
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -28,6 +31,10 @@ const Header = () => {
   // };
   const cartItems = useSelector((store) => store.cart.items);
   // console.log(cartItems);
+
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div>
@@ -60,6 +67,7 @@ const Header = () => {
               <Link
                 style={{ textDecoration: "none", color: "inherit" }}
                 to="/about-us"
+                onClick={handleClickTop}
                 className="flex items-center gap-x-2"
               >
                 <AboutUsIcon />
@@ -71,6 +79,7 @@ const Header = () => {
               <Link
                 style={{ textDecoration: "none", color: "inherit" }}
                 to="/search"
+                onClick={handleClickTop}
                 className="flex items-center gap-x-2"
               >
                 <i class="fa-solid fa-magnifying-glass"></i> Search
@@ -80,6 +89,7 @@ const Header = () => {
               <Link
                 style={{ textDecoration: "none", color: "inherit" }}
                 to="/offers"
+                onClick={handleClickTop}
                 className="flex items-center gap-x-2"
               >
                 <Offer />
@@ -90,7 +100,7 @@ const Header = () => {
               <HelpIcon />
               Help
             </li>
-            <li
+            <button
               className="flex items-center gap-x-2"
               onClick={() => {
                 loginAuth === "Sign in"
@@ -100,9 +110,12 @@ const Header = () => {
             >
               <ProfileIcon />
               {loginAuth}
-            </li>
+            </button>
             <Link to="/cart">
-              <li className="flex items-center gap-x-2">
+              <li
+                className="flex items-center gap-x-2"
+                onClick={handleClickTop}
+              >
                 {cartItems.length != 0 ? (
                   <div className="scale-150 items-center text-green-700 mb-1">
                     <CartIcon />

@@ -16,6 +16,10 @@ const WhatsOnYourMind = () => {
   let swiggyApi = useSwiggyApi();
   // console.log(swiggyApi);
 
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     if (swiggyApi) {
       setSwiggyInfo(
@@ -74,6 +78,7 @@ const WhatsOnYourMind = () => {
           {swiggyInfo?.map((d) => (
             <div key={d?.id} className="">
               <Link
+                onClick={handleClickTop}
                 to={
                   "/collections/" +
                   regex.exec(d?.action?.link)[1] +

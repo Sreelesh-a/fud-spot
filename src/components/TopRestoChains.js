@@ -16,6 +16,10 @@ const TopRestoChains = () => {
   // let swiggyInfo = swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info;
   // const RestoCardItemOffer = WithItemLabel(RestaurantCard);
 
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   // useEffect(() => {
   //   fetchData();
   // }, []);
@@ -99,6 +103,7 @@ const TopRestoChains = () => {
         >
           {ListOfRest?.map((rest) => (
             <Link
+              onClick={handleClickTop}
               key={rest?.info?.id}
               style={{ textDecoration: "none", color: "inherit" }}
               to={"/resto-menu/" + rest?.info?.id}

@@ -20,6 +20,10 @@ const TopRestoChainsMobile = () => {
     swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
       ?.restaurants;
 
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     if (restaurantData) {
       setListOfRest(restaurantData || []);
@@ -75,6 +79,7 @@ const TopRestoChainsMobile = () => {
         >
           {ListOfRest?.map((rest) => (
             <Link
+              onClick={handleClickTop}
               key={rest?.info?.id}
               style={{ textDecoration: "none", color: "inherit" }}
               to={"/resto-menu/" + rest?.info?.id}

@@ -30,6 +30,9 @@ const Body = () => {
 
   // console.log(FilteredListOfResto);
   // console.log(swiggyApidata);
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     if (restaurantData) {
@@ -162,6 +165,7 @@ const Body = () => {
             {FilteredListOfResto &&
               FilteredListOfResto?.map((rest) => (
                 <Link
+                  onClick={handleClickTop}
                   key={rest.info.id}
                   style={{ textDecoration: "none", color: "inherit" }}
                   to={"/resto-menu/" + rest?.info?.id}

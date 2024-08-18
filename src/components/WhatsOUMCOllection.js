@@ -13,6 +13,10 @@ const WhatsOUMCOllection = () => {
   const [itemCards, setItemCards] = useState([]);
   const RestoCardItemOffer = WithItemLabel(RestaurantCard);
 
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   const apiData = useWhatsOnUrMindAPI(collectionId.slice(0, 5)) || [];
   const filteredList =
     itemCards &&
@@ -70,6 +74,7 @@ const WhatsOUMCOllection = () => {
           {filteredList &&
             filteredList.map((rest) => (
               <Link
+                onClick={handleClickTop}
                 key={rest?.card?.card?.info?.id}
                 style={{ textDecoration: "none", color: "inherit" }}
                 to={"/resto-menu/" + rest?.card?.card?.info?.id}

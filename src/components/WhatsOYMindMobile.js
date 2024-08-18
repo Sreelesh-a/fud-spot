@@ -8,6 +8,10 @@ const WhatsOYMindMobile = () => {
   const [swiggyInfo, setSwiggyInfo] = useState([]);
   let swiggyApi = useSwiggyApi();
 
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     if (swiggyApi) {
       setSwiggyInfo(
@@ -44,6 +48,7 @@ const WhatsOYMindMobile = () => {
                     swiggyInfo?.map((d) => (
                       <div key={d?.id} className="">
                         <Link
+                          onClick={handleClickTop}
                           to={
                             "/collections/" +
                             regex.exec(d?.action?.link)[1] +
