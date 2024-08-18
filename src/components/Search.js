@@ -1,9 +1,11 @@
 import { AVATAR_IMG } from "../utils/constants";
 import WhatsOnYourMind from "./WhatsOnYourMind";
+import WhatsOYMindMobile from "./WhatsOYMindMobile";
 import TopRestoChains from "./TopRestoChains";
 import { useEffect, useState } from "react";
 import SearchResult from "./SearchResult";
 import useSwiggyApi from "../utils/useSwiggiApi";
+import WhatsOYMindFull from "./WhatsOYMindFull";
 import { Link } from "react-router-dom";
 const Search = () => {
   const [searchText, setSearchText] = useState("");
@@ -47,7 +49,14 @@ const Search = () => {
       </div>
       <div className="space-y-4 sm:mb-0 mb-20">
         {searchingResult.length == 0 ? (
-          <WhatsOnYourMind />
+          <div>
+            <div className="hidden sm:block">
+              <WhatsOnYourMind />
+            </div>
+            <div className="sm:hidden">
+              <WhatsOYMindFull />
+            </div>
+          </div>
         ) : (
           searchingResult &&
           searchingResult.map((res) => (

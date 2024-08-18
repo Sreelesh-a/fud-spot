@@ -6,6 +6,7 @@ import { WithItemLabel } from "./RestaurantCard";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerCard from "./ShimmerCard";
 import { title } from "process";
+import TopRestoMobileShimmer from "../utils/TopRestoMobileShimmer";
 
 const WhatsOUMCOllection = () => {
   const { collectionId } = useParams();
@@ -57,7 +58,17 @@ const WhatsOUMCOllection = () => {
 
   const ShimmerUi = () => {
     if (!filteredList) {
-      return <ShimmerCard />;
+      return (
+        <div>
+          <div className="hidden sm:block">
+            <ShimmerCard />
+          </div>
+          <div className="sm:hidden">
+            <TopRestoMobileShimmer />
+            <TopRestoMobileShimmer />
+          </div>
+        </div>
+      );
     }
   };
 

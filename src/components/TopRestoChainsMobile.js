@@ -9,6 +9,7 @@ import { SWIGGY_API_LINK3 } from "../utils/constants";
 import { Link } from "react-router-dom";
 import ShimmerCard from "./ShimmerCard";
 import useSwiggiApi from "../utils/useSwiggiApi";
+import TopRestoMobileShimmer from "../utils/TopRestoMobileShimmer";
 
 const TopRestoChainsMobile = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -34,7 +35,7 @@ const TopRestoChainsMobile = () => {
 
   const ShimmerUi = () => {
     if (ListOfRest.length == 0) {
-      return <ShimmerCard />;
+      return <TopRestoMobileShimmer />;
     }
   };
 
@@ -54,7 +55,7 @@ const TopRestoChainsMobile = () => {
   };
 
   return (
-    <div className="  sm:w-full">
+    <div className="   sm:w-full">
       <div className=" flex justify-between">
         <div className="font-bold lg:text-2xl sm:text-sm">
           Top Restaurant Chains in Kochi

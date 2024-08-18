@@ -3,7 +3,7 @@ import { SWIGGY_AERO_DELIVERY_VECTOR } from "../utils/constants";
 const IndustryPioneer = () => {
   return (
     <div className="px-56 ">
-      <div className="flex items-center gap-x-32 justify-center px-4">
+      <div className="flex items-center gap-x-4 sm:gap-x-32 justify-center px-4">
         <div className="w-1/2 flex flex-wrap gap-y-5 ">
           <span className="text-2xl w-full font-semibold">
             Industry pioneer

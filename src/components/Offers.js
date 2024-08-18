@@ -1,10 +1,10 @@
-import WhatsOYMindShimmer from "../utils/whatsOYMindShimmer";
+import TopRestoMobileShimmer from "../utils/TopRestoMobileShimmer";
 
 const Offers = () => {
   return (
     <>
       {/* <ShimmerCard /> */}
-      <WhatsOYMindShimmer />
+      <TopRestoMobileShimmer />
     </>
   );
 };
