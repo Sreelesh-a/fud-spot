@@ -5,9 +5,17 @@ import useRestoMenu from "../utils/useRestoMenu";
 import RestoMenuCategory from "./RestoMenuCategory";
 import { CYCLE_DELIVERY_ICON } from "../utils/constants";
 import MenuPageShimmerUI from "./MenuPageShimmerUI";
+import DealsForYou from "./DealsForYou";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const RestMenu = () => {
   const { resid } = useParams();
+  const [handleScroll, setHandleSCroll] = useState(0);
+
+  if (handleScroll == 740 + 370) {
+    setHandleSCroll(0);
+  }
 
   const restInfo = useRestoMenu(resid);
 
@@ -16,6 +24,13 @@ const RestMenu = () => {
   // const { itemCardss } =
   //   restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
   //     ?.card;
+
+  // console.log(
+  //   restInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers
+  // );
+
+  const dealsForYouList =
+    restInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers || [];
 
   const itemCards =
     restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
@@ -47,6 +62,7 @@ const RestMenu = () => {
   const recommendMenu =
     restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2];
   // console.log(restInfo?.cards[2]?.card?.card?.info);
+  // console.log(handleScroll);
   return (
     <div className="px-4 sm:px-80 mt-28 sm:mt-32">
       <div className="menu-main my-12">
@@ -104,6 +120,42 @@ const RestMenu = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="  overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+          <div className="hidden sm:block">
+            <div className="flex justify-between">
+              <div className="text-xl font-bold">Deals for you</div>
+              <div className="flex gap-x-2">
+                <i
+                  class="fa-solid fa-circle-arrow-left text-3xl text-gray-300"
+                  onClick={() => {
+                    if (handleScroll >= 370) {
+                      setHandleSCroll(handleScroll - 370);
+                    }
+                  }}
+                ></i>
+
+                <i
+                  class="fa-solid fa-circle-arrow-right text-3xl  text-gray-300"
+                  onClick={() => {
+                    setHandleSCroll(handleScroll + 370);
+                  }}
+                ></i>
+              </div>
+            </div>
+          </div>
+          <motion.div
+            // initial={{ x: 300 }}
+            animate={{ x: -[handleScroll] }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="flex gap-x-4  ">
+              {dealsForYouList &&
+                dealsForYouList.map((list, index) => (
+                  <DealsForYou key={index} dealsList={list} />
+                ))}
+            </div>
+          </motion.div>
         </div>
         <div className="menulist">
           {recommendMenu && (

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { SWIGGY_CAROUSEL_API } from "../utils/constants";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Slider from "react-slick";
 import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import RestaurantCard, { WithItemLabel } from "./RestaurantCard";
@@ -9,6 +9,7 @@ import { SWIGGY_API_LINK3 } from "../utils/constants";
 import { Link } from "react-router-dom";
 import ShimmerCard from "./ShimmerCard";
 import useSwiggiApi from "../utils/useSwiggiApi";
+import TopRestoMobileShimmer from "../utils/TopRestoMobileShimmer";
 
 const TopRestoChainsMobile = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -20,6 +21,10 @@ const TopRestoChainsMobile = () => {
     swiggyApidata?.cards[4]?.card?.card?.gridElements?.infoWithStyle
       ?.restaurants;
 
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     if (restaurantData) {
       setListOfRest(restaurantData || []);
@@ -30,7 +35,7 @@ const TopRestoChainsMobile = () => {
 
   const ShimmerUi = () => {
     if (ListOfRest.length == 0) {
-      return <ShimmerCard />;
+      return <TopRestoMobileShimmer />;
     }
   };
 
@@ -50,17 +55,19 @@ const TopRestoChainsMobile = () => {
   };
 
   return (
-    <div className="  sm:w-full">
+    <div className="   sm:w-full">
       <div className=" flex justify-between">
         <div className="font-bold lg:text-2xl sm:text-sm">
           Top Restaurant Chains in Kochi
         </div>
         <div className="flex">
           <div className="w-10" onClick={previous}>
-            <ArrowBack />
+            {/* <ArrowBack /> */}
+            <i class="fa-solid fa-circle-arrow-left text-3xl text-gray-300"></i>
           </div>
           <div className="w-10 " onClick={next}>
-            <ArrowFront />
+            {/* <ArrowFront /> */}
+            <i class="fa-solid fa-circle-arrow-right text-3xl text-gray-300"></i>
           </div>
         </div>
       </div>
@@ -75,6 +82,7 @@ const TopRestoChainsMobile = () => {
         >
           {ListOfRest?.map((rest) => (
             <Link
+              onClick={handleClickTop}
               key={rest?.info?.id}
               style={{ textDecoration: "none", color: "inherit" }}
               to={"/resto-menu/" + rest?.info?.id}

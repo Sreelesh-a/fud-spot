@@ -18,6 +18,7 @@ import "react-toastify/dist/ReactToastify.css";
 import useWhatsOnUrMindAPI from "../utils/useWhatOnUrMindAPI";
 import TopRestoChainsMobile from "./TopRestoChainsMobile";
 import WhatsOYMindMobile from "./WhatsOYMindMobile";
+import TopRestoMobileShimmer from "../utils/TopRestoMobileShimmer";
 
 const Body = () => {
   const [ListOfRest, setListOfRest] = useState([]);
@@ -30,6 +31,9 @@ const Body = () => {
 
   // console.log(FilteredListOfResto);
   // console.log(swiggyApidata);
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     if (restaurantData) {
@@ -38,11 +42,27 @@ const Body = () => {
     }
   }, [restaurantData]);
 
+  // console.log(restaurantData);
+
   const ShimmerUi = () => {
     if (FilteredListOfResto.length === 0) {
       return <ShimmerCard />;
     }
   };
+
+  const TopRestoShimmer = () => {
+    if (FilteredListOfResto.length === 0) {
+      return (
+        <div className="flex flex-wrap">
+          <TopRestoMobileShimmer />
+          <TopRestoMobileShimmer />
+          <TopRestoMobileShimmer />
+          <TopRestoMobileShimmer />9
+        </div>
+      );
+    }
+  };
+
   const [searchText, setSearchText] = useState("");
   // console.log(FilteredListOfRest[0]?.info?.id);
 
@@ -76,13 +96,9 @@ const Body = () => {
   // console.log(FilteredListOfResto);
 
   return (
-    <div className="px-4 sm:px-40 py-4 ml-2   sm:ml-6 mt-24 bg-[#FFFFFF]">
+    <div className="px-4 sm:px-40 py-4 ml-2 overflow-hidden   sm:ml-6 mt-24 bg-[#FFFFFF]">
       {/* <MobCarousel /> */}
       <div className="hidden sm:block">
-        {/* <div className="font-bold lg:text-2xl sm:text-sm">
-          What's on your mind?
-        </div> */}
-
         <WhatsOnYourMind />
       </div>
       <div className="sm:hidden">
@@ -154,14 +170,18 @@ const Body = () => {
           </div>
         </div>
 
-        <div className="rest-container">
+        <div className="rest-container hidden sm:block">
           <ShimmerUi />
+        </div>
+        <div className="sm:hidden">
+          <TopRestoShimmer />
         </div>
         <div className="sm:mb-0 mb-20">
           <div className="  justify-between  grid grid-cols-1 sm:grid-cols-4  gap-x-4 cursor-pointer ">
             {FilteredListOfResto &&
               FilteredListOfResto?.map((rest) => (
                 <Link
+                  onClick={handleClickTop}
                   key={rest.info.id}
                   style={{ textDecoration: "none", color: "inherit" }}
                   to={"/resto-menu/" + rest?.info?.id}

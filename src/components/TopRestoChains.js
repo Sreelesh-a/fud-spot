@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { SWIGGY_CAROUSEL_API } from "../utils/constants";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Slider from "react-slick";
 import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import RestaurantCard, { WithItemLabel } from "./RestaurantCard";
@@ -15,6 +15,10 @@ const TopRestoChains = () => {
   // const swiggyApi = useSwiggyApi();
   // let swiggyInfo = swiggyApi?.cards[0]?.card?.card?.imageGridCards?.info;
   // const RestoCardItemOffer = WithItemLabel(RestaurantCard);
+
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   // useEffect(() => {
   //   fetchData();
@@ -81,10 +85,12 @@ const TopRestoChains = () => {
         </div>
         <div className="flex">
           <div className="w-10" onClick={previous}>
-            <ArrowBack />
+            {/* <ArrowBack /> */}
+            <i class="fa-solid fa-circle-arrow-left text-3xl text-gray-300"></i>
           </div>
           <div className="w-10 " onClick={next}>
-            <ArrowFront />
+            {/* <ArrowFront /> */}
+            <i class="fa-solid fa-circle-arrow-right text-3xl text-gray-300"></i>
           </div>
         </div>
       </div>
@@ -99,6 +105,7 @@ const TopRestoChains = () => {
         >
           {ListOfRest?.map((rest) => (
             <Link
+              onClick={handleClickTop}
               key={rest?.info?.id}
               style={{ textDecoration: "none", color: "inherit" }}
               to={"/resto-menu/" + rest?.info?.id}

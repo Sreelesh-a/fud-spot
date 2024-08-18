@@ -2,7 +2,7 @@ import useSwiggyApi from "../utils/useSwiggiApi";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { SWIGGY_CAROUSEL_API } from "../utils/constants";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Slider from "react-slick";
 import { ArrowBack, ArrowFront } from "../utils/icons/Arrow";
 import { ShimmerWhatsOnYourMind } from "./ShimmerCard";
@@ -15,6 +15,10 @@ const WhatsOnYourMind = () => {
   const [collectionId, setCollectionId] = useState(null);
   let swiggyApi = useSwiggyApi();
   // console.log(swiggyApi);
+
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     if (swiggyApi) {
@@ -51,16 +55,18 @@ const WhatsOnYourMind = () => {
   return (
     <div className="">
       <div className="">
-        <div className=" flex justify-between">
+        <div className=" flex justify-between items-center">
           <div className="font-bold lg:text-2xl sm:text-sm">
             What's on your mind?
           </div>
-          <div className="flex ">
+          <div className="flex  ">
             <div className="w-10" onClick={previous}>
-              <ArrowBack />
+              {/* <ArrowBack /> */}
+              <i class="fa-solid fa-circle-arrow-left text-3xl text-gray-300"></i>
             </div>
             <div className="w-10 " onClick={next}>
-              <ArrowFront />
+              {/* <ArrowFront /> */}
+              <i class="fa-solid fa-circle-arrow-right text-3xl text-gray-300"></i>
             </div>
           </div>
         </div>
@@ -74,6 +80,7 @@ const WhatsOnYourMind = () => {
           {swiggyInfo?.map((d) => (
             <div key={d?.id} className="">
               <Link
+                onClick={handleClickTop}
                 to={
                   "/collections/" +
                   regex.exec(d?.action?.link)[1] +

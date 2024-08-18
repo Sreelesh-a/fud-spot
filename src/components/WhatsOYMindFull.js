@@ -5,7 +5,7 @@ import { SWIGGY_CAROUSEL_API } from "../utils/constants";
 import { Link } from "react-router-dom";
 import WhatsOYMindShimmer from "../utils/WhatsOYMindShimmer";
 
-const WhatsOYMindMobile = () => {
+const WhatsOYMindFull = () => {
   const [swiggyInfo, setSwiggyInfo] = useState([]);
   let swiggyApi = useSwiggyApi();
 
@@ -42,10 +42,14 @@ const WhatsOYMindMobile = () => {
           </div>
           {/* <ShimmerUi /> */}
           {swiggyInfo.length == 0 ? (
-            <WhatsOYMindShimmer />
+            <div className="">
+              <WhatsOYMindShimmer />
+              <WhatsOYMindShimmer />
+              <WhatsOYMindShimmer />
+            </div>
           ) : (
             <div className="">
-              <div className=" relative h-52 w-screen   overflow-x-auto  ">
+              <div className=" relative  w-screen   overflow-hidden  ">
                 <div className="  ">
                   <div className="flex flex-wrap ">
                     {swiggyInfo &&
@@ -77,4 +81,4 @@ const WhatsOYMindMobile = () => {
   );
 };
 
-export default WhatsOYMindMobile;
+export default WhatsOYMindFull;

@@ -1,26 +1,31 @@
 import { Link } from "react-router-dom";
-import logoHeaderImg from "/img/fud-spot-log-b.png";
+// import logoHeaderImg from "/img/fud-spot-log-b.png";
+// import { logoHeaderImg } from "../utils/imageConstants";
+import { logoHeaderImgMob } from "../utils/imageConstants";
 import React from "react";
 import { useSelector } from "react-redux";
 import { CartIcon } from "../utils/icons/Arrow";
 const MobMenu = () => {
   const cartItems = useSelector((store) => store.cart.items);
+  const handleClickTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <div className="fixed font-normal bottom-0 left-0 px-4  bg-white flex h-auto py-3  z-10 w-full  border-[.1rem] ">
       <div className="flex justify-center mx-auto px-4   items-center gap-12 ">
-        <Link to={"/"}>
+        <Link to={"/"} onClick={handleClickTop}>
           <div className="flex flex-wrap justify-center items-center space-y-1">
             <img
               alt="logo"
               className="nav-logo w-4 justify-center"
-              src={logoHeaderImg}
+              src={logoHeaderImgMob}
             ></img>
             <div className="font-semibold text-[.7rem]">FUDSPOT</div>
           </div>
         </Link>
 
         <div className="">
-          <Link to={"/"}>
+          <Link to={"/"} onClick={handleClickTop}>
             <div className="flex flex-wrap justify-center items-center ">
               <span className="text-xl justify-center  ">
                 <ion-icon className="" name="fast-food-outline"></ion-icon>
@@ -39,7 +44,7 @@ const MobMenu = () => {
             <div className="font-semibold text-[.7rem] ">CART</div>
           </Link> */}
 
-          <Link to="/cart">
+          <Link to="/cart" onClick={handleClickTop}>
             <div className="flex flex-wrap ">
               {cartItems.length != 0 ? (
                 <div className="scale-150 items-center text-green-700 mb-1">
@@ -61,7 +66,7 @@ const MobMenu = () => {
         </div>
 
         <div className="">
-          <Link to={"/search"}>
+          <Link to={"/search"} onClick={handleClickTop}>
             <div className="flex flex-wrap justify-center items-center ">
               <span className="text-xl justify-center  ">
                 <ion-icon name="search-outline"></ion-icon>

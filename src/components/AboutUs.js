@@ -12,9 +12,9 @@ import IndustryPioneer from "./IndustryPioneer";
 import Footer from "./Footer";
 const AboutUs = () => {
   return (
-    <div>
+    <div className="hidden sm:block">
       <div className="bg-[#FE4F05]  text-center text-white my-auto  ">
-        <div className="flex items-center gap-x-9 px-32 py-4 justify-between">
+        <div className="flex items-center gap-x-9 px-4 sm:px-32 py-4 justify-between">
           <div className=" flex">
             <Link to="/">
               <img className="w-10" src={fudspotLogo} />
@@ -31,7 +31,7 @@ const AboutUs = () => {
             </ul>
           </div>
         </div>
-        <div className="relative flex justify-center flex-wrap my-auto py-40 gap-y-4">
+        <div className="relative flex justify-center flex-wrap my-auto py-10 sm:py-40 gap-y-4">
           <div className="absolute left-0 bottom-0">
             <motion.div
               initial={{ x: -300 }}
