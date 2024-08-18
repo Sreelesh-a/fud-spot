@@ -41,6 +41,8 @@ const Body = () => {
     }
   }, [restaurantData]);
 
+  // console.log(restaurantData);
+
   const ShimmerUi = () => {
     if (FilteredListOfResto.length === 0) {
       return <ShimmerCard />;

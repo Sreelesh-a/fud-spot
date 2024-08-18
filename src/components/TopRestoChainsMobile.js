@@ -61,10 +61,12 @@ const TopRestoChainsMobile = () => {
         </div>
         <div className="flex">
           <div className="w-10" onClick={previous}>
-            <ArrowBack />
+            {/* <ArrowBack /> */}
+            <i class="fa-solid fa-circle-arrow-left text-3xl text-gray-300"></i>
           </div>
           <div className="w-10 " onClick={next}>
-            <ArrowFront />
+            {/* <ArrowFront /> */}
+            <i class="fa-solid fa-circle-arrow-right text-3xl text-gray-300"></i>
           </div>
         </div>
       </div>

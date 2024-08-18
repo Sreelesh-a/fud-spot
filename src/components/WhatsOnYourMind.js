@@ -55,16 +55,18 @@ const WhatsOnYourMind = () => {
   return (
     <div className="">
       <div className="">
-        <div className=" flex justify-between">
+        <div className=" flex justify-between items-center">
           <div className="font-bold lg:text-2xl sm:text-sm">
             What's on your mind?
           </div>
-          <div className="flex ">
+          <div className="flex  ">
             <div className="w-10" onClick={previous}>
-              <ArrowBack />
+              {/* <ArrowBack /> */}
+              <i class="fa-solid fa-circle-arrow-left text-3xl text-gray-300"></i>
             </div>
             <div className="w-10 " onClick={next}>
-              <ArrowFront />
+              {/* <ArrowFront /> */}
+              <i class="fa-solid fa-circle-arrow-right text-3xl text-gray-300"></i>
             </div>
           </div>
         </div>

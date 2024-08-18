@@ -23,7 +23,7 @@ const WhatsOYMindMobile = () => {
 
   const ShimmerUi = () => {
     if (swiggyInfo.length == 0) {
-      return <ShimmerWhatsOnYourMind />;
+      return <WhatsOYMindMobile />;
     }
   };
 

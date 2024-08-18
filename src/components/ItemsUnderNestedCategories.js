@@ -19,7 +19,7 @@ const ItemsUnderNestedCategories = ({ data }) => {
   //     cartItems.map((res) => setCartId(res?.id));
   //   }
   // };
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div>
