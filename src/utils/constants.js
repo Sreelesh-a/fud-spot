@@ -1,4 +1,6 @@
 module.exports = {
+  RESTO_IMG_LINK2:
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/",
   RESTO_IMG_LINK: "https://media-assets.swiggy.com/swiggy/image/upload/",
 
   SWIGGY_API_LINK1:

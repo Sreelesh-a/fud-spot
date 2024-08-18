@@ -13,6 +13,8 @@ const WhatsOUMCOllection = () => {
   const [itemCards, setItemCards] = useState([]);
   const RestoCardItemOffer = WithItemLabel(RestaurantCard);
 
+  const [checkCardEmpty, setCheckCardEmpty] = useState(false);
+
   const handleClickTop = () => {
     window.scrollTo(0, 0);
   };
@@ -32,7 +34,12 @@ const WhatsOUMCOllection = () => {
     if (apiData) {
       setItemCards(apiData?.cards);
     }
-  }, [apiData]);
+    if (itemCards) {
+      if (itemCards.length == 3) {
+        setCheckCardEmpty(true);
+      }
+    }
+  }, [apiData, itemCards]);
 
   //   if (!apiData.length == 0) {
   //     return <ShimmerCard />;
@@ -54,6 +61,31 @@ const WhatsOUMCOllection = () => {
     }
   };
 
+  // if (apiData?.cards.length == 3) {
+  //   setCheckCardEmpty(true);
+  // }
+
+  console.log(checkCardEmpty);
+  console.log(apiData);
+  console.log(itemCards);
+
+  const EmptyMessage = () => {
+    if (checkCardEmpty) {
+      return (
+        <div className="py-10 ">
+          <div className=" py-6 bg-gray-100   text-center  p-6 font-semibold  flex flex-wrap justify-center gap-y-1">
+            <span className="w-full text-2xl text-gray-600">
+              Oops, this section is empty!
+            </span>
+            <span className="text-sm font-normal ">
+              Explore our other delicious options while we restock this section.
+            </span>
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
     <div>
       <div className="my-32 px-7 sm:px-44">
@@ -68,6 +100,7 @@ const WhatsOUMCOllection = () => {
         </div>
 
         <div className="font-bold text-2xl mt-6 ">Restaurants to explore</div>
+
         <ShimmerUi />
         <ShimmerUi />
         <div className=" justify-between  grid grid-cols-1 sm:grid-cols-4  gap-x-4 cursor-pointer ">
@@ -95,6 +128,10 @@ const WhatsOUMCOllection = () => {
                 )}
               </Link>
             ))}
+        </div>
+
+        <div className="">
+          <EmptyMessage />
         </div>
       </div>
     </div>

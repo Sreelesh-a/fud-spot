@@ -1,4 +1,5 @@
 import { RESTO_IMG_LINK } from "../utils/constants";
+import { RESTO_IMG_LINK2 } from "../utils/constants";
 import { Link } from "react-router-dom";
 // import { Ratingicon } from "./RestMenu";
 import { Ratingicon } from "./Ratingicon";
@@ -21,7 +22,7 @@ const RestaurantCard = (res) => {
         {/* <ShimmerUi /> */}
         <div className="relative rounded-xl overflow-hidden w-36 h-28 sm:w-60 sm:h-40  ">
           <img
-            src={RESTO_IMG_LINK + cloudinaryImageId}
+            src={RESTO_IMG_LINK2 + cloudinaryImageId}
             className="object-cover w-full h-full "
           />
           {discountCheck && (
