@@ -5,7 +5,8 @@
     "starts": "parcel watch index.html --dist-dir dist",
     "start": "parcel index.html ",
     "serve": "node server.js",
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch"
   },
   "author": "",
   "license": "ISC",
