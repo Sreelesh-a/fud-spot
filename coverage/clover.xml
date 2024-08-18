@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1723977456434" clover="3.2.0">
+  <project timestamp="1723977456434" name="All files">
+    <metrics statements="78" coveredstatements="45" conditionals="22" coveredconditionals="6" methods="31" coveredmethods="13" elements="131" coveredelements="64" complexity="0" loc="78" ncloc="78" packages="4" files="13" classes="13"/>
+    <package name="components">
+      <metrics statements="42" coveredstatements="25" conditionals="16" coveredconditionals="6" methods="19" coveredmethods="8"/>
+      <file name="Header.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/components/Header.js">
+        <metrics statements="11" coveredstatements="9" conditionals="6" coveredconditionals="3" methods="5" coveredmethods="3"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="32" count="9" type="stmt"/>
+        <line num="35" count="5" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="5" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="106" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="MobMenu.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/components/MobMenu.js">
+        <metrics statements="5" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+      </file>
+      <file name="Ratingicon.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/components/Ratingicon.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+      <file name="RestaurantCard.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/components/RestaurantCard.js">
+        <metrics statements="10" coveredstatements="7" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+      </file>
+      <file name="SelectLocation.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/components/SelectLocation.js">
+        <metrics statements="10" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+      </file>
+      <file name="ShimmerCard.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/components/ShimmerCard.js">
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.mocks">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="restCardMock.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/components/mocks/restCardMock.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="21" coveredstatements="7" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="LocationContext.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/utils/LocationContext.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="appStore.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/utils/appStore.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="cartSlice.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/utils/cartSlice.js">
+        <metrics statements="16" coveredstatements="2" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+      </file>
+      <file name="constants.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/utils/constants.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="imageConstants.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/utils/imageConstants.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils.icons">
+      <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
+      <file name="Arrow.js" path="/Users/macbook/Sreelesh/Self-Learn/Food-Order/src/utils/icons/Arrow.js">
+        <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="6" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="5" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="90" count="5" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="11" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
