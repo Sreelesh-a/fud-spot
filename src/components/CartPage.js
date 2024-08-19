@@ -4,6 +4,7 @@ import { useState } from "react";
 import { addItem, removeItem, clearCart } from "../utils/cartSlice";
 import { Link } from "react-router-dom";
 import cartIMG from "../../img/cartIMG.png";
+import PaymentComponent from "./PaymentComponent";
 
 const CartPage = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -21,7 +22,7 @@ const CartPage = () => {
   //   console.log(totalAmount);
 
   //   const [totalAmount,setTotalAmount]
-  console.log(cartItems);
+
   const dispatch = useDispatch();
   const handleAddItem = (res) => {
     dispatch(addItem(res));
@@ -112,9 +113,16 @@ const CartPage = () => {
           <div className="bg-white w-full max-h-96  sm:w-[38%] py-6  grid grid-cols-1 justify-between px-9">
             <div>
               {cartItems.length !== 0 ? (
-                <div className="bg-white  h-2 text-xl font-bold flex justify-between mb-20">
-                  <span className="">To pay :</span>{" "}
-                  <span className=" text-green-600">{totalAmount / 100} </span>
+                <div className=" flex flex-wrap gap-y-10">
+                  <div className="bg-white  h-2 text-xl font-bold flex justify-between w-full">
+                    <span className="">To pay :</span>{" "}
+                    <span className=" text-green-600">
+                      {totalAmount / 100}{" "}
+                    </span>
+                  </div>
+                  <div className="">
+                    <PaymentComponent amount={totalAmount / 100} />
+                  </div>
                 </div>
               ) : (
                 <div className="mx-auto my-auto">
