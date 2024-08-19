@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { RESTO_IMG_LINK } from "../utils/constants";
+import { RESTO_IMG_LINK2 } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 import { useSelector } from "react-redux";
 import { useState } from "react";
@@ -63,7 +63,7 @@ const ItemsUnderNestedCategories = ({ data }) => {
               {res?.card?.info?.imageId ? (
                 <img
                   className=" w-36 h-36 rounded-2xl"
-                  src={RESTO_IMG_LINK + res?.card?.info?.imageId}
+                  src={RESTO_IMG_LINK2 + res?.card?.info?.imageId}
                   alt=""
                 />
               ) : (
