@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { SelectLocationContext } from "../utils/LocationContext";
 import SelectLocation from "./SelectLocation";
+import { useDispatch } from "react-redux";
+import { handleShowSigup } from "../utils/userSlice";
 // import boxicons from "boxicons";
 import {
   Offer,
@@ -18,10 +20,12 @@ import {
 } from "../utils/icons/Arrow";
 import MobMenu from "./MobMenu";
 import { useSelector } from "react-redux";
+import SignUp from "./SignUp";
 
 const Header = () => {
   const { setSelectArea, location } = useContext(SelectLocationContext);
-  const [loginAuth, setLoginAuth] = useState("Sign in");
+  const [showSigup, setShowSignup] = useState(false);
+  const [loginAuth, setLoginAuth] = useState(false);
   const [displayLocations, setDisplayLocation] = useState(false);
   const { setDisplaySelectLocation } = useContext(SelectLocationContext);
   // const DisplayLocationComp = () => {
@@ -31,10 +35,18 @@ const Header = () => {
   // };
   const cartItems = useSelector((store) => store.cart.items);
   // console.log(cartItems);
+  const userData = useSelector((store) => store.user.userData);
 
   const handleClickTop = () => {
     window.scrollTo(0, 0);
   };
+
+  const handleSignUp = () => {
+    setShowSignup(!showSigup);
+  };
+
+  const dispatch = useDispatch();
+  dispatch(handleShowSigup(setShowSignup));
 
   return (
     <div>
@@ -61,6 +73,7 @@ const Header = () => {
         {/* <div className=" ">
         <i class="fa-solid fa-circle-user "></i>
       </div> */}
+        {showSigup && <SignUp handle={setShowSignup} />}
         <div className="navItems hide-on-mob hidden sm:block">
           <ul className="flex gap-10 items-center">
             <li>
@@ -100,16 +113,11 @@ const Header = () => {
               <HelpIcon />
               Help
             </li>
-            <button
-              className="flex items-center gap-x-2"
-              onClick={() => {
-                loginAuth === "Sign in"
-                  ? setLoginAuth("Sign out")
-                  : setLoginAuth("Sign in");
-              }}
-            >
+            <button className="flex items-center " onClick={handleSignUp}>
               <ProfileIcon />
-              {loginAuth}
+              <div className="truncate w-24">
+                {userData?.name ? userData?.name : "Sign in"}
+              </div>
             </button>
             <Link to="/cart">
               <li

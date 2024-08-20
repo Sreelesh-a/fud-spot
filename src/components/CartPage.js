@@ -117,7 +117,7 @@ const CartPage = () => {
                   <div className="bg-white  h-2 text-xl font-bold flex justify-between w-full">
                     <span className="">To pay :</span>{" "}
                     <span className=" text-green-600">
-                      ₹{" "}{totalAmount / 100}{" "}
+                      ₹ {totalAmount / 100}{" "}
                     </span>
                   </div>
                   <div className="">
