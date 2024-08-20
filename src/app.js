@@ -6,6 +6,9 @@ import Error from "./components/Error";
 import AppDownloadBanner from "./components/AppDownloadBanner";
 import { SwiggyProvider } from "./utils/swiggyContext.js";
 import RestMenu from "./components/RestMenu";
+import { PersistGate } from "redux-persist/integration/react";
+// import appStore, { persistor } from "./path/to/your/store";
+import appStore, { persistor } from "./utils/appStore.js";
 
 import SearchClassComp from "./components/SearchClassComp";
 import Search from "./components/Search";
@@ -37,28 +40,30 @@ export const AppLayout = () => {
   return (
     <>
       <Provider store={appStore}>
-        <SelectLocationContext.Provider
-          value={{ location: selectArea, setDisplaySelectLocation }}
-        >
-          <SwiggyProvider>
-            <div className="AppLayout relative">
-              <div className="">
-                {displaySelectLocation == true && (
-                  <SelectLocation
-                    displaySelectLocation={displaySelectLocation}
-                    setDisplaySelectLocation={setDisplaySelectLocation}
-                    setSelectArea={setSelectArea}
-                  />
-                )}
+        <PersistGate loading={null} persistor={persistor}>
+          <SelectLocationContext.Provider
+            value={{ location: selectArea, setDisplaySelectLocation }}
+          >
+            <SwiggyProvider>
+              <div className="AppLayout relative">
+                <div className="">
+                  {displaySelectLocation == true && (
+                    <SelectLocation
+                      displaySelectLocation={displaySelectLocation}
+                      setDisplaySelectLocation={setDisplaySelectLocation}
+                      setSelectArea={setSelectArea}
+                    />
+                  )}
+                </div>
+
+                <Header />
+
+                {/* <MobMenu /> */}
+                <Outlet />
               </div>
-
-              <Header />
-
-              {/* <MobMenu /> */}
-              <Outlet />
-            </div>
-          </SwiggyProvider>
-        </SelectLocationContext.Provider>
+            </SwiggyProvider>
+          </SelectLocationContext.Provider>
+        </PersistGate>
       </Provider>
     </>
   );
