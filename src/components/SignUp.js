@@ -50,8 +50,8 @@ const SignUp = (props) => {
         animate={{ x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="absolute right-0 top-0 w-1/3  z-10 ">
-          <div className="  bg-white shadow-2xl h-screen px-11 py-9">
+        <div className="absolute right-0 top-0  w-[100%] sm:w-1/3   z-10 ">
+          <div className="  bg-white shadow-2xl h-screen px-5 sm:px-11 py-9">
             <div
               className=""
               onClick={() => {
@@ -60,7 +60,7 @@ const SignUp = (props) => {
             >
               <i class="fa-solid fa-xmark text-xl text-gray-500  "></i>
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between ">
               <div className="py-6 space-y-2">
                 <div className="text-3xl font-m">
                   {loginStatusCheck ? "Update Profile" : "Login"}

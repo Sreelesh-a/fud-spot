@@ -19,7 +19,7 @@ const PaymentComponent = ({ amount }) => {
   const handleSignUp = useSelector((store) => store.user.showSigup);
   // paymentStatusCheck = useSelector((store) => store.user.paymentStatus);
 
-  console.log(paymentStatusCheck);
+  // console.log(paymentStatusCheck);
   const handlePayment = () => {
     const options = {
       key: "rzp_test_fRX19y3ulO6D3U",
