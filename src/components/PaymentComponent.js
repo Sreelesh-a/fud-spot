@@ -17,7 +17,7 @@ const PaymentComponent = ({ amount }) => {
 
   const userData = useSelector((store) => store.user.userData);
   const handleSignUp = useSelector((store) => store.user.showSigup);
-  paymentStatusCheck = useSelector((store) => store.user.paymentStatus);
+  // paymentStatusCheck = useSelector((store) => store.user.paymentStatus);
 
   console.log(paymentStatusCheck);
   const handlePayment = () => {
