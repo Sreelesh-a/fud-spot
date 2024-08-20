@@ -4,7 +4,7 @@ const PaymentComponent = ({ amount }) => {
   const [paymentSuccessState, setPaymentSuccessState] = useState(null);
   const handlePayment = () => {
     const options = {
-      key: process.env.REACT_APP_RAZORPAY_KEY,
+      key: "rzp_test_fRX19y3ulO6D3U",
       amount: amount * 100, // Razorpay expects amount in paise
       currency: "INR",
       name: "Cropacity",
