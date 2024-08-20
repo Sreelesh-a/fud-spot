@@ -49,4 +49,6 @@ module.exports = {
     "https://www.swiggy.com/about-us/wp-content/uploads/2024/04/about-img1-new.png",
   SWIGGY_APP_DOWNLOAD_FOOTER:
     "https://www.swiggy.com/about-us/wp-content/uploads/2024/03/Section-Break.png",
+  SWIGGY_LOGIN_VECTOR:
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r",
 };
