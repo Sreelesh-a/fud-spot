@@ -2,13 +2,13 @@ import { redirect } from "react-router-dom";
 import PaymentSuccess from "../utils/icons/PaymentSuccess";
 import { useNavigate } from "react-router-dom";
 
-PaymentSuccessBanner = ({ handle }) => {
+PaymentSuccessBanner = () => {
   const toCartPage = useNavigate();
 
   handleHide = () => {
-    toCartPage("/cart");
+    console.log("hi)
   };
-  console.log(handle);
+  
   return (
     <div className="absolute z-10 bg-gray-100 w-full sm:w-[50%] top-[5.2rem]    py-11 lg:py-20 md:py-16  right-0 sm:right-[25%]">
       <div className="absolute top-8 left-10" onClick={handleHide}>
