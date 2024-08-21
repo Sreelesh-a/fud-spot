@@ -15,8 +15,8 @@ const SignUp = (props) => {
 
   const userData = useSelector((store) => store.user.userData);
   const loginStatusCheck = useSelector((store) => store.user.loginStatus);
-  console.log(userData);
-  console.log(loginStatusCheck);
+  // console.log(userData);
+  // console.log(loginStatusCheck);
   const dispatch = useDispatch();
   const formSubmit = (event) => {
     event.preventDefault();

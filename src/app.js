@@ -18,7 +18,7 @@ import MobMenu from "./components/MobMenu";
 // import AboutUs from "./components/AboutUs";
 // let AboutUs = require("./components/AboutUs");
 import ShimmerCard from "./components/ShimmerCard";
-import { useState } from "react";
+import { useState, useContext, createContext } from "react";
 import { SelectLocationContext } from "./utils/LocationContext";
 import SelectLocation from "./components/SelectLocation";
 import Footer from "./components/Footer";
@@ -32,37 +32,40 @@ import AboutUs from "./components/AboutUs";
 // AboutUs = lazy(() => {
 //   import("./components/AboutUs");
 // });
-
+export const ShowSignUpContext = createContext();
 export const AppLayout = () => {
   const [selectArea, setSelectArea] = useState("Kochi");
   const [displaySelectLocation, setDisplaySelectLocation] = useState(false);
+  const [showSigup, setShowSignup] = useState(false);
 
   return (
     <>
       <Provider store={appStore}>
         <PersistGate loading={null} persistor={persistor}>
-          <SelectLocationContext.Provider
-            value={{ location: selectArea, setDisplaySelectLocation }}
-          >
-            <SwiggyProvider>
-              <div className="AppLayout relative">
-                <div className="">
-                  {displaySelectLocation == true && (
-                    <SelectLocation
-                      displaySelectLocation={displaySelectLocation}
-                      setDisplaySelectLocation={setDisplaySelectLocation}
-                      setSelectArea={setSelectArea}
-                    />
-                  )}
+          <ShowSignUpContext.Provider value={{ showSigup, setShowSignup }}>
+            <SelectLocationContext.Provider
+              value={{ location: selectArea, setDisplaySelectLocation }}
+            >
+              <SwiggyProvider>
+                <div className="AppLayout relative">
+                  <div className="">
+                    {displaySelectLocation == true && (
+                      <SelectLocation
+                        displaySelectLocation={displaySelectLocation}
+                        setDisplaySelectLocation={setDisplaySelectLocation}
+                        setSelectArea={setSelectArea}
+                      />
+                    )}
+                  </div>
+
+                  <Header />
+
+                  {/* <MobMenu /> */}
+                  <Outlet />
                 </div>
-
-                <Header />
-
-                {/* <MobMenu /> */}
-                <Outlet />
-              </div>
-            </SwiggyProvider>
-          </SelectLocationContext.Provider>
+              </SwiggyProvider>
+            </SelectLocationContext.Provider>
+          </ShowSignUpContext.Provider>
         </PersistGate>
       </Provider>
     </>

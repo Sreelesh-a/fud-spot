@@ -3,7 +3,7 @@
 import { logoHeaderImg } from "../utils/imageConstants";
 
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { SelectLocationContext } from "../utils/LocationContext";
@@ -11,6 +11,8 @@ import SelectLocation from "./SelectLocation";
 import { useDispatch } from "react-redux";
 import { handleShowSigup } from "../utils/userSlice";
 import { useSelector } from "react-redux";
+import { ShowSignUpContext } from "../app";
+
 // import boxicons from "boxicons";
 import {
   Offer,
@@ -25,10 +27,12 @@ import SignUp from "./SignUp";
 
 const Header = () => {
   const { setSelectArea, location } = useContext(SelectLocationContext);
-  const [showSigup, setShowSignup] = useState(false);
+  const [showSigups, setShowSignups] = useState(false);
   const [loginAuth, setLoginAuth] = useState(false);
   const [displayLocations, setDisplayLocation] = useState(false);
   const { setDisplaySelectLocation } = useContext(SelectLocationContext);
+
+  const { showSigup, setShowSignup } = useContext(ShowSignUpContext);
   // const DisplayLocationComp = () => {
   //   if (displayLocations) {
   //     return <SelectLocation />;
@@ -47,7 +51,7 @@ const Header = () => {
   };
 
   const dispatch = useDispatch();
-  dispatch(handleShowSigup(setShowSignup));
+  // dispatch(handleShowSigup(setShowSignup));
 
   return (
     <div>
