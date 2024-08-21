@@ -50,8 +50,8 @@ const SignUp = (props) => {
         animate={{ x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="absolute right-0 top-0  w-[100%] sm:w-1/3   z-10 ">
-          <div className="  bg-white shadow-2xl h-screen px-5 sm:px-11 py-9">
+        <div className="absolute right-0 top-0  w-[100%] md:w-1/2 lg:w-1/3   z-10 ">
+          <div className="  bg-white shadow-2xl h-screen px-5 lg:px-11 py-9">
             <div
               className=""
               onClick={() => {

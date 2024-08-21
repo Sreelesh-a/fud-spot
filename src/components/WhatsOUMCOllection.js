@@ -99,7 +99,7 @@ const WhatsOUMCOllection = () => {
 
   return (
     <div>
-      <div className="my-32 px-7 sm:px-44">
+      <div className="my-32 px-7 md:px-20 lg:px-44">
         <div>
           <div className="font-bold text-3xl font-[montserrat]">
             {collectionTitle}

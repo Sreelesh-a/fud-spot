@@ -20,7 +20,7 @@ const RestaurantCard = (res) => {
     <div className="justify-between mt-9 ">
       <div className="space-y-2 grid grid-cols-2 items-center sm:grid-cols-1  ">
         {/* <ShimmerUi /> */}
-        <div className="relative rounded-xl overflow-hidden w-36 h-28 sm:w-60 sm:h-40  ">
+        <div className="relative rounded-xl overflow-hidden w-36 h-28 md:w-36 lg:w-60 lg:h-40  ">
           <img
             src={RESTO_IMG_LINK2 + cloudinaryImageId}
             className="object-cover w-full h-full "
@@ -34,11 +34,13 @@ const RestaurantCard = (res) => {
           <div className="font-bold truncate ...">{name}</div>
 
           <div className="resto-rating ">
-            <div className="flex   text-sm items-center gap-1 font-bold">
-              <Ratingicon />
+            <div className="flex  truncate lg:text-sm md:text-xs text-sm   items-center gap-1 font-bold">
+              <div className="sm:scale-100   lg:scale-100 md:scale-75">
+                <Ratingicon />
+              </div>
               {avgRating}
               <div className="center-dot">•</div>
-              {sla.slaString}
+              <span className="">{sla.slaString}</span>
             </div>
           </div>
 
@@ -59,7 +61,7 @@ export const WithItemLabel = (RestaurantCard) => {
       <div className="relative ">
         <RestaurantCard restData={restData} discountCheck={true} />
         {discountInfo && (
-          <div className="absolute bottom-0  sm:bottom-20 sm:left-2  text-white px-2 font-[oswald] py-1 text-sm sm:text-xl font-bold">
+          <div className="absolute bottom-0  lg:bottom-20 md:bottom-20 lg:left-2 truncate  text-white px-2 font-[oswald] py-1 text-sm md:text-sm lg:text-xl font-bold">
             {discountInfo.header} {discountInfo.subHeader}
           </div>
         )}

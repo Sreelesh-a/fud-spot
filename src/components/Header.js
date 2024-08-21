@@ -10,6 +10,7 @@ import { SelectLocationContext } from "../utils/LocationContext";
 import SelectLocation from "./SelectLocation";
 import { useDispatch } from "react-redux";
 import { handleShowSigup } from "../utils/userSlice";
+import { useSelector } from "react-redux";
 // import boxicons from "boxicons";
 import {
   Offer,
@@ -50,7 +51,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="flex  justify-between py-4  px-10 sm:px-28  items-center drop-shadow-[0_0rem_1rem_rgba(0,0,0,0.07)]  w-full fixed top-0 left-0 right-0 z-10 bg-white  ">
+      <div className="flex  justify-between py-4  px-10 md:items-center md:px-20  lg:px-28  items-center drop-shadow-[0_0rem_1rem_rgba(0,0,0,0.07)]  w-full fixed top-0 left-0 right-0 z-10 bg-white  ">
         <div className="flex items-center gap-4 ">
           <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
             <img src={logoHeaderImg} className="w-10 "></img>
@@ -74,9 +75,9 @@ const Header = () => {
         <i class="fa-solid fa-circle-user "></i>
       </div> */}
         {showSigup && <SignUp handle={setShowSignup} />}
-        <div className="navItems hide-on-mob hidden sm:block">
+        <div className="navItems  hidden sm:block">
           <ul className="flex gap-10 items-center">
-            <li>
+            <li className="md:hidden">
               <Link
                 style={{ textDecoration: "none", color: "inherit" }}
                 to="/about-us"
@@ -98,7 +99,7 @@ const Header = () => {
                 <i class="fa-solid fa-magnifying-glass"></i> Search
               </Link>
             </li>
-            <li>
+            <li className="md:hidden">
               <Link
                 style={{ textDecoration: "none", color: "inherit" }}
                 to="/offers"
@@ -109,7 +110,7 @@ const Header = () => {
                 Offers
               </Link>
             </li>
-            <li className="flex items-center gap-x-2">
+            <li className="flex items-center gap-x-2 md:hidden">
               <HelpIcon />
               Help
             </li>
@@ -142,6 +143,9 @@ const Header = () => {
               </li>
             </Link>
           </ul>
+        </div>
+        <div className="sm:hidden my-auto" onClick={() => setShowSignup(true)}>
+          <i class="fa-solid fa-circle-user text-4xl text-gray-500"></i>
         </div>
       </div>
       <div className="sm:hidden">

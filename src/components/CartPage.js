@@ -34,29 +34,28 @@ const CartPage = () => {
     dispatch(clearCart());
   };
   return (
-    <div className="bg-[#E9ECEE] px-2 sm:px-40 py-2  sm:mb-0 mb-52 sm:py-6    ">
+    <div className="bg-[#E9ECEE] px-2 md:px-10 lg:px-40 py-2  lg:mb-0 mb-52 lg:py-6    ">
       <div className="relative mt-24">
         {cartItems.length != 0 && (
           <div
-            className="border-red-500 border-[.1rem] mt-1  scale-90 z-100 absolute right-[10%] sm:right-[42.3%]  bg-white hover:bg-red-500 hover:text-white  font-medium w-32 h-9 flex gap-x-2 p-2 cursor-pointer items-center justify-center rounded-xl text-red-600"
+            className="border-red-500 border-[.1rem] mt-1  scale-90 z-100 absolute right-[10%] lg:right-[42.3%]  bg-white hover:bg-red-500 hover:text-white  font-medium w-32 h-9 flex gap-x-2 p-2 cursor-pointer items-center justify-center rounded-xl text-red-600"
             onClick={() => handleClearCart()}
           >
             <i class="fa-regular fa-trash-can"></i> Clear Cart
           </div>
         )}
 
-        <div className="p-4 sm:px-1  flex flex-wrap justify-between w-full">
-          <div className="bg-white w-full sm:w-[60%] items-start py-6 h-auto grid grid-cols-1 justify-between px-6 sm:px-9">
+        <div className="p-4 lg:px-1  flex flex-wrap justify-between w-full">
+          <div className="bg-white w-full lg:w-[60%] items-start py-6 h-auto grid grid-cols-1 justify-between px-6 lg:px-9">
             {cartItems && cartItems.length > 0 ? (
               cartItems.map((res, index) => {
-                // console.log(res);
                 return (
                   <div
-                    className="flex sm:px-4 items-center py-4 justify-between gap-x-4 w-full"
+                    className="flex lg:px-4 items-center py-4 justify-between gap-x-4 w-full"
                     key={index}
                   >
-                    <div className="sm:w-[43%]  sm:flex  gap-x-4 items-center">
-                      <div className="relative overflow-hidden bg-gray-200 size-20  sm:size-16 rounded-lg">
+                    <div className="lg:w-[43%] md:flex  lg:flex  gap-x-4 items-center">
+                      <div className="relative overflow-hidden bg-gray-200 size-20  lg:size-16 rounded-lg">
                         {res?.imageId && (
                           <img
                             className="w-full h-full object-cover"
@@ -64,11 +63,11 @@ const CartPage = () => {
                           />
                         )}
                       </div>
-                      <div className="sm:font-medium text-sm  sm:text-lg w-24 truncate sm:w-40">
+                      <div className="lg:font-medium text-sm  lg:text-lg w-24 truncate md:w-20 lg:w-40">
                         {res?.name}
                       </div>
                     </div>
-                    <div className="border-[.1rem] rounded-md px-3 border-green-600 sm:border-[.01rem] w-28 sm:w-[30%] sm:px-4">
+                    <div className="border-[.1rem] rounded-md px-3 border-green-600 lg:border-[.01rem] w-28 lg:w-[30%] sm:px-4">
                       <div className=" items-center h-10 flex justify-between ">
                         <div
                           className="cursor-pointer text-xl font-bold text-gray-400"
@@ -85,7 +84,7 @@ const CartPage = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="sm:w-[10%]">
+                    <div className="lg:w-[10%]">
                       ₹
                       {(res?.price / 100) * res?.count ||
                         (res?.defaultPrice / 100) * res?.count}
@@ -94,7 +93,7 @@ const CartPage = () => {
                 );
               })
             ) : (
-              <div className="mx-auto my-auto sm:mt-2 sm:py-4  mt-10">
+              <div className="mx-auto my-auto lg:mt-2 lg:py-4  mt-10">
                 <div className="text-center text-lg font-semibold text-gray-600 ">
                   Your cart is empty
                 </div>
@@ -110,7 +109,7 @@ const CartPage = () => {
             )}
           </div>
 
-          <div className="bg-white w-full max-h-96  sm:w-[38%] py-6  grid grid-cols-1 justify-between px-9">
+          <div className="bg-white w-full max-h-96  lg:w-[38%] py-6  grid grid-cols-1 justify-between px-9">
             <div>
               {cartItems.length !== 0 ? (
                 <div className=" flex flex-wrap gap-y-10">

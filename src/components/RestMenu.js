@@ -64,7 +64,7 @@ const RestMenu = () => {
   // console.log(restInfo?.cards[2]?.card?.card?.info);
   // console.log(handleScroll);
   return (
-    <div className="px-4 sm:px-80 mt-28 sm:mt-32">
+    <div className="px-4 md:px-20 lg:px-80 mt-28 sm:mt-32">
       <div className="menu-main my-12">
         <div className="resto-menu-header">
           <div className="font-bold sm:ml-0 ml-4 text-xl">{name}</div>

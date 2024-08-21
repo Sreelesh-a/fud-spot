@@ -1,6 +1,6 @@
 const MenuPageShimmerUI = () => {
   return (
-    <div className="px-6 sm:px-80 mt-32">
+    <div className="px-6 md:px-20 lg:px-80 mt-32 animate-pulse">
       <div className="my-12">
         <div className="flex items-center justify-center py-6">
           <div className=" relative border-black  bg-gradient-to-t from-gray-200 h-52 w-full   rounded-3xl ">
@@ -27,31 +27,31 @@ const MenuPageShimmerUI = () => {
           </div>
         </div>
         <div className="py-5">
-          <div className="bg-gray-100 w-full h-5 rounded-xl">
+          <div className="bg-gray-100 w-full h-10 rounded-xl">
             <div className="py-5">
               <div className="flex items-center justify-between py-9">
                 <div className="space-y-5">
-                  <div className="bg-gray-100 w-40 h-5"></div>
-                  <div className="bg-gray-100 w-11 h-5"></div>
-                  <div className="bg-gray-100 w-11 h-5"></div>
-                  <div className="bg-gray-100 w-96 h-3"></div>
-                  <div className="bg-gray-100 w-96 h-3"></div>
+                  <div className="bg-gray-100 rounded-xl w-40 h-5"></div>
+                  <div className="bg-gray-100 rounded-xl  w-36 h-5"></div>
+                  <div className="bg-gray-100 rounded-xl  w-32 h-5"></div>
+                  <div className="bg-gray-100 rounded-xl   sm:w-96 h-5"></div>
+                  <div className="bg-gray-100 rounded-xl  sm:w-96 h-5"></div>
                 </div>
                 <div className="relative">
-                  <div className=" size-40 bg-gray-100"></div>
+                  <div className=" size-40 rounded-2xl bg-gray-100"></div>
                   <div className=" absolute top-32 left-6 rounded-md drop-shadow-sm bg-white w-28 h-9"></div>
                 </div>
               </div>
               <div className="flex items-center justify-between py-9">
                 <div className="space-y-5">
-                  <div className="bg-gray-100 w-40 h-5"></div>
-                  <div className="bg-gray-100 w-11 h-5"></div>
-                  <div className="bg-gray-100 w-11 h-5"></div>
-                  <div className="bg-gray-100 w-96 h-3"></div>
-                  <div className="bg-gray-100 w-96 h-3"></div>
+                  <div className="bg-gray-100 rounded-xl w-40 h-5"></div>
+                  <div className="bg-gray-100 rounded-xl  w-36 h-5"></div>
+                  <div className="bg-gray-100 rounded-xl  w-32 h-5"></div>
+                  <div className="bg-gray-100 rounded-xl   sm:w-96 h-5"></div>
+                  <div className="bg-gray-100 rounded-xl  sm:w-96 h-5"></div>
                 </div>
                 <div className="relative">
-                  <div className=" size-40 bg-gray-100"></div>
+                  <div className=" size-40 rounded-2xl bg-gray-100"></div>
                   <div className=" absolute top-32 left-6 rounded-md drop-shadow-sm bg-white w-28 h-9"></div>
                 </div>
               </div>
