@@ -7,7 +7,7 @@ PaymentSuccessBanner = () => {
 
   handleHide = () => {
     console.log("hi)
-  };
+  }
   
   return (
     <div className="absolute z-10 bg-gray-100 w-full sm:w-[50%] top-[5.2rem]    py-11 lg:py-20 md:py-16  right-0 sm:right-[25%]">
