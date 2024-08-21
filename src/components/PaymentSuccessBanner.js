@@ -6,7 +6,7 @@ PaymentSuccessBanner = () => {
   const toCartPage = useNavigate();
 
   handleHide = () => {
-    console.log("hi)
+    console.log("hi")
   }
   
   return (
