@@ -20,7 +20,7 @@ const PaymentSuccessBanner = () => {
             </svg>
           </div>
           <div className="font-bold text-xl sm:text-2xl text-gray-600">
-            Payment Successfull
+            Payment Successful!
           </div>
           <div className="font-bold text-2xl text-gray-700">₹100</div>
         </div>
