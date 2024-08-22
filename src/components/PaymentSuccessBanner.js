@@ -1,8 +1,10 @@
 import { redirect } from "react-router-dom";
 import PaymentSuccess from "../utils/icons/PaymentSuccess";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const PaymentSuccessBanner = () => {
+  const paymentDetails = useSelector((store) => store.user.paymentStatus);
   return (
     <div className="absolute z-10 bg-white w-full sm:w-[40%] top-[5.2rem]    py-10 lg:py-20 md:py-16  right-0 sm:right-[30%]">
       <div className="absolute top-8 left-10">
