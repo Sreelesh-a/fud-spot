@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addItem } from "./cartSlice";
+import { act } from "react";
 
 const userSlice = createSlice({
   name: "user",
@@ -30,6 +31,9 @@ const userSlice = createSlice({
     paymentStatusUpdate: (state, action) => {
       state.paymentStatus = action.payload;
     },
+    paymentStatusChange: (state, action) => {
+      state.paymentStatus.status = action.payload;
+    },
   },
 });
 
@@ -38,5 +42,6 @@ export const {
   handleShowSigup,
   handleloginStatus,
   paymentStatusUpdate,
+  paymentStatusChange,
 } = userSlice.actions;
 export default userSlice.reducer;

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RESTO_IMG_LINK } from "../utils/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addItem, removeItem, clearCart } from "../utils/cartSlice";
 import { Link } from "react-router-dom";
 import cartIMG from "../../img/cartIMG.png";
@@ -21,7 +21,7 @@ const CartPage = () => {
       0
     );
   const paymentDetails = useSelector((store) => store.user.paymentStatus);
-  console.log(paymentDetails);
+  // console.log(paymentDetails);
 
   //   const [totalAmount,setTotalAmount]
 
@@ -39,7 +39,7 @@ const CartPage = () => {
   // if (paymentDetails?.status) {
   //   setHandlePaymentSuccess(true);
   // }
-
+  // useEffect(() => {}, [paymentDetails]);
   const ShowPaymentSuccess = () => {
     if (paymentDetails?.status) {
       dispatch(clearCart());
@@ -51,6 +51,14 @@ const CartPage = () => {
   // const handleClickTop = () => {
   //   window.scrollTo(0, 0);
   // };
+
+  const paisaFormatter = (paisa) => {
+    const rupees = paisa / 10;
+    return Math.round(rupees) / 10;
+  };
+
+  console.log(paisaFormatter(16092));
+  console.log(cartItems);
 
   return (
     <div>
@@ -114,8 +122,8 @@ const CartPage = () => {
                       </div>
                       <div className="lg:w-[10%]">
                         ₹
-                        {(res?.price / 100) * res?.count ||
-                          (res?.defaultPrice / 100) * res?.count}
+                        {paisaFormatter(res?.price) * res?.count ||
+                          paisaFormatter(res?.defaultPrice) * res?.count}
                       </div>
                     </div>
                   );

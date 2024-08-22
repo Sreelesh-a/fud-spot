@@ -25,7 +25,14 @@ const PaymentComponent = ({ amount }) => {
   const dispath = useDispatch();
   dispath(paymentStatusUpdate(paymentDetails));
 
-  // console.log(cartItems);
+  const convertTimeFormat = (timeString) => {
+    const [hours, minutes, seconds] = timeString.split(":");
+
+    const formattedHours = parseInt(hours) % 12 || 12;
+    const formattedMinutes = minutes.padStart(2, "0");
+    const period = hours >= 12 ? "PM" : "AM";
+    return `${formattedHours}:${formattedMinutes} ${period}`;
+  };
 
   // console.log(paymentStatusCheck);
   const handlePayment = () => {
@@ -36,10 +43,13 @@ const PaymentComponent = ({ amount }) => {
       name: "Fudspot",
       description: "Test Transaction",
       handler: function (response) {
+        const paymentTime = convertTimeFormat(new Date().toLocaleTimeString());
+
         setPaymentDetails((res) => ({
           paymentID: response.razorpay_payment_id,
           status: true,
           orders: cartItems,
+          time: paymentTime,
         }));
 
         setPaymentSuccessState(true);
