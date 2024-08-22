@@ -42,9 +42,15 @@ const CartPage = () => {
 
   const ShowPaymentSuccess = () => {
     if (paymentDetails?.status) {
+      dispatch(clearCart());
+      window.scrollTo(0, 0);
       return <PaymentSuccessBanner />;
     }
   };
+
+  // const handleClickTop = () => {
+  //   window.scrollTo(0, 0);
+  // };
 
   return (
     <div>

@@ -3,13 +3,9 @@ import PaymentSuccess from "../utils/icons/PaymentSuccess";
 import { useNavigate } from "react-router-dom";
 
 const PaymentSuccessBanner = () => {
-  
-
-  
-  
   return (
-    <div className="absolute z-10 bg-gray-100 w-full sm:w-[50%] top-[5.2rem]    py-11 lg:py-20 md:py-16  right-0 sm:right-[25%]">
-      <div className="absolute top-8 left-10" >
+    <div className="absolute z-10 bg-white w-full sm:w-[40%] top-[5.2rem]    py-10 lg:py-20 md:py-16  right-0 sm:right-[30%]">
+      <div className="absolute top-8 left-10">
         <i class="fa-solid fa-xmark text-xl text-gray-400  "></i>
       </div>
       <div className=" flex justify-center items-center py-4 ">
