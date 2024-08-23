@@ -48,6 +48,21 @@ const MobMenu = () => {
             <div className="flex flex-wrap ">
               {cartItems.length != 0 ? (
                 <div className="scale-150 items-center text-green-700 mb-1">
+                  {cartItems.length != 0 && (
+                    <div
+                      className="absolute   font-bold mt-2 bg-white text-green-700"
+                      style={{
+                        left: "50%",
+                        transform: "translateX(-50%)",
+
+                        width: "auto",
+                        fontSize: "0.55rem",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {cartItems.length}
+                    </div>
+                  )}
                   <CartIcon />
                 </div>
               ) : (
@@ -56,11 +71,11 @@ const MobMenu = () => {
                 </div>
               )}
               <span className="w-full">Cart</span>
-              {cartItems.length != 0 && (
+              {/* {cartItems.length != 0 && (
                 <div className="absolute ml-[.47rem]  text-xs font-bold mt-2 text-green-700 mb-[.23rem] ">
                   {cartItems.length}
                 </div>
-              )}
+              )} */}
             </div>
           </Link>
         </div>

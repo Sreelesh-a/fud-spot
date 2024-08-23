@@ -90,7 +90,10 @@ const ItemsUnderNestedCategories = ({ data }) => {
                     scale: 1.1,
                     boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
                   }}
-                  onClick={() => setAddToCartText("ADDED")}
+                  onClick={() => {
+                    handleAddItems(res?.card?.info);
+                    setAddToCartText("ADDED");
+                  }}
                   style={{
                     padding: "10px 20px",
                     fontSize: "16px",
