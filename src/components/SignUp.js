@@ -1,47 +1,71 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addUser, handleloginStatus } from "../utils/userSlice";
+import { addUser, handleloginStatus, updateUser } from "../utils/userSlice";
 import { motion } from "framer-motion";
 import { SWIGGY_LOGIN_VECTOR } from "../utils/constants";
 import { useState } from "react";
+import { useContext } from "react";
+import { ShowSignUpContext } from "../app";
 
-const SignUp = (props) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    email: "",
-  });
-  const { handle } = props;
-  console.log();
+const SignUp = () => {
+  // const { handle } = props;
+  const { showSigup, setShowSignup } = useContext(ShowSignUpContext);
+  // console.log(handle);
 
   const userData = useSelector((store) => store.user.userData);
+  const [formData, setFormData] = useState({
+    name: userData?.name || null,
+    mobile: userData?.mobile || null,
+    email: userData?.email || null,
+  });
   const loginStatusCheck = useSelector((store) => store.user.loginStatus);
-  // console.log(userData);
+  console.log(userData);
+  console.log(formData);
   // console.log(loginStatusCheck);
   const dispatch = useDispatch();
+
   const formSubmit = (event) => {
     event.preventDefault();
     // console.log(formData);
     dispatch(addUser(formData));
+    // setFormData({
+    //   ...formData,
+    //   [event.target.name]: event.target.value,
+    // });
+
     dispatch(handleloginStatus(true));
-    props.handle(false);
+    setShowSignup(false);
+  };
+
+  // const formUpdate = (event) => {
+  //   event.preventDefault();
+  // };
+
+  const updateForm = (event) => {
+    event.preventDefault();
+
+    dispatch(updateUser(formData));
+    dispatch(handleloginStatus(true));
+    setShowSignup(false);
   };
 
   const handleLogout = () => {
     dispatch(handleloginStatus(false));
-    props.handle(false);
+    setShowSignup(false);
     // dispatch(addUser(null));
   };
 
   const handleChange = (event) => {
-    dispatch(
-      addUser({
+    // dispatch(
+    //   addUser({
+    //     [event.target.name]: event.target.value,
+    //   })
+    // );
+    if (event.target.name) {
+      setFormData({
+        ...formData,
         [event.target.name]: event.target.value,
-      })
-    );
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
+      });
+    }
   };
   return (
     <div>
@@ -55,7 +79,7 @@ const SignUp = (props) => {
             <div
               className=""
               onClick={() => {
-                props?.handle(false);
+                setShowSignup(false);
               }}
             >
               <i class="fa-solid fa-xmark text-xl text-gray-500  "></i>
@@ -81,19 +105,33 @@ const SignUp = (props) => {
             <div className="py-6">
               {loginStatusCheck ? (
                 <div>
-                  <form onSubmit={formSubmit} className="space-y-3">
+                  <form
+                    method="post"
+                    onSubmit={updateForm}
+                    className="space-y-3"
+                  >
                     <input
                       name="name"
-                      value={userData?.name && userData.name}
-                      onChange={handleChange}
+                      value={formData?.name ? formData.name : null}
+                      onChange={(event) => {
+                        setFormData({
+                          ...formData,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
                       type="text"
                       className=" border-[.1rem] w-full h-16 px-3 "
                       placeholder="Name"
                       required
                     />
                     <input
-                      value={userData?.mobile && userData?.mobile}
-                      onChange={handleChange}
+                      value={formData?.mobile ? formData?.mobile : null}
+                      onChange={(event) => {
+                        setFormData({
+                          ...formData,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
                       name="mobile"
                       type="number"
                       className=" border-[.1rem] w-full h-16 px-3 "
@@ -101,8 +139,13 @@ const SignUp = (props) => {
                       required
                     />
                     <input
-                      value={userData?.email && userData?.email}
-                      onChange={handleChange}
+                      value={formData?.email ? formData?.email : null}
+                      onChange={(event) => {
+                        setFormData({
+                          ...formData,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
                       name="email"
                       type="email"
                       className=" border-[.1rem] w-full h-16 px-3 "
@@ -127,10 +170,14 @@ const SignUp = (props) => {
                 </div>
               ) : (
                 <div>
-                  <form onSubmit={formSubmit} className="space-y-3">
+                  <form
+                    onSubmit={formSubmit}
+                    method="post"
+                    className="space-y-3"
+                  >
                     <input
                       name="name"
-                      value={userData?.name && userData.name}
+                      value={formData?.name && formData.name}
                       onChange={handleChange}
                       type="text"
                       className=" border-[.1rem] w-full h-16 px-3 "
@@ -138,8 +185,13 @@ const SignUp = (props) => {
                       required
                     />
                     <input
-                      value={userData?.mobile && userData?.mobile}
-                      onChange={handleChange}
+                      value={formData?.mobile && formData?.mobile}
+                      onChange={(event) => {
+                        setFormData({
+                          ...formData,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
                       name="mobile"
                       type="number"
                       className=" border-[.1rem] w-full h-16 px-3 "
@@ -147,8 +199,13 @@ const SignUp = (props) => {
                       required
                     />
                     <input
-                      value={userData?.email && userData?.email}
-                      onChange={handleChange}
+                      value={formData?.email && formData?.email}
+                      onChange={(event) => {
+                        setFormData({
+                          ...formData,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
                       name="email"
                       type="email"
                       className=" border-[.1rem] w-full h-16 px-3 "

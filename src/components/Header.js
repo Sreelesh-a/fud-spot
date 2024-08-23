@@ -78,7 +78,7 @@ const Header = () => {
         {/* <div className=" ">
         <i class="fa-solid fa-circle-user "></i>
       </div> */}
-        {showSigup && <SignUp handle={setShowSignup} />}
+        {showSigup && <SignUp />}
         <div className="navItems  hidden sm:block">
           <ul className="flex gap-10 items-center">
             <li className="md:hidden">

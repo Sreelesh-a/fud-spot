@@ -5,7 +5,11 @@ import { act } from "react";
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    userData: {},
+    userData: {
+      name: "",
+      email: "",
+      mobile: "",
+    },
     paymentStatus: null,
     loginStatus: false,
     showSigup: null,
@@ -15,8 +19,15 @@ const userSlice = createSlice({
       //   if (!state?.userData?.length == 0) {
       //     state.userData.length == 0;
       //   }
+
       state.userData = action.payload;
       //   state.loginStatus = true;
+    },
+    updateUser: (state, action) => {
+      state.userData = {
+        ...state.userData,
+        ...action.payload,
+      };
     },
     handleShowSigup: (state, action) => {
       state.showSigup = action.payload;
@@ -43,5 +54,6 @@ export const {
   handleloginStatus,
   paymentStatusUpdate,
   paymentStatusChange,
+  updateUser,
 } = userSlice.actions;
 export default userSlice.reducer;

@@ -57,9 +57,9 @@ const CartPage = () => {
     return Math.round(rupees) / 10;
   };
 
-  console.log(paisaFormatter(16092));
-  console.log(cartItems);
-
+  // console.log(paisaFormatter(16092));
+  // console.log(cartItems);
+  s;
   return (
     <div>
       {/* {handlePaymentSuccess && (
