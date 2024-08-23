@@ -51,7 +51,7 @@ const WhatsOYMindFull = () => {
             <div className="">
               <div className=" relative  w-screen   overflow-hidden  ">
                 <div className="  ">
-                  <div className="flex flex-wrap ">
+                  <div className="flex flex-wrap h-[21.9rem] overflow-scroll ">
                     {swiggyInfo &&
                       swiggyInfo?.map((d) => (
                         <div key={d?.id} className="">
