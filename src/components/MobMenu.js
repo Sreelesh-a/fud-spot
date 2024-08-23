@@ -60,7 +60,7 @@ const MobMenu = () => {
                         whiteSpace: "nowrap",
                       }}
                     >
-                      {cartItems.length*cartItems?.count}
+                      {cartItems.length}
                     </div>
                   )}
                   <CartIcon />
