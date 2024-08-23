@@ -59,7 +59,7 @@ const CartPage = () => {
 
   // console.log(paisaFormatter(16092));
   // console.log(cartItems);
-  s;
+
   return (
     <div>
       {/* {handlePaymentSuccess && (
