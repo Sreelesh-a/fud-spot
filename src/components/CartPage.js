@@ -77,7 +77,7 @@ const CartPage = () => {
             </div>
           )}
 
-          <div className="p-4 lg:px-1  flex flex-wrap justify-between w-full">
+          <div className="p-4 lg:px-1  flex flex-wrap gap-3 justify-between w-full">
             <div className="bg-white w-full lg:w-[60%] items-start py-6 h-auto grid grid-cols-1 justify-between px-6 lg:px-9">
               {cartItems && cartItems.length > 0 ? (
                 cartItems.map((res, index) => {
@@ -86,8 +86,8 @@ const CartPage = () => {
                       className="flex lg:px-4 items-center py-4 justify-between gap-x-4 w-full"
                       key={index}
                     >
-                      <div className="lg:w-[43%] md:flex  lg:flex  gap-x-4 items-center">
-                        <div className="relative overflow-hidden bg-gray-200 size-20  lg:size-16 rounded-lg">
+                      <div className="lg:w-[43%] w-[30%] md:flex sm:space-y-0   lg:flex  gap-x-4 items-center">
+                        <div className="relative overflow-hidden bg-gray-200  w-22 h-14 lg:size-16  rounded-lg">
                           {res?.imageId ? (
                             <img
                               className="w-full h-full object-cover"
@@ -103,8 +103,8 @@ const CartPage = () => {
                           {res?.name}
                         </div>
                       </div>
-                      <div className="border-[.1rem] rounded-md px-3 border-green-600 lg:border-[.01rem] w-28 lg:w-[30%] sm:px-4">
-                        <div className=" items-center h-10 flex justify-between ">
+                      <div className="border-[.1rem] sm:mb-0 mb-4  rounded-md px-3 border-green-600 lg:border-[.01rem] w-[35%] lg:w-[30%] sm:px-4">
+                        <div className=" items-center   h-10 sm:h-10 flex justify-between ">
                           <div
                             className="cursor-pointer text-xl font-bold text-gray-400"
                             onClick={() => handleRemoveItem(res)}
@@ -120,7 +120,7 @@ const CartPage = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="lg:w-[10%]">
+                      <div className="w-[20%] text-start lg:w-[10%] sm:mb-0 mb-5">
                         ₹
                         {paisaFormatter(res?.price) * res?.count ||
                           paisaFormatter(res?.defaultPrice) * res?.count}
@@ -145,7 +145,7 @@ const CartPage = () => {
               )}
             </div>
 
-            <div className="bg-white w-full max-h-96  lg:w-[38%] py-6  grid grid-cols-1 justify-between px-9">
+            <div className="bg-white w-full max-h-96  lg:w-[38%] py-6 sm:py-6  grid grid-cols-1 justify-between px-9">
               <div>
                 {cartItems.length !== 0 ? (
                   <div className=" flex flex-wrap gap-y-10">
