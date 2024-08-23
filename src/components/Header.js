@@ -61,12 +61,12 @@ const Header = () => {
             <img src={logoHeaderImg} className="w-10 "></img>
           </Link>
 
-          <div className="flex items-center gap-x-2 cursor-pointer">
+          <div className="flex items-center gap-x-2 ">
             <div
               className="font-semibold underline underline-offset-4"
-              onClick={() => {
-                setDisplaySelectLocation(true);
-              }}
+              // onClick={() => {
+              //   setDisplaySelectLocation(true);
+              // }}
             >
               {location}
             </div>
@@ -118,12 +118,15 @@ const Header = () => {
               <HelpIcon />
               Help
             </li>
-            <button className="flex items-center " onClick={handleSignUp}>
+            <div
+              className="flex items-center cursor-pointer gap-x-2"
+              onClick={handleSignUp}
+            >
               <ProfileIcon />
-              <div className="truncate w-24">
+              <div className="truncate max-w-24 text-start">
                 {userData?.name ? userData?.name : "Sign in"}
               </div>
-            </button>
+            </div>
             <Link to="/cart">
               <li
                 className="flex items-center gap-x-2"

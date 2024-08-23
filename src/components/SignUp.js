@@ -82,7 +82,7 @@ const SignUp = () => {
                 setShowSignup(false);
               }}
             >
-              <i class="fa-solid fa-xmark text-xl text-gray-500  "></i>
+              <i class="fa-solid fa-xmark text-xl text-gray-500 cursor-pointer "></i>
             </div>
             <div className="flex items-center justify-between ">
               <div className="py-6 space-y-2">

@@ -130,37 +130,37 @@ const Body = () => {
                   Rating 4.2+
                 </button>
                 <button
-                  className="flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  className="flex-shrink-0 border border-gray-400  px-4 rounded-xl"
                   onClick={mgRoadFilter}
                 >
                   Near M G Road
                 </button>
                 <button
-                  className=" flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  className=" flex-shrink-0 border border-gray-500 px-4 text-gray-400 rounded-xl"
                   onClick={""}
                 >
                   Pure Veg
                 </button>
                 <button
-                  className=" flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  className=" flex-shrink-0 border border-gray-500 px-4 text-gray-400  px-4 rounded-xl"
                   onClick={""}
                 >
                   Fast Delivery
                 </button>
                 <button
-                  className=" flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  className=" flex-shrink-0 border border-gray-500 px-4 text-gray-400  px-4 rounded-xl"
                   onClick={""}
                 >
                   Offers
                 </button>
                 <button
-                  className="flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  className="flex-shrink-0 border border-gray-500 px-4 text-gray-400  px-4 rounded-xl"
                   onClick={""}
                 >
                   ₹300-600
                 </button>
                 <button
-                  className="flex-shrink-0 border border-gray-400 px-4 rounded-xl"
+                  className="flex-shrink-0 border border-gray-500 px-4 text-gray-400  px-4 rounded-xl"
                   onClick={""}
                 >
                   Less than ₹300
