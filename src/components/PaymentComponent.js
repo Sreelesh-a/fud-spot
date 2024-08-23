@@ -9,6 +9,7 @@ const PaymentComponent = ({ amount }) => {
     paymentID: null,
     status: null,
     orders: null,
+    amountPaid: null,
   });
 
   const { showSigup, setShowSignup } = useContext(ShowSignUpContext);
@@ -34,7 +35,6 @@ const PaymentComponent = ({ amount }) => {
     return `${formattedHours}:${formattedMinutes} ${period}`;
   };
 
-  // console.log(paymentStatusCheck);
   const handlePayment = () => {
     const options = {
       key: "rzp_test_fRX19y3ulO6D3U",
@@ -50,6 +50,7 @@ const PaymentComponent = ({ amount }) => {
           status: true,
           orders: cartItems,
           time: paymentTime,
+          amountPaid: amount,
         }));
 
         setPaymentSuccessState(true);

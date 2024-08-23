@@ -6,6 +6,7 @@
     "start": "parcel index.html ",
     "serve": "node server.js",
     "test": "jest",
+    "dev": "parcel index.html --host 0.0.0.0 --port 3000",
     "watch-test": "jest --watch"
   },
   "author": "",
