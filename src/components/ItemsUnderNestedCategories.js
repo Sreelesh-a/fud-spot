@@ -3,8 +3,11 @@ import { RESTO_IMG_LINK2 } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
 const ItemsUnderNestedCategories = ({ data }) => {
   const [cartId, setCartId] = useState([]);
+  const [addToCartText, setAddToCartText] = useState("ADD");
   const res = data;
   const dispatch = useDispatch();
   const handleAddItems = (res) => {
@@ -72,12 +75,34 @@ const ItemsUnderNestedCategories = ({ data }) => {
                 </div>
               )}
               <div
-                className="absolute bg-white cursor-pointer hover:bg-gray-100  font-bold text-green-600 bottom-[-1rem] shadow-md mx-6 sm:mx-6  py-1 w-24 h-9 text-center sm:h-8 rounded-lg items-center "
-                onClick={() => {
-                  handleAddItems(res?.card?.info);
-                }}
+                className="absolute cursor-pointer   font-bold text-green-600 bottom-[-.01rem] shadow-md mx-6 sm:mx-6  py-1 w-24 h-9 text-center sm:h-8 rounded-lg items-center "
+                // onClick={(e) => {
+                //   handleAddItems(res?.card?.info);
+                //   setAddToCartText("ADDED");
+                // }}
               >
-                ADD
+                <motion.div
+                  whileTap={{
+                    scale: 0.9,
+                    background: "linear-gradient(145deg, #d6e0f0, #ffffff)",
+                  }}
+                  whileHover={{
+                    scale: 1.1,
+                    boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
+                  }}
+                  onClick={() => setAddToCartText("ADDED")}
+                  style={{
+                    padding: "10px 20px",
+                    fontSize: "16px",
+                    cursor: "pointer",
+                    background: "linear-gradient(145deg, #ffffff, #d6e0f0)",
+                    border: "none",
+                    borderRadius: "0.5rem",
+                    outline: "none",
+                  }}
+                >
+                  {addToCartText}
+                </motion.div>
               </div>
             </div>
           </div>
