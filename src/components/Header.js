@@ -81,7 +81,7 @@ const Header = () => {
         {showSigup && <SignUp />}
         <div className="navItems  hidden sm:block">
           <ul className="flex gap-10 items-center">
-            <li className="md:hidden">
+            <li className="">
               <Link
                 style={{ textDecoration: "none", color: "inherit" }}
                 to="/about-us"
