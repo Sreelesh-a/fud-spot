@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ShowSignUpContext } from "../app";
 // import { paymentStatusUpdate } from "../utils/userSlice";
 import { paymentStatusUpdate } from "../utils/userSlice";
+import { logoHeaderImgMob } from "../utils/imageConstants";
 
 const PaymentComponent = ({ amount }) => {
   const [paymentDetails, setPaymentDetails] = useState({
@@ -37,9 +38,10 @@ const PaymentComponent = ({ amount }) => {
 
   const handlePayment = () => {
     const options = {
-      key: "rzp_test_fRX19y3ulO6D3U",
+      key: "rzp_test_8vmABvQnXhmXnw",
       amount: amount * 100,
       currency: "INR",
+      image: "https://i.ibb.co/CJ0F76p/favicon-32x32.png",
       name: "Fudspot",
       description: "Test Transaction",
       handler: function (response) {
