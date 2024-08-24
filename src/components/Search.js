@@ -54,7 +54,7 @@ const Search = () => {
               <WhatsOnYourMind />
             </div>
             <div className="sm:hidden">
-              <WhatsOYMindFull />
+              <WhatsOnYourMind />
             </div>
           </div>
         ) : (
