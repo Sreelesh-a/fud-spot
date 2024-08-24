@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { handleShowSigup } from "../utils/userSlice";
 import { useSelector } from "react-redux";
 import { ShowSignUpContext } from "../app";
+import { updateCartCount } from "../utils/userSlice";
 
 // import boxicons from "boxicons";
 import {
@@ -39,8 +40,9 @@ const Header = () => {
   //   }
   // };
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
+  const cartCount = useSelector((store) => store.user.cartCount);
   const userData = useSelector((store) => store.user.userData);
+  // console.log(cartCount);
 
   const handleClickTop = () => {
     window.scrollTo(0, 0);
@@ -153,7 +155,7 @@ const Header = () => {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        {cartItems.length}
+                        {cartCount}
                       </div>
                     )}
                     <CartIcon />

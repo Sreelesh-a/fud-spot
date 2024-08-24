@@ -4,6 +4,7 @@ import { addItem } from "../utils/cartSlice";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { updateCartCount } from "../utils/userSlice";
 
 const ItemsUnderNestedCategories = ({ data }) => {
   const [cartId, setCartId] = useState([]);
@@ -16,6 +17,11 @@ const ItemsUnderNestedCategories = ({ data }) => {
 
   const cartItems = useSelector((store) => store.cart.items);
   // console.log(cartItems);
+  const cartCount =
+    cartItems && cartItems.reduce((sum, action) => sum + action?.count, 0);
+
+  dispatch(updateCartCount(cartCount));
+  // console.log(cartCount);
 
   // const getCartIDs = () => {
   //   if (cartItems) {

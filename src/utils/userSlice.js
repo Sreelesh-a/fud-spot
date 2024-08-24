@@ -13,6 +13,7 @@ const userSlice = createSlice({
     paymentStatus: null,
     loginStatus: false,
     showSigup: null,
+    cartCount: null,
   },
   reducers: {
     addUser: (state, action) => {
@@ -45,6 +46,9 @@ const userSlice = createSlice({
     paymentStatusChange: (state, action) => {
       state.paymentStatus.status = action.payload;
     },
+    updateCartCount: (state, action) => {
+      state.cartCount = action.payload;
+    },
   },
 });
 
@@ -55,5 +59,6 @@ export const {
   paymentStatusUpdate,
   paymentStatusChange,
   updateUser,
+  updateCartCount,
 } = userSlice.actions;
 export default userSlice.reducer;

@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { CartIcon } from "../utils/icons/Arrow";
 const MobMenu = () => {
   const cartItems = useSelector((store) => store.cart.items);
+  const cartCount = useSelector((store) => store.cart.cartCount);
   const handleClickTop = () => {
     window.scrollTo(0, 0);
   };
@@ -60,7 +61,7 @@ const MobMenu = () => {
                         whiteSpace: "nowrap",
                       }}
                     >
-                      {cartItems.length}
+                      {cartCount}
                     </div>
                   )}
                   <CartIcon />
