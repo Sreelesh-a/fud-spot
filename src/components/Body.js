@@ -57,7 +57,7 @@ const Body = () => {
           <TopRestoMobileShimmer />
           <TopRestoMobileShimmer />
           <TopRestoMobileShimmer />
-          <TopRestoMobileShimmer />9
+          <TopRestoMobileShimmer />
         </div>
       );
     }
