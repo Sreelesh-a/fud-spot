@@ -7,7 +7,8 @@ import { useSelector } from "react-redux";
 import { CartIcon } from "../utils/icons/Arrow";
 const MobMenu = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  const cartCount = useSelector((store) => store.user.cartCount);
+  const cartCount =
+    cartItems && cartItems.reduce((sum, action) => sum + action?.count, 0);
   const handleClickTop = () => {
     window.scrollTo(0, 0);
   };

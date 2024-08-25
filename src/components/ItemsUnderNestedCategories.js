@@ -9,6 +9,7 @@ import { updateCartCount } from "../utils/userSlice";
 const ItemsUnderNestedCategories = ({ data }) => {
   const [cartId, setCartId] = useState([]);
   const [addToCartText, setAddToCartText] = useState("ADD");
+  const [totalCartCount, setTotalCartCount] = useState(0);
   const res = data;
   const dispatch = useDispatch();
   const handleAddItems = (res) => {
@@ -16,19 +17,10 @@ const ItemsUnderNestedCategories = ({ data }) => {
   };
 
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
   const cartCount =
     cartItems && cartItems.reduce((sum, action) => sum + action?.count, 0);
 
   dispatch(updateCartCount(cartCount));
-  // console.log(cartCount);
-
-  // const getCartIDs = () => {
-  //   if (cartItems) {
-  //     cartItems.map((res) => setCartId(res?.id));
-  //   }
-  // };
-  // console.log(cartItems);
 
   return (
     <div>

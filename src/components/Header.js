@@ -2,7 +2,7 @@
 
 import { logoHeaderImg } from "../utils/imageConstants";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -32,6 +32,7 @@ const Header = () => {
   const [loginAuth, setLoginAuth] = useState(false);
   const [displayLocations, setDisplayLocation] = useState(false);
   const { setDisplaySelectLocation } = useContext(SelectLocationContext);
+  const [totalCartItems, setTotalCartItems] = useState(0);
 
   const { showSigup, setShowSignup } = useContext(ShowSignUpContext);
   // const DisplayLocationComp = () => {
@@ -40,9 +41,11 @@ const Header = () => {
   //   }
   // };
   const cartItems = useSelector((store) => store.cart.items);
-  const cartCount = useSelector((store) => store.user.cartCount);
+
   const userData = useSelector((store) => store.user.userData);
-  // console.log(cartCount);
+
+  const cartCount =
+    cartItems && cartItems.reduce((sum, action) => sum + action?.count, 0);
 
   const handleClickTop = () => {
     window.scrollTo(0, 0);
