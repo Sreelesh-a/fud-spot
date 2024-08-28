@@ -21,9 +21,6 @@ const CartPage = () => {
       0
     );
   const paymentDetails = useSelector((store) => store.user.paymentStatus);
-  // console.log(paymentDetails);
-
-  //   const [totalAmount,setTotalAmount]
 
   const dispatch = useDispatch();
   const handleAddItem = (res) => {
@@ -56,9 +53,6 @@ const CartPage = () => {
     const rupees = paisa / 10;
     return Math.round(rupees) / 10;
   };
-
-  // console.log(paisaFormatter(16092));
-  // console.log(cartItems);
 
   return (
     <div>

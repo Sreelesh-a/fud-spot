@@ -15,7 +15,6 @@ const PaymentSuccessBanner = () => {
     // navigateCart("/cart");
     dispatch(paymentStatusChange(false));
   };
-  console.log(paymentDetails);
 
   // if(paymentDetails?.status){
 

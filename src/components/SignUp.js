@@ -18,8 +18,7 @@ const SignUp = () => {
     email: userData?.email || null,
   });
   const loginStatusCheck = useSelector((store) => store.user.loginStatus);
-  console.log(userData);
-  console.log(formData);
+
   // console.log(loginStatusCheck);
   const dispatch = useDispatch();
 

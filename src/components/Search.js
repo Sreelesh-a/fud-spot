@@ -42,7 +42,6 @@ const Search = () => {
             // console.log(searchText);
 
             setSearchingResult(filteredList);
-            console.log(searchingResult);
           }}
         ></input>
         <i className="fa-solid fa-magnifying-glass text-gray-500 p-4"></i>

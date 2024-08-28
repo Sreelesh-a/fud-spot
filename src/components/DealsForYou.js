@@ -2,7 +2,7 @@ import { RESTO_IMG_LINK2, SWIGGY_OFFER_LOGO_IMG } from "../utils/constants";
 
 const DealsForYou = (props) => {
   const { description, header, logoBottom, offerLogo } = props.dealsList?.info;
-  //   console.log(props.dealsList?.info);
+
   return (
     <div className="py-8">
       <div className="flex w-full ">

@@ -3,7 +3,6 @@ import { useState } from "react";
 import { RESTO_IMG_LINK } from "../utils/constants";
 
 const SearchResult = (props) => {
-  console.log(props);
   const { name, areaName, cloudinaryImageId } = props?.data;
 
   return (

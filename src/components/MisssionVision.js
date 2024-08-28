@@ -9,8 +9,6 @@ const MissionVision = () => {
     walkthrough: false,
   });
 
-  console.log(handleMissionVision);
-
   return (
     <div className="sm:px-56 sm:py-10 ">
       <div className="text-2xl items-center justify-center flex gap-7">

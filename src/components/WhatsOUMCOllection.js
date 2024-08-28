@@ -76,10 +76,6 @@ const WhatsOUMCOllection = () => {
   //   setCheckCardEmpty(true);
   // }
 
-  console.log(checkCardEmpty);
-  console.log(apiData);
-  console.log(itemCards);
-
   const EmptyMessage = () => {
     if (checkCardEmpty) {
       return (
