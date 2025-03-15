@@ -59,4 +59,4 @@ Open a pull request.
 Contact
 For any questions or suggestions, please open an issue or contact:
 
-mail.sreelesh@gmail.com
+connect@sreelesh.in
